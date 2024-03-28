@@ -7,20 +7,47 @@ import { Pricing } from '@/components/Pricing'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
 import { Testimonials } from '@/components/Testimonials'
+import { Pump } from "basehub/react-pump";
+import { draftMode } from "next/headers";
+import { LinkFragment, linkFragment } from "@/lib/basehub-queries";
+
 
 export default function Home() {
   return (
-    <>
-      <main>
-        <Hero />
-        <PrimaryFeatures />
-        <SecondaryFeatures />
-        <CallToAction />
-        <Testimonials />
-        <Pricing />
-        <Faqs />
-      </main>
-      <Footer />
-    </>
+    <Pump
+      draft={draftMode().isEnabled || process.env.DRAFT_MODE === "true"}
+      next={{ revalidate: 30 }} // or { tags: ["basehub"] }
+      queries={[
+        {
+          homepage: {
+            title: true,
+            subtitle: {
+              json: { content: true },
+            },
+            getStartedLink: linkFragment,
+            contactUsLink: linkFragment,
+          },
+        },
+      ]}
+    >
+      {async ([{ homepage }]) => {
+        "use server";
+        return (
+          <>
+            <main>
+              <Hero homepage={homepage} />
+              <PrimaryFeatures />
+              <SecondaryFeatures />
+              <CallToAction />
+              <Testimonials />
+              <Pricing />
+              <Faqs />
+            </main>
+            <Footer />
+          </>
+        )
+      }}
+
+    </Pump>
   )
 }

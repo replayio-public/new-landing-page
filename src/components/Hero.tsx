@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import logoLaravel from '@/images/logos/laravel.svg'
@@ -9,11 +10,11 @@ import logoStaticKit from '@/images/logos/statickit.svg'
 import logoTransistor from '@/images/logos/transistor.svg'
 import logoTuple from '@/images/logos/tuple.svg'
 
-export function Hero() {
+export function Hero({ homepage }) {
   return (
     <Container className="pb-16 pt-20 text-center lg:pt-32">
       <h1 className="mx-auto max-w-3xl font-display text-4xl font-medium tracking-tight text-slate-900 sm:text-7xl">
-        Move fast and don't break things.
+        {homepage.title}
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
         Replay helps devs fix their flaky Cypress and
@@ -25,13 +26,13 @@ export function Hero() {
           href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           variant="outline"
         >
-         
+
           <span className="ml-3">Book a demo </span>
         </Button>
       </div>
       <div className="mt-36 lg:mt-44">
         <p className="font-display text-base text-slate-900">
-        Trusted by world-class companies and open source projects.
+          Trusted by world-class companies and open source projects.
         </p>
         <ul
           role="list"
