@@ -10,17 +10,17 @@ import logoStaticKit from '@/images/logos/statickit.svg'
 import logoTransistor from '@/images/logos/transistor.svg'
 import logoTuple from '@/images/logos/tuple.svg'
 import { HomepageFragment } from '@/lib/basehub-queries'
+import { RichText } from "basehub/react-rich-text"
 
 export function Hero({ homepage }: { homepage: HomepageFragment }) {
   return (
     <Container className="pb-16 pt-20 text-center lg:pt-32">
-      <h1 className="mx-auto max-w-3xl font-display text-4xl font-medium tracking-tight text-slate-900 sm:text-7xl">
+      <h1 className="mx-auto max-w-4xl font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">
         {homepage.title}
       </h1>
-      <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        Replay helps devs fix their flaky Cypress and
-        Playwright tests so that tests are green and bugs are caught before they ship to prod.
-      </p>
+      <div className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
+        <RichText>{homepage.subtitle.json.content}</RichText>
+      </div>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button href="/register">Record your first replay </Button>
         <Button
