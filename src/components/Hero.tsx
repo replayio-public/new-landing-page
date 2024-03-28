@@ -9,8 +9,9 @@ import logoStatamic from '@/images/logos/statamic.svg'
 import logoStaticKit from '@/images/logos/statickit.svg'
 import logoTransistor from '@/images/logos/transistor.svg'
 import logoTuple from '@/images/logos/tuple.svg'
+import { HomepageFragment } from '@/lib/basehub-queries'
 
-export function Hero({ homepage }) {
+export function Hero({ homepage }: { homepage: HomepageFragment }) {
   return (
     <Container className="pb-16 pt-20 text-center lg:pt-32">
       <h1 className="mx-auto max-w-3xl font-display text-4xl font-medium tracking-tight text-slate-900 sm:text-7xl">
