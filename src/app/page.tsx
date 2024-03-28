@@ -9,6 +9,7 @@ import { Testimonials } from '@/components/Testimonials'
 import { Pump } from "basehub/react-pump";
 import { draftMode } from "next/headers";
 import { homepageFragment } from "@/lib/basehub-queries";
+import { Header } from "@/components/Header";
 
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
         return (
           <>
             <main>
+              <Header />
               <Hero homepage={homepage} />
               <PrimaryFeatures />
               <SecondaryFeatures />
