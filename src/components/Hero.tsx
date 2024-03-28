@@ -12,22 +12,21 @@ import logoTuple from '@/images/logos/tuple.svg'
 export function Hero() {
   return (
     <Container className="pb-16 pt-20 text-center lg:pt-32">
-      <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
-        Catch bugs before they ship to prod
+      <h1 className="mx-auto max-w-3xl font-display text-4xl font-medium tracking-tight text-slate-900 sm:text-7xl">
+        Move fast and don't break things.
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        Replay helps developers fix the flaky tests in their Cypress and
-        Playwright tests so that the tests are green and they can move fast and{' '}
-        <span className="text-red-500">not</span> break things.
+        Replay helps devs fix their flaky Cypress and
+        Playwright tests so that tests are green and bugs are caught before they ship to prod.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
-        <Button href="/register">Record your first replay in 60s -></Button>
+        <Button href="/register">Record your first replay </Button>
         <Button
           href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           variant="outline"
         >
          
-          <span className="ml-3">Book a demo -></span>
+          <span className="ml-3">Book a demo </span>
         </Button>
       </div>
       <div className="mt-36 lg:mt-44">
