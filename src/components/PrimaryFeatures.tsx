@@ -14,27 +14,27 @@ import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
 
 const features = [
   {
-    title: 'Payroll',
+    title: 'Add console logs',
     description:
-      "Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.",
+      'Add console logs in your source code with a single click and  the messages “automagically” appear in the Console.',
     image: screenshotPayroll,
   },
   {
-    title: 'Claim expenses',
+    title: 'Inspect React components',
     description:
-      "All of your receipts organized into one place, as long as you don't mind typing in the data by hand.",
+      'Pause at any point in the replay and inspect your React component props, state, and hooks.',
     image: screenshotExpenses,
   },
   {
-    title: 'VAT handling',
+    title: 'Jump to test steps',
     description:
-      "We only sell our software to companies who don't deal with VAT at all, so technically we do all the VAT stuff they need.",
+      'Add console logs in your source code with a single and the messages will “automagically” appear in the Console.',
     image: screenshotVatReturns,
   },
   {
-    title: 'Reporting',
+    title: 'View Network Requests',
     description:
-      'Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.',
+      'Add console logs in your source code with a single and the messages will “automagically” appear in the Console.',
     image: screenshotReporting,
   },
 ]
@@ -76,11 +76,13 @@ export function PrimaryFeatures() {
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            Everything you need to run your books.
+            Debug your application, after the fact.
           </h2>
           <p className="mt-6 text-lg tracking-tight text-blue-100">
-            Well everything you need if you aren’t that picky about minor
-            details like tax compliance.
+            Record your E2E tests in CI and debug them later with time travel
+            enabled Browser DevTools. <br />
+            With Replay, you can focus on fixing the test not reproducing it
+            locally.
           </p>
         </div>
         <Tab.Group
