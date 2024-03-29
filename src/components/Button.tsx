@@ -24,23 +24,23 @@ const variantStyles = {
   },
 }
 
+
 type ButtonProps = (
   | {
-      variant?: 'solid'
-      color?: keyof typeof variantStyles.solid
-    }
+    variant?: 'solid'
+    color?: keyof typeof variantStyles.solid
+  }
   | {
-      variant: 'outline'
-      color?: keyof typeof variantStyles.outline
-    }
+    variant: 'outline'
+    color?: keyof typeof variantStyles.outline
+  }
 ) &
   (
     | Omit<React.ComponentPropsWithoutRef<typeof Link>, 'color'>
     | (Omit<React.ComponentPropsWithoutRef<'button'>, 'color'> & {
-        href?: undefined
-      })
+      href?: undefined
+    })
   )
-
 export function Button({ className, ...props }: ButtonProps) {
   props.variant ??= 'solid'
   props.color ??= 'slate'
@@ -56,8 +56,41 @@ export function Button({ className, ...props }: ButtonProps) {
   )
 
   return typeof props.href === 'undefined' ? (
-    <button className={className} {...props} />
+    <button className={className} {...props} {...props} />
   ) : (
-    <Link className={className} {...props} />
+    <Link className={className} {...props}  {...props} />
+  )
+}
+
+
+
+type BaseHubButtonProps = {
+  className?: string
+  label: string
+  href: string
+  color?: 'slate' | 'blue' | 'white'
+  variant: string
+}
+
+type Variant = 'solid' | 'outline'
+
+export function BaseHubButton({ className, label, ...props }: BaseHubButtonProps) {
+  props.variant ??= 'solid'
+  props.color ??= 'slate'
+
+  className = clsx(
+    baseStyles[props.variant as Variant],
+    props.variant === 'outline'
+      ? variantStyles.outline[props.color as keyof typeof variantStyles['outline']]
+      : props.variant === 'solid'
+        ? variantStyles.solid[props.color]
+        : undefined,
+    className,
+  )
+
+  return typeof props.href === 'undefined' ? (
+    <button className={className} {...props}>{label} </button>
+  ) : (
+    <Link className={className} {...props} >{label} </Link>
   )
 }

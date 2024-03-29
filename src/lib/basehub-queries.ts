@@ -1,7 +1,7 @@
 import {
     FieldsSelection,
-    Homepage,
-    HomepageGenqlSelection,
+    LandingPage,
+    LandingPageGenqlSelection,
     LinkComponent,
     LinkComponentGenqlSelection,
 } from "basehub";
@@ -13,15 +13,28 @@ export const linkFragment = {
     variant: true,
 } satisfies LinkComponentGenqlSelection;
 
-export const homepageFragment = {
-    title: true,
-    subtitle: {
-        json: { content: true },
+export const landingPageFragment = {
+    hero: {
+        title: true,
+        subtitle: {
+            json: { content: true },
+        },
+        getStartedLink: linkFragment,
+        contactUsLink: linkFragment,
     },
-    getStartedLink: linkFragment,
-    contactUsLink: linkFragment,
-} satisfies HomepageGenqlSelection;
+    devTools: {
+        title: true,
+        subTitle: true,
+        features: {
+            items: {
+                _title: true,
+                subTitle: true,
+                image: true
+            },
+        }
+    }
+} satisfies LandingPageGenqlSelection;
 
 
-export type HomepageFragment = FieldsSelection<Homepage, typeof homepageFragment>;
+export type LandingPageFragment = FieldsSelection<LandingPage, typeof landingPageFragment>;
 export type LinkFragment = FieldsSelection<LinkComponent, typeof linkFragment>;
