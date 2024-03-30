@@ -11,6 +11,7 @@ import { draftMode } from 'next/headers'
 import { landingPageFragment } from '@/lib/basehub-queries'
 import { Header } from "@/components/Header";
 import FAQ from '@/components/sections/FAQ'
+import DynamicAnalysis from '@/components/sections/DynamicAnalysis'
 
 export default function Home() {
   return (
@@ -29,10 +30,11 @@ export default function Home() {
               <DevTools {...landingPage} />
               <TestSuites {...landingPage} />
               <FAQ {...landingPage} />
-              <CallToAction />
+              <DynamicAnalysis {...landingPage} />
+              <CallToAction {...landingPage} />
               <Testimonials />
-              <Pricing />
-              <Faqs />
+              {/* <Pricing /> */}
+              {/* <Faqs /> */}
             </main>
             <Footer />
           </>
