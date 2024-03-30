@@ -1,6 +1,5 @@
 import Image from 'next/image'
 
-
 import { BaseHubButton } from '@/components/Button'
 import { Container } from '@/components/Container'
 import logoLaravel from '@/images/logos/laravel.svg'
@@ -10,7 +9,7 @@ import logoStaticKit from '@/images/logos/statickit.svg'
 import logoTransistor from '@/images/logos/transistor.svg'
 import logoTuple from '@/images/logos/tuple.svg'
 import { LandingPageFragment } from '@/lib/basehub-queries'
-import { RichText } from "basehub/react-rich-text"
+import { RichText } from 'basehub/react-rich-text'
 
 export function Hero({ hero }: LandingPageFragment) {
   return (
@@ -61,6 +60,6 @@ export function Hero({ hero }: LandingPageFragment) {
           ))}
         </ul>
       </div>
-    </Container >
+    </Container>
   )
 }
