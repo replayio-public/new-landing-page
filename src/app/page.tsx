@@ -4,7 +4,7 @@ import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/sections/Hero'
 import { Pricing } from '@/components/Pricing'
 import { DevTools } from '@/components/sections/DevTools'
-import { SecondaryFeatures } from '@/components/SecondaryFeatures'
+import { TestSuites } from '@/components/sections/TestSuites'
 import { Testimonials } from '@/components/Testimonials'
 import { Pump } from "basehub/react-pump";
 import { draftMode } from "next/headers";
@@ -29,7 +29,7 @@ export default function Home() {
               <Header />
               <Hero {...landingPage} />
               <DevTools {...landingPage} />
-              <SecondaryFeatures />
+              <TestSuites {...landingPage} />
               <CallToAction />
               <Testimonials />
               <Pricing />
