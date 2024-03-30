@@ -4,7 +4,7 @@ import {
     LandingPageGenqlSelection,
     LinkComponent,
     LinkComponentGenqlSelection,
-} from "basehub";
+} from ".basehub";
 
 export const linkFragment = {
     _id: true,
