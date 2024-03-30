@@ -9,7 +9,8 @@ import { Testimonials } from '@/components/Testimonials'
 import { Pump } from '.basehub/react-pump'
 import { draftMode } from 'next/headers'
 import { landingPageFragment } from '@/lib/basehub-queries'
-import { Header } from '@/components/Header'
+import { Header } from "@/components/Header";
+import FAQ from '@/components/sections/FAQ'
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
               <Hero {...landingPage} />
               <DevTools {...landingPage} />
               <TestSuites {...landingPage} />
+              <FAQ {...landingPage} />
               <CallToAction />
               <Testimonials />
               <Pricing />
