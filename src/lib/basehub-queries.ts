@@ -4,7 +4,10 @@ import {
     LandingPageGenqlSelection,
     LinkComponent,
     LinkComponentGenqlSelection,
+    PricingPage,
+    PricingPageGenqlSelection,
 } from ".basehub";
+
 
 export const linkFragment = {
     _id: true,
@@ -74,5 +77,17 @@ export const landingPageFragment = {
 } satisfies LandingPageGenqlSelection;
 
 
+export const pricingPageFragment = {
+    hero: {
+        title: {
+            left: true,
+            right: true
+        },
+        label: true,
+        description: { json: { content: true }, }
+    }
+} satisfies PricingPageGenqlSelection;
+
 export type LandingPageFragment = FieldsSelection<LandingPage, typeof landingPageFragment>;
 export type LinkFragment = FieldsSelection<LinkComponent, typeof linkFragment>;
+export type PricingPageFragment = FieldsSelection<PricingPage, typeof pricingPageFragment>;

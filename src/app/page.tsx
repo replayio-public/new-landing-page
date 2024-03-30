@@ -1,8 +1,6 @@
 import { CallToAction } from '@/components/CallToAction'
-import { Faqs } from '@/components/Faqs'
 import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/sections/Hero'
-import { Pricing } from '@/components/Pricing'
 import { DevTools } from '@/components/sections/DevTools'
 import { TestSuites } from '@/components/sections/TestSuites'
 import { Testimonials } from '@/components/Testimonials'
