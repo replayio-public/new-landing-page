@@ -32,6 +32,18 @@ export const landingPageFragment = {
                 image: true
             },
         }
+    },
+    testSuites: {
+        title: true,
+        subTitle: true,
+        features: {
+            items: {
+                _title: true,
+                subtitle: true,
+                description: true,
+                image: true
+            }
+        }
     }
 } satisfies LandingPageGenqlSelection;
 
