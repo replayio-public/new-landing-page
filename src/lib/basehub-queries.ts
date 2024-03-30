@@ -54,6 +54,22 @@ export const landingPageFragment = {
                 summary: true
             }
         }
+    },
+    cta: {
+        title: true,
+        getStartedLink: linkFragment
+    },
+    dynamicAnalysis: {
+        title: true,
+        subtitle: true,
+        description: true,
+        features: {
+            items: {
+                _title: true,
+                feature: { json: { content: true } },
+                icon: true
+            }
+        }
     }
 } satisfies LandingPageGenqlSelection;
 
