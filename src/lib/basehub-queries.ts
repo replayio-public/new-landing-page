@@ -44,6 +44,16 @@ export const landingPageFragment = {
                 image: true
             }
         }
+    },
+    faq: {
+        title: true,
+        subTitle: true,
+        questions: {
+            items: {
+                _title: true,
+                summary: true
+            }
+        }
     }
 } satisfies LandingPageGenqlSelection;
 
