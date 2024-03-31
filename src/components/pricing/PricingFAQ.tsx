@@ -42,7 +42,7 @@ export function PricingFAQ() {
                     <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900">Frequently asked questions</h2>
                     <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
                         {faqs.map((faq) => (
-                            <Collapsible.Root as="div" key={faq.question} className="pt-6" onOpenChange={setOpen}>
+                            <Collapsible.Root key={faq.question} className="pt-6" onOpenChange={setOpen}>
 
                                 <dt>
                                     <Collapsible.Trigger className="flex w-full items-start justify-between text-left text-gray-900">
@@ -56,7 +56,7 @@ export function PricingFAQ() {
                                         </span>
                                     </Collapsible.Trigger>
                                 </dt>
-                                <Collapsible.Content as="dd" className="mt-2 pr-12">
+                                <Collapsible.Content className="mt-2 pr-12">
                                     <p className="text-base leading-7 text-gray-600">{faq.answer}</p>
                                 </Collapsible.Content>
                             </Collapsible.Root>
