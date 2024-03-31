@@ -7,18 +7,17 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 // import backgroundImage from '@/images/background-features.jpg'
-import screenshotExpenses from '@/images/screenshots/expenses.png'
-import screenshotPayroll from '@/images/screenshots/payroll.png'
-import screenshotReporting from '@/images/screenshots/reporting.png'
-import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
+import console from '@/images/screenshots/add-console-logs.png'
+import react from '@/images/screenshots/inspect-react-components.png'
+import testSteps from '@/images/screenshots/jump-to-test-steps.png'
+import network from '@/images/screenshots/view-network-requests.png'
 import { LandingPageFragment } from '@/lib/basehub-queries'
 
-
 const images = {
-  expenses: screenshotExpenses,
-  payroll: screenshotPayroll,
-  reports: screenshotReporting,
-  'vat-returns': screenshotVatReturns,
+  expenses: console,
+  payroll: react,
+  reports: testSteps,
+  'vat-returns': network,
 }
 
 export function DevTools({ devTools }: LandingPageFragment) {
@@ -56,11 +55,11 @@ export function DevTools({ devTools }: LandingPageFragment) {
         unoptimized
       /> */}
       <Container className="relative">
-        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none flex flex-col justfify-center items-center">
+        <div className="justfify-center flex max-w-2xl flex-col items-center md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-2xl tracking-tight text-white sm:text-3xl md:text-4xl">
             {devTools.title}
           </h2>
-          <p className="mt-6 md:max-w-3xl text-lg tracking-tight text-blue-100">
+          <p className="mt-6 text-lg tracking-tight text-blue-100 md:max-w-3xl">
             {devTools.subTitle}
           </p>
         </div>
@@ -122,7 +121,11 @@ export function DevTools({ devTools }: LandingPageFragment) {
                     <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
                       <Image
                         className="w-full"
-                        src={images[feature.image as keyof typeof images || "payroll"]}
+                        src={
+                          images[
+                            (feature.image as keyof typeof images) || 'console'
+                          ]
+                        }
                         alt=""
                         priority
                         sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"

@@ -7,9 +7,9 @@ import clsx from 'clsx'
 import { LandingPageFragment } from '@/lib/basehub-queries'
 
 import { Container } from '@/components/Container'
-import screenshotContacts from '@/images/screenshots/contacts.png'
-import screenshotInventory from '@/images/screenshots/inventory.png'
-import screenshotProfitLoss from '@/images/screenshots/profit-loss.png'
+import screenshotTests from '@/images/screenshots/tests-view.png'
+import screenshotRuns from '@/images/screenshots/runs-view.png'
+import screenshotPRComments from '@/images/screenshots/pr-comments.png'
 
 interface Feature {
   title: React.ReactNode
@@ -20,9 +20,9 @@ interface Feature {
 }
 
 const images = {
-  profit: screenshotProfitLoss,
-  inventory: screenshotInventory,
-  contacts: screenshotContacts
+  profit: screenshotTests,
+  inventory: screenshotRuns,
+  contacts: screenshotPRComments,
 }
 const icons = {
   profit: function ReportingIcon() {
@@ -129,19 +129,26 @@ function Feature({
   )
 }
 
-function FeaturesMobile({ features }: { features: LandingPageFragment['testSuites']['features']['items'] }) {
+function FeaturesMobile({
+  features,
+}: {
+  features: LandingPageFragment['testSuites']['features']['items']
+}) {
   return (
     <div className="-mx-4 mt-20 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden">
       {features.map((feature) => (
         <div key={feature._title}>
-          <Feature feature={{
-            title: feature._title,
-            subTitle: feature.subtitle,
-            description: feature.description,
-            image: images[feature.image as keyof typeof images],
-            icon: icons[feature.image as keyof typeof icons]
-
-          }} className="mx-auto max-w-2xl" isActive />
+          <Feature
+            feature={{
+              title: feature._title,
+              subTitle: feature.subtitle,
+              description: feature.description,
+              image: images[feature.image as keyof typeof images],
+              icon: icons[feature.image as keyof typeof icons],
+            }}
+            className="mx-auto max-w-2xl"
+            isActive
+          />
           <div className="relative mt-10 pb-10">
             <div className="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6" />
             <div className="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
@@ -159,7 +166,11 @@ function FeaturesMobile({ features }: { features: LandingPageFragment['testSuite
   )
 }
 
-function FeaturesDesktop({ features }: { features: LandingPageFragment['testSuites']['features']['items'] }) {
+function FeaturesDesktop({
+  features,
+}: {
+  features: LandingPageFragment['testSuites']['features']['items']
+}) {
   return (
     <Tab.Group as="div" className="hidden lg:mt-20 lg:block">
       {({ selectedIndex }) => (
