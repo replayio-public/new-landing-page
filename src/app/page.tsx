@@ -10,6 +10,7 @@ import { landingPageFragment } from '@/lib/basehub-queries'
 import { Header } from "@/components/Header";
 import FAQ from '@/components/sections/FAQ'
 import DynamicAnalysis from '@/components/sections/DynamicAnalysis'
+import { TestSuiteCaseStudies } from '@/components/sections/TestSuiteCaseStudies'
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
             <main>
               <Header />
               <Hero {...landingPage} />
+              <TestSuiteCaseStudies />
               <DevTools {...landingPage} />
               <TestSuites {...landingPage} />
               <FAQ {...landingPage} />
