@@ -37,6 +37,8 @@ export default {
     formsPlugin,
     headlessuiPlugin,
     require("tailwindcss-animate"),
-    require('@tailwindcss/forms')
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+
   ],
 } satisfies Config

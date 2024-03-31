@@ -25,7 +25,7 @@ function Panel({ className = "", superTitle, title, description, orientation, im
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-200 sm:text-4xl">
         {title}
       </h1>
-      <div className="rich-text-paragraphs max-w-xl">
+      <div className="prose text-slate-300 max-w-xl">
         <RichText>{description}</RichText>
       </div>
     </div>
