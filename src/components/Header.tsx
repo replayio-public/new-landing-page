@@ -9,8 +9,6 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/FullLogo'
 import { NavLink } from '@/components/NavLink'
-// import Logo from '@/images/logo.svg'
-// import Image from "next/image"
 
 function MobileNavLink({
   href,
@@ -105,12 +103,12 @@ export function Header() {
       <Container>
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
-            <Link href="#" aria-label="Home">
+            <Link href="/" aria-label="Home">
               <Logo className='fill-slate-800' style={{ height: "20px", }} />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="#devtools">Browser DevTools</NavLink>
-              <NavLink href="#test-suites">Test Suites</NavLink>
+              <NavLink href="/#devtools">Browser DevTools</NavLink>
+              <NavLink href="/#test-suites">Test Suites</NavLink>
               <NavLink href="/pricing">Pricing</NavLink>
             </div>
           </div>
