@@ -33,5 +33,10 @@ export default {
       },
     },
   },
-  plugins: [formsPlugin, headlessuiPlugin, require("tailwindcss-animate")],
+  plugins: [
+    formsPlugin,
+    headlessuiPlugin,
+    require("tailwindcss-animate"),
+    require('@tailwindcss/forms')
+  ],
 } satisfies Config

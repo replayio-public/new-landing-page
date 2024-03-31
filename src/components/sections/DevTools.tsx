@@ -43,8 +43,8 @@ export function DevTools({ devTools }: LandingPageFragment) {
 
   return (
     <section
-      id="features"
-      aria-label="Features for running your books"
+      id="devtools"
+      aria-label="Time Travel enabled Browser DevTools"
       className="relative overflow-hidden bg-gray-700 pb-28 pt-20 sm:py-32"
     >
       {/* <Image
@@ -56,11 +56,11 @@ export function DevTools({ devTools }: LandingPageFragment) {
         unoptimized
       /> */}
       <Container className="relative">
-        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
+        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none flex flex-col justfify-center items-center">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
             {devTools.title}
           </h2>
-          <p className="mt-6 text-lg tracking-tight text-blue-100">
+          <p className="mt-6 md:max-w-3xl text-lg tracking-tight text-blue-100">
             {devTools.subTitle}
           </p>
         </div>
