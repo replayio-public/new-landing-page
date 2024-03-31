@@ -1,5 +1,5 @@
 
-function SwirlyDoodle(props: React.ComponentPropsWithoutRef<'svg'>) {
+export function SwirlyDoodle(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
       aria-hidden="true"

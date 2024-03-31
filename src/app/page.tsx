@@ -1,4 +1,4 @@
-import { CallToAction } from '@/components/CallToAction'
+import { CallToAction } from '@/components/sections/CallToAction'
 import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/sections/Hero'
 import { DevTools } from '@/components/sections/DevTools'
@@ -11,6 +11,7 @@ import { Header } from "@/components/Header";
 import FAQ from '@/components/sections/FAQ'
 import DynamicAnalysis from '@/components/sections/DynamicAnalysis'
 import { TestSuiteCaseStudies } from '@/components/sections/TestSuiteCaseStudies'
+import { Content } from '@/components/sections/Content'
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
               <DynamicAnalysis {...landingPage} />
               <CallToAction {...landingPage} />
               <Testimonials />
+              <Content />
             </main>
             <Footer />
           </>
