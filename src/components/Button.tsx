@@ -51,9 +51,6 @@ export function Button({ className, ...props }: ButtonProps) {
   const variant = props.variant || 'solid' as keyof typeof variantStyles
   const color = props.color || 'slate' as keyof typeof variantStyles.solid
 
-  console.log('btn', variant, color)
-
-
   className = clsx(
     baseStyles[variant],
     variantStyles[variant][color],
