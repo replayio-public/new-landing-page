@@ -56,7 +56,9 @@ export const landingPageFragment = {
         questions: {
             items: {
                 _title: true,
-                summary: true
+                summary: true,
+                href: true,
+                logos: true
             }
         }
     },
