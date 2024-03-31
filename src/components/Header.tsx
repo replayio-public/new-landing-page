@@ -109,6 +109,7 @@ export function Header() {
             <div className="hidden md:flex md:gap-x-6">
               <NavLink href="/#devtools">Browser DevTools</NavLink>
               <NavLink href="/#test-suites">Test Suites</NavLink>
+              <NavLink href="/#test-suites">Resources</NavLink>
               <NavLink href="/pricing">Pricing</NavLink>
             </div>
           </div>
