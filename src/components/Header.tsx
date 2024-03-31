@@ -7,7 +7,7 @@ import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import { Logo } from '@/components/Logo'
+import { Logo } from '@/components/FullLogo'
 import { NavLink } from '@/components/NavLink'
 // import Logo from '@/images/logo.svg'
 // import Image from "next/image"
@@ -100,7 +100,6 @@ function MobileNavigation() {
 }
 
 export function Header() {
-  console.log('logo', Logo)
   return (
     <header className="py-10">
       <Container>

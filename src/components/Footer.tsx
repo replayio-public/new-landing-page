@@ -1,28 +1,62 @@
+import { ShortLogo } from "./ShortLogo"
+
+
+type LinkItem = {
+  name: string
+  href: string
+  icon?: (props: any) => JSX.Element
+}
+
+function Category({ name, links }: { name: string, links: LinkItem[] }) {
+  return <>
+    <h3 className="text-sm font-semibold leading-6 text-gray-900">{name}</h3>
+    <ul role="list" className="mt-6 space-y-4">
+      {links.map((item) => (
+        <li key={item.name}>
+          <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </>
+}
+
 
 const navigation = {
-  solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
-  ],
-  support: [
-    { name: 'Pricing', href: '#' },
+  product: [
+    { name: 'Replay DevTools', href: '#' },
+    { name: 'Replay Browser', href: '#' },
+    { name: 'Replay Test Suites', href: '#' },
+    { name: 'Replay Bug Reports', href: '#' },
+    { name: 'Status', href: '#' },
     { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
+    { name: 'Pricing', href: '#' },
   ],
   company: [
-    { name: 'About', href: '#' },
     { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: 'Changelog', href: '#' },
+    { name: 'Engineering blog', href: '#' },
+    { name: 'Case Studies', href: '#' },
   ],
-  legal: [
-    { name: 'Claim', href: '#' },
+  information: [
+    { name: 'Support', href: '#' },
+    { name: 'Resources', href: '#' },
+    { name: 'Guides', href: '#' },
+    { name: 'Security & Compliance', href: '#' },
     { name: 'Privacy', href: '#' },
     { name: 'Terms', href: '#' },
+  ],
+  integrations: [
+    { name: 'React', href: '#' },
+    { name: 'Redux', href: '#' },
+    { name: 'Cypress', href: '#' },
+    { name: 'Playwright', href: '#' },
+    { name: 'Selenium WebDriver', href: '#' },
+    { name: 'NextJS', href: '#' },
+    { name: 'Apollo GraphQL', href: '#' },
+    { name: 'Zustand', href: '#' },
+
   ],
   social: [
     {
@@ -97,62 +131,22 @@ export function Footer() {
       </h2>
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <img
-            className="h-7"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-            alt="Company name"
-          />
+          <ShortLogo className='fill-slate-800' style={{ height: "20px", }} />
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-gray-900">Solutions</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.solutions.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                <Category name="Product" links={navigation.product} />
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-gray-900">Support</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.support.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                <Category name="Company" links={navigation.company} />
               </div>
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-gray-900">Company</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.company.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                <Category name="Information" links={navigation.information} />
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-gray-900">Legal</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.legal.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                <Category name="Integrations" links={navigation.integrations} />
               </div>
             </div>
           </div>
@@ -197,7 +191,7 @@ export function Footer() {
             ))}
           </div>
           <p className="mt-8 text-xs leading-5 text-gray-500 md:order-1 md:mt-0">
-            &copy; 2020 Your Company, Inc. All rights reserved.
+            &copy; Record Replay, Inc. All rights reserved.
           </p>
         </div>
       </div>
