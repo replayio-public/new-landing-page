@@ -1,5 +1,5 @@
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
-import screenshotRca from '@/images/screenshots/rca.png'
+import screenshotRca from '@/images/screenshots/rca-1.png'
 import Image from 'next/image'
 import { LandingPageFragment } from '@/lib/basehub-queries'
 import { RichText } from "basehub/react-rich-text"
