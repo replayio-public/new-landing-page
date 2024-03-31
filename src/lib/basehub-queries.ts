@@ -1,4 +1,6 @@
 import {
+    AboutPage,
+    AboutPageGenqlSelection,
     FieldsSelection,
     LandingPage,
     LandingPageGenqlSelection,
@@ -88,6 +90,19 @@ export const pricingPageFragment = {
     }
 } satisfies PricingPageGenqlSelection;
 
+
+export const aboutPageFragment = {
+    hero: {
+        title: true,
+        subTitle: true,
+        title1: true,
+        description1: { json: { content: true }, },
+        title2: true,
+        description2: { json: { content: true }, },
+    }
+} satisfies AboutPageGenqlSelection
+
 export type LandingPageFragment = FieldsSelection<LandingPage, typeof landingPageFragment>;
 export type LinkFragment = FieldsSelection<LinkComponent, typeof linkFragment>;
 export type PricingPageFragment = FieldsSelection<PricingPage, typeof pricingPageFragment>;
+export type AboutPageFragment = FieldsSelection<AboutPage, typeof aboutPageFragment>;
