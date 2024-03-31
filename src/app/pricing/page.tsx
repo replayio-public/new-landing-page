@@ -8,6 +8,7 @@ import { pricingPageFragment } from '@/lib/basehub-queries'
 import { Header } from "@/components/Header";
 import { CostCalculator } from '@/components/pricing/sections/CostCalculator'
 import { Footer } from '@/components/Footer'
+import { PricingFAQ } from '@/components/pricing/PricingFAQ'
 
 export default function Home() {
     return (
@@ -25,6 +26,7 @@ export default function Home() {
                             <PricingHero {...pricingPage} />
                             <CostCalculator />
                             <PricingTable />
+                            <PricingFAQ />
                             <Footer />
                         </main>
                     </>
