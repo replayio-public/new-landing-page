@@ -57,7 +57,7 @@ export function DevTools({ devTools }: LandingPageFragment) {
       /> */}
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none flex flex-col justfify-center items-center">
-          <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
+          <h2 className="font-display text-2xl tracking-tight text-white sm:text-3xl md:text-4xl">
             {devTools.title}
           </h2>
           <p className="mt-6 md:max-w-3xl text-lg tracking-tight text-blue-100">

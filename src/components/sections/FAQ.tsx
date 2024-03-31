@@ -1,37 +1,68 @@
 import { LandingPageFragment } from '@/lib/basehub-queries'
 
-const features = [
+import circle from '@/images/faq/circle.png'
+import cypress from '@/images/faq/cypress.png'
+import gdpr from '@/images/faq/gdpr.png'
+import github from '@/images/faq/github.png'
+import gitlab from '@/images/faq/gitlab.png'
+import playwright from '@/images/faq/playwright.png'
+import sauce from '@/images/faq/sauce.png'
+import selenium from '@/images/faq/selenium.png'
+import semaphore from '@/images/faq/semaphore.png'
+import soc2 from '@/images/faq/soc2.png'
+import Link from "next/link";
+import Image from 'next/image'
+
+const logos = {
+    "test-runner": [{
+        image: playwright,
+        alt: "Playwright",
+        height: 45
+    },
+
     {
-        name: 'Push to deploy.',
-        description:
-            'Aut illo quae. Ut et harum ea animi natus. Culpa maiores et sed sint et magnam exercitationem quia. Ullam voluptas nihil vitae dicta molestiae et. Aliquid velit porro vero.',
+        image: cypress,
+        alt: "Cypress",
+        height: 40
     },
     {
-        name: 'SSL certificates.',
-        description:
-            'Mollitia delectus a omnis. Quae velit aliquid. Qui nulla maxime adipisci illo id molestiae. Cumque cum ut minus rerum architecto magnam consequatur. Quia quaerat minima.',
-    },
-    {
-        name: 'Simple queues.',
-        description:
-            'Aut repellendus et officiis dolor possimus. Deserunt velit quasi sunt fuga error labore quia ipsum. Commodi autem voluptatem nam. Quos voluptatem totam.',
-    },
-    {
-        name: 'Advanced security.',
-        description:
-            'Magnam provident veritatis odit. Vitae eligendi repellat non. Eum fugit impedit veritatis ducimus. Non qui aspernatur laudantium modi. Praesentium rerum error deserunt harum.',
-    },
-    {
-        name: 'Powerful API.',
-        description:
-            'Sit minus expedita quam in ullam molestiae dignissimos in harum. Tenetur dolorem iure. Non nesciunt dolorem veniam necessitatibus laboriosam voluptas perspiciatis error.',
-    },
-    {
-        name: 'Database backups.',
-        description:
-            'Ipsa in earum deserunt aut. Quos minus aut animi et soluta. Ipsum dicta ut quia eius. Possimus reprehenderit iste aspernatur ut est velit consequatur distinctio.',
-    },
-]
+        image: selenium,
+        alt: "Selenium",
+        height: 35
+    }],
+    "ci-environment": [
+
+        {
+            image: circle,
+            alt: "CircleCI",
+            height: 32
+        },
+        {
+            image: github,
+            alt: "Github",
+            height: 45
+        },
+        {
+            image: gitlab,
+            alt: "Gitlab",
+            height: 35
+        },
+        {
+            image: sauce,
+            alt: "Sauce Labs",
+            height: 40
+        },
+        {
+            image: semaphore,
+            alt: "Semaphore",
+            height: 35
+        }],
+    "security": [
+        { image: gdpr, alt: "GDPR", height: 45 },
+        { image: soc2, alt: "SOC2", height: 45 },
+    ]
+}
+
 
 export default function FAQ({ faq }: LandingPageFragment) {
     return (
@@ -43,11 +74,22 @@ export default function FAQ({ faq }: LandingPageFragment) {
                         {faq.subTitle}
                     </p>
                 </div>
-                <dl className="mx-auto mt-16 text-center grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                <dl className="mx-auto mt-16 text-left grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                     {faq.questions.items.map((question) => (
-                        <div key={question._title}>
+                        <div key={question._title} className='flex flex-col'>
                             <dt className="font-semibold text-gray-900">{question._title}</dt>
-                            <dd className="mt-1 text-gray-600">{question.summary}</dd>
+                            <dd className="mt-1 text-gray-600 flex-grow">{question.summary}
+                                <br /> <Link className='underline' href={question.href}>Learn more</Link></dd>
+                            {question.logos && <dd className="mt-1 text-gray-600">{
+                                <div className='flex flex-row items-center mt-4'>
+                                    {logos[question.logos as keyof typeof logos].map((logo, i) =>
+                                        <div key={i} className="mr-2">
+                                            <Image src={logo.image} alt={logo.alt} height={logo.height} />
+                                        </div>
+                                    )}
+                                </div>
+
+                            }</dd>}
                         </div>
                     ))}
                 </dl>
