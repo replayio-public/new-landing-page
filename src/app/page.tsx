@@ -7,7 +7,7 @@ import { Testimonials } from '@/components/Testimonials'
 import { Pump } from '.basehub/react-pump'
 import { draftMode } from 'next/headers'
 import { landingPageFragment } from '@/lib/basehub-queries'
-import { Header } from "@/components/Header";
+import { Header } from '@/components/Header'
 import FAQ from '@/components/sections/FAQ'
 import DynamicAnalysis from '@/components/sections/DynamicAnalysis'
 import { TestSuiteCaseStudies } from '@/components/sections/TestSuiteCaseStudies'
@@ -27,7 +27,7 @@ export default function Home() {
             <main>
               <Header />
               <Hero {...landingPage} />
-              <TestSuiteCaseStudies />
+
               <DevTools {...landingPage} />
               <TestSuites {...landingPage} />
               <FAQ {...landingPage} />
