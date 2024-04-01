@@ -26,6 +26,7 @@ export const landingPageFragment = {
     },
     getStartedLink: linkFragment,
     contactUsLink: linkFragment,
+    logosTitle: true,
   },
   devTools: {
     title: true,
