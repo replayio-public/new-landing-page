@@ -42,7 +42,7 @@ export function Hero({ hero }: LandingPageFragment) {
       </div>
       <div className="mt-36 lg:mt-44">
         <p className="font-display text-base text-slate-900">
-          Trusted by world-class companies and open source projects.
+          {hero.logosTitle}
         </p>
         <ul
           role="list"
