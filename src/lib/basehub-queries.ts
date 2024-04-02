@@ -20,7 +20,6 @@ export const linkFragment = {
 
 export const landingPageFragment = {
   hero: {
-    title: true,
     subtitle: {
       json: { content: true },
     },
@@ -80,12 +79,27 @@ export const landingPageFragment = {
     }
   },
   testimonials: {
+    title: true,
+    subtitle: true,
+    caseStudyTitle: true,
+    caseStudySubTitle: true,
+    caseStudies: {
+      items: {
+        _title: true,
+        name: true,
+        handle: true,
+        quote: true,
+        image: true,
+        logo: true
+      }
+    },
     testimonials: {
       items: {
         _title: true,
         title: true,
         quote: true,
-        image: true
+        image: true,
+        featured: true
       }
     }
   }
