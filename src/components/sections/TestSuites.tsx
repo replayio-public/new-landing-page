@@ -7,6 +7,7 @@ import clsx from 'clsx'
 import { LandingPageFragment } from '@/lib/basehub-queries'
 
 import { Container } from '@/components/Container'
+import screenshotDashboard from '@/images/screenshots/dashboard-view.png'
 import screenshotTests from '@/images/screenshots/tests-view.png'
 import screenshotRuns from '@/images/screenshots/runs-view.png'
 import screenshotPRComments from '@/images/screenshots/pr-comments.png'
@@ -20,12 +21,13 @@ interface Feature {
 }
 
 const images = {
-  profit: screenshotTests,
-  inventory: screenshotRuns,
-  contacts: screenshotPRComments,
+  dashboard: screenshotDashboard,
+  tests: screenshotTests,
+  runs: screenshotRuns,
+  pr: screenshotPRComments,
 }
 const icons = {
-  profit: function ReportingIcon() {
+  dashboard: function DasboardIcon() {
     let id = useId()
     return (
       <>
@@ -52,7 +54,34 @@ const icons = {
       </>
     )
   },
-  inventory: function InventoryIcon() {
+  tests: function TestsIcon() {
+    let id = useId()
+    return (
+      <>
+        <defs>
+          <linearGradient
+            id={id}
+            x1="11.5"
+            y1={18}
+            x2={36}
+            y2="15.5"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset=".194" stopColor="#fff" />
+            <stop offset={1} stopColor="#6692F1" />
+          </linearGradient>
+        </defs>
+        <path
+          d="m30 15-4 5-4-11-4 18-4-11-4 7-4-5"
+          stroke={`url(#${id})`}
+          strokeWidth={2}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </>
+    )
+  },
+  runs: function RunsIcon() {
     return (
       <>
         <path
@@ -72,7 +101,7 @@ const icons = {
       </>
     )
   },
-  contacts: function ContactsIcon() {
+  pr: function PRIcon() {
     return (
       <>
         <path
@@ -98,6 +127,7 @@ function Feature({
   feature: Feature
   isActive: boolean
 }) {
+  console.log(feature)
   return (
     <div
       className={clsx(className, !isActive && 'opacity-75 hover:opacity-100')}
@@ -175,7 +205,7 @@ function FeaturesDesktop({
     <Tab.Group as="div" className="hidden lg:mt-20 lg:block">
       {({ selectedIndex }) => (
         <>
-          <Tab.List className="grid grid-cols-3 gap-x-8">
+          <Tab.List className="grid grid-cols-4 gap-x-8">
             {features.map((feature, featureIndex) => (
               <Feature
                 key={feature.description}
@@ -196,7 +226,7 @@ function FeaturesDesktop({
               />
             ))}
           </Tab.List>
-          <Tab.Panels className="relative mt-20 overflow-hidden rounded-4xl bg-slate-200 px-14 py-16 xl:px-16">
+          <Tab.Panels className="relative mt-12 overflow-hidden rounded-xl bg-slate-700 px-2 py-8 xl:px-8">
             <div className="-mx-5 flex">
               {features.map((feature, featureIndex) => (
                 <Tab.Panel
@@ -206,10 +236,12 @@ function FeaturesDesktop({
                     'px-5 transition duration-500 ease-in-out ui-not-focus-visible:outline-none',
                     featureIndex !== selectedIndex && 'opacity-60',
                   )}
-                  style={{ transform: `translateX(-${selectedIndex * 100}%)` }}
+                  style={{
+                    transform: `translateX(-${selectedIndex * 100}%)`,
+                  }}
                   aria-hidden={featureIndex !== selectedIndex}
                 >
-                  <div className="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+                  <div className="w-[66.5rem] overflow-hidden rounded-md shadow-xl">
                     <Image
                       className="w-full"
                       src={images[feature.image as keyof typeof images]}
@@ -220,7 +252,7 @@ function FeaturesDesktop({
                 </Tab.Panel>
               ))}
             </div>
-            <div className="pointer-events-none absolute inset-0 rounded-4xl ring-1 ring-inset ring-slate-900/10" />
+            <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-slate-900/10" />
           </Tab.Panels>
         </>
       )}
