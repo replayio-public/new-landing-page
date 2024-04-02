@@ -30,55 +30,10 @@ import simeon from "@/images/testimonials/simeon.jpg"
 import timh from "@/images/testimonials/tim-haines.jpg"
 import timn from "@/images/testimonials/tim-neutkins.png"
 import zack from "@/images/testimonials/zack-rosen.jpg"
-import test from "node:test"
+import pantheon from "@/images/testimonials/pantheon.png"
+import tablecheck from "@/images/testimonials/tablecheck.png"
 
-const images = { alex, algodaily, amjad, cypress, dan, david, dom, erik, gleb, glide, guillermo, harald, ives, jacob, jj, kenneth, lenz, marke, markp, mateusz, matt, ryan, sebastian, shane, shawn, simeon, timh, timn, zack }
-
-
-const featuredTestimonial = {
-  body: 'Integer id nunc sit semper purus. Bibendum at lacus ut arcu blandit montes vitae auctor libero. Hac condimentum dignissim nibh vulputate ut nunc. Amet nibh orci mi venenatis blandit vel et proin. Non hendrerit in vel ac diam.',
-  author: {
-    name: 'Brenna Goyette',
-    handle: 'brennagoyette',
-    imageUrl:
-      'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80',
-    logoUrl: 'https://tailwindui.com/img/logos/savvycal-logo-gray-900.svg',
-  },
-}
-
-const caseStudies = [
-  {
-    body: `Before Replay We spent somewhere between 1–2 hours per day per dev in this reproducibility purgatory. The toll this was taking on our development velocity and our ability to respond and resolve issues was huge. We thought there must be a better way.`,
-    author: {
-      name: 'Mark Probst',
-      handle: 'VP Eng, Glide',
-      imageUrl:
-        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80',
-      logoUrl: 'https://tailwindui.com/img/logos/savvycal-logo-gray-900.svg',
-    },
-  },
-  {
-    body: `If I didn’t have Replay, it would have taken me several days or even weeks getting the debugger to run properly in all the dynamically loaded scripts, which is not easy. With Replay it took me half a day to figure it out and get a fix ready.`,
-    author: {
-      name: 'Simeon Cheeseman',
-      handle: 'Principal Engineer, Tablecheck',
-      imageUrl:
-        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80',
-      logoUrl: 'https://tailwindui.com/img/logos/savvycal-logo-gray-900.svg',
-    },
-  },
-  {
-    body: `The tools that we were using before were barely better than useless,” said Shane. “You’d say thanks for the console log screenshot but I don’t know how to help you. So you’d spend 2–3 days trying to recreate the issues and finding it in the code. With Replay, all that wasted time has been eliminated`,
-    author: {
-      name: 'Shane Duff',
-      handle: 'Front End Lead, Pantheon',
-      imageUrl:
-        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80',
-      logoUrl: 'https://tailwindui.com/img/logos/savvycal-logo-gray-900.svg',
-    },
-  },
-]
-
+const images = { alex, algodaily, amjad, cypress, dan, david, dom, erik, gleb, glide, guillermo, harald, ives, jacob, jj, kenneth, lenz, marke, markp, mateusz, matt, pantheon, ryan, sebastian, shane, shawn, simeon, tablecheck, timh, timn, zack }
 
 
 function CaseStudy({
@@ -86,7 +41,7 @@ function CaseStudy({
   colStart,
   rowEnd,
 }: {
-  testimonial: typeof featuredTestimonial
+  testimonial: any
   colStart: number
   rowEnd: number
 }) {
@@ -98,11 +53,8 @@ function CaseStudy({
         <p>{`“${testimonial.body}”`}</p>
       </blockquote>
       <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
-        <img
-          className="h-10 w-10 flex-none rounded-full bg-gray-50"
-          src={testimonial.author.imageUrl}
-          alt=""
-        />
+        <Image src={testimonial.author.image} className="h-10 w-10 rounded-full bg-gray-50" alt="" />
+
         <div className="flex-auto">
           <div className="font-semibold">{testimonial.author.name}</div>
           <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
@@ -112,6 +64,8 @@ function CaseStudy({
           src={testimonial.author.logoUrl}
           alt=""
         />
+        <Image src={testimonial.author.logo} className="h-10 w-auto flex-none" alt="" />
+
       </figcaption>
     </figure>
   )
@@ -175,6 +129,16 @@ export function Testimonials({ testimonials }: LandingPageFragment) {
     featured: testimonial.featured
   }))
 
+  const newCaseStudies = testimonials.caseStudies.items.map(testimonial => ({
+    body: testimonial.quote,
+    author: {
+      name: testimonial._title,
+      handle: testimonial.handle,
+      image: images[testimonial.image as keyof typeof images],
+      logo: images[testimonial.logo as keyof typeof images]
+    },
+  }))
+
   const breaks = [0, 6, 10, 14, 19]
 
   const featuredTestimonial = newTestimonials.filter(t => t.featured)[0];
@@ -229,7 +193,7 @@ export function Testimonials({ testimonials }: LandingPageFragment) {
         </div>
 
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-1 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-3">
-          {caseStudies.map((caseStudy, index) => (
+          {newCaseStudies.map((caseStudy, index) => (
             <CaseStudy
               testimonial={caseStudy}
               colStart={index + 1}

@@ -83,6 +83,16 @@ export const landingPageFragment = {
     subtitle: true,
     caseStudyTitle: true,
     caseStudySubTitle: true,
+    caseStudies: {
+      items: {
+        _title: true,
+        name: true,
+        handle: true,
+        quote: true,
+        image: true,
+        logo: true
+      }
+    },
     testimonials: {
       items: {
         _title: true,
