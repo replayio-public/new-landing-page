@@ -32,7 +32,7 @@ export default function Home() {
               <FAQ {...landingPage} />
               <DynamicAnalysis {...landingPage} />
               <CallToAction {...landingPage} />
-              <Testimonials />
+              <Testimonials {...landingPage}/>
               <Content />
             </main>
             <Footer />
