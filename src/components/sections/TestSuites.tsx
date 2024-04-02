@@ -5,6 +5,7 @@ import Image, { type ImageProps } from 'next/image'
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
 import { LandingPageFragment } from '@/lib/basehub-queries'
+import styles from '../../styles/Landingpage.module.css'
 
 import { Container } from '@/components/Container'
 import screenshotDashboard from '@/images/screenshots/dashboard-view.png'
@@ -127,7 +128,6 @@ function Feature({
   feature: Feature
   isActive: boolean
 }) {
-  console.log(feature)
   return (
     <div
       className={clsx(className, !isActive && 'opacity-75 hover:opacity-100')}
@@ -180,7 +180,10 @@ function FeaturesMobile({
             isActive
           />
           <div className="relative mt-10 pb-10">
-            <div className="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6" />
+            <div
+              className={`absolute -inset-x-4 bottom-0 top-8  sm:-inset-x-6`}
+            />
+
             <div className="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
               <Image
                 className="w-full"
@@ -226,7 +229,9 @@ function FeaturesDesktop({
               />
             ))}
           </Tab.List>
-          <Tab.Panels className="relative mt-12 overflow-hidden rounded-xl bg-slate-700 px-2 py-8 xl:px-8">
+          <Tab.Panels
+            className={`${styles.slate} relative mt-12 overflow-hidden rounded-xl px-2 py-8 xl:px-8`}
+          >
             <div className="-mx-5 flex">
               {features.map((feature, featureIndex) => (
                 <Tab.Panel
