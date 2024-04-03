@@ -41,6 +41,7 @@ export const landingPageFragment = {
   testSuites: {
     title: true,
     subTitle: true,
+    superTitle: true,
     features: {
       items: {
         _title: true,
