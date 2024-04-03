@@ -15,7 +15,9 @@ if (typeof process.env.NEXT_PUBLIC_SITE_URL !== 'string') {
   )
 }
 
-export const siteURL = new URL(process.env.NEXT_PUBLIC_SITE_URL)
+export const siteURL = new URL(
+  process.env.NEXT_PUBLIC_SITE_URL ?? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+)
 export const siteOrigin = siteURL.origin
 
 // we like putting this in the JavaScript console,
