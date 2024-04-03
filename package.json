@@ -1,6 +1,6 @@
 {
-  "name": "tailwindui-salient",
-  "version": "0.1.0",
+  "name": "replay-landing-page",
+  "version": "7.0.0",
   "private": true,
   "scripts": {
     "basehub-gen": "basehub --output .basehub",
