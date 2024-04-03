@@ -167,12 +167,7 @@ export function Texture(props: React.ComponentPropsWithoutRef<'svg'>) {
           <rect width="1920" height="1025" fill="white" />
         </clipPath>
         <clipPath id="clip1_1200_9748">
-          <rect
-            width="1920"
-            height="796"
-            fill="white"
-            transform="translate(0 -61)"
-          />
+          <rect width="1920" height="796" fill="white" transform="translate(0 -61)" />
         </clipPath>
       </defs>
     </svg>
