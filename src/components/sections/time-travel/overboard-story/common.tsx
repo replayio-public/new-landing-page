@@ -35,7 +35,7 @@ export const logContent = (content: any) => {
   }
 
   if (kind === 'string') {
-    return <>"{content}"</>
+    return <>&quot;{content}&quot;</>
   }
 
   if (kind === 'boolean') {
@@ -171,6 +171,8 @@ export const PanelContainer = forwardRef<HTMLDivElement, JSX.IntrinsicElements['
     </div>
   )
 )
+
+PanelContainer.displayName = 'PanelContainer'
 
 export const useTimeline = (
   active: boolean,

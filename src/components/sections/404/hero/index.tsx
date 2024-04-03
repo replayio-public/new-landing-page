@@ -41,7 +41,7 @@ export const Hero: FC = () => {
             }}
           />
         </div>
-        <p className={s.text}>The page you are looking for doesn't exist or has been moved.</p>
+        <p className={s.text}>The page you are looking for doesn&apos;t exist or has been moved.</p>
         <ButtonLink size="big" href={SITEMAP.home.href || '/'} aria-label={SITEMAP.home.label}>
           Go Back {SITEMAP.home.label}
         </ButtonLink>

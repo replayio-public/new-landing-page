@@ -116,6 +116,7 @@ const roobert = localFont({
 })
 
 const App = ({ Component, pageProps, ...rest }: AppProps) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   if (gaTrackingId) useAppGA()
 
   useOverflowDebuggerInDev()

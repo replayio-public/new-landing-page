@@ -64,8 +64,8 @@ function renderHtmlTree({
             {node.attributes &&
               Object.entries(node.attributes).map(([key, value]) => (
                 <span style={{ color: '#FF9640' }} key={key}>
-                  &nbsp;{key}="
-                  <span style={{ color: '#3734D3' }}>{value}</span>"
+                  &nbsp;{key}=&quot;
+                  <span style={{ color: '#3734D3' }}>{value}</span>&quot;
                 </span>
               ))}
 
@@ -201,3 +201,5 @@ export const Elements = forwardRef<HTMLDivElement, ElementsProps>(
     )
   }
 )
+
+Elements.displayName = 'Elements'

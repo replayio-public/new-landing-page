@@ -88,8 +88,8 @@ function renderReactTree({
           <span style={{ color: 'var(--editor-functions)' }}>{node.type}</span>
           {node.props?.key && (
             <span style={{ color: '#FF9640' }}>
-              key="
-              <span style={{ color: '#3734D3' }}>{node.props?.key}</span>"
+              key=&quot;
+              <span style={{ color: '#3734D3' }}>{node.props?.key}</span>&quot;
             </span>
           )}
         </div>
@@ -181,3 +181,5 @@ export const ReactDevTools = forwardRef<HTMLDivElement, ReactDevToolsProps>(
     )
   }
 )
+
+ReactDevTools.displayName = 'ReactDevTools'

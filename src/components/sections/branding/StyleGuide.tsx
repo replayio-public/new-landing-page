@@ -31,7 +31,7 @@ const StyleGuide: FC = () => {
           </tr>
           <tr>
             <td>Recording</td>
-            <td>replay (e.g. "Please share the replay with me")</td>
+            <td>replay (e.g. &quot;Please share the replay with me&quot;)</td>
           </tr>
           <tr>
             <td>Copy style</td>

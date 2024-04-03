@@ -1,5 +1,4 @@
 /* eslint-disable import/no-named-as-default-member */
-// eslint-disable-next-line simple-import-sort/imports
 import clsx from 'clsx'
 import Prism, { Grammar } from 'prismjs'
 import { forwardRef, Fragment, RefObject, useImperativeHandle, useMemo, useRef } from 'react'
@@ -168,6 +167,8 @@ const PrintPanel = forwardRef<UseGsapTimeAPI | ProgressAPI, PrintPanelProps>(
   }
 )
 
+PrintPanel.displayName = 'PrintPanel'
+
 const CodeLine = ({
   children,
   debug,
@@ -193,6 +194,8 @@ const CodeLine = ({
     </div>
   )
 }
+
+CodeLine.displayName = 'CodeLine'
 
 type CodeProps = {
   filename?: string
@@ -393,3 +396,5 @@ export const Code = forwardRef<CodeRef, CodeProps>(
     )
   }
 )
+
+Code.displayName = 'Code'

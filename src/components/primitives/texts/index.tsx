@@ -22,6 +22,8 @@ export const Title = forwardRef<HTMLHeadingElement, TitleProps>(
   }
 )
 
+Title.displayName = 'Title'
+
 type SubtitleProps = { children: ReactNode; className?: string }
 
 export const Subtitle = forwardRef<HTMLParagraphElement, SubtitleProps>(
@@ -33,6 +35,8 @@ export const Subtitle = forwardRef<HTMLParagraphElement, SubtitleProps>(
     )
   }
 )
+
+Subtitle.displayName = 'Subtitle'
 
 export const TitleAndSubtitle = ({
   title,

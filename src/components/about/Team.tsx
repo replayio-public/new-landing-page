@@ -124,10 +124,10 @@ export function Team() {
             Meet the Team
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            We're a distributed company, founded by people who have spent years working on fully
-            distributed teams at companies like Mozilla. We work across the globe, so we focus less
-            on hours and more on building a great product. We build for the long term: it's a relay,
-            not a sprint.
+            We&lsquo;re a distributed company, founded by people who have spent years working on
+            fully distributed teams at companies like Mozilla. We work across the globe, so we focus
+            less on hours and more on building a great product. We build for the long term:
+            it&lsquo;s a relay, not a sprint.
           </p>
         </div>
         <ul

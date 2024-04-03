@@ -16,6 +16,8 @@ export const Container = forwardRef<HTMLDivElement, Props>(
   }
 )
 
+Container.displayName = 'Container'
+
 export const containerStyles = s
 
 export type ContainerProps = ComponentProps<typeof Container>

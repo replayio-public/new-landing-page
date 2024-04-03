@@ -30,6 +30,8 @@ export const TabList = forwardRef<HTMLDivElement, TabListProps>(
   )
 )
 
+TabList.displayName = 'TabList'
+
 type TabsProps = {
   tabListProps?: TabListProps
   tabs: TabProps[]

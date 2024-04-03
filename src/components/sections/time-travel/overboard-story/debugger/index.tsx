@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import get from 'lodash/get'
-import { FC, forwardRef, useMemo } from 'react'
+import { FC, forwardRef, ReactNode, useMemo } from 'react'
 
 import { Header, IdentifiedNode, logContent, PanelContainer } from '../common'
 import s from './debugger.module.scss'
@@ -81,6 +81,7 @@ const process = (
 
 const DebuggerSection: FC<{
   title: string
+  children?: ReactNode
 }> = ({ title, children }) => {
   return (
     <div className={s['section']}>
@@ -368,3 +369,5 @@ export const Debugger = forwardRef<HTMLDivElement, DebuggerProps>(
     )
   }
 )
+
+Debugger.displayName = 'Debugger'

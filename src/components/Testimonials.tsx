@@ -95,8 +95,8 @@ function CaseStudy({
           <div className="font-semibold">{testimonial.author.name}</div>
           <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
         </div>
-        <img className="h-10 w-auto flex-none" src={testimonial.author.logoUrl} alt="" />
         {/* Remove the duplicate Image component if it's not needed */}
+        <Image src={testimonial.author.logo} className="h-10 w-auto flex-none" alt="" />
       </figcaption>
     </figure>
   )
@@ -154,7 +154,7 @@ function FeaturedTestimonial({ testimonial }: { testimonial: any }) {
           <div className="font-semibold">{testimonial.author.name}</div>
           <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
         </div>
-        <img className="h-10 w-auto flex-none" src={testimonial.author.logoUrl} alt="" />
+        <Image src={testimonial.author.logo} className="h-10 w-auto flex-none" alt="" />
       </figcaption>
     </figure>
   )
@@ -259,8 +259,9 @@ export function Testimonials({ testimonials }: LandingPageFragment) {
                     'space-y-8'
                   )}
                 >
-                  {column.map((testimonial) => (
+                  {column.map((testimonial, i) => (
                     <Testimonial
+                      key={i}
                       testimonial={testimonial}
                       columnIdx={columnIdx}
                       columnGroupIdx={columnGroupIdx}

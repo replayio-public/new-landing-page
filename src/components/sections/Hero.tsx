@@ -67,7 +67,7 @@ export function Hero({ hero }: LandingPageFragment) {
         </ul>
       </div>
       <div className={styles.quoteCallout}>
-        "This sure would be a great place to put a compelling quote" – Jon Bell
+        &quot;This sure would be a great place to put a compelling quote&quot; – Jon Bell
       </div>
     </Container>
   )

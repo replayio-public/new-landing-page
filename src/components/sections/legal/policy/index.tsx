@@ -27,9 +27,9 @@ export const Policy: FC = () => {
             Privacy Policy.
             <br />
             <br />
-            Remember that your use of Replay's Services is at all times subject to our Terms of Use,
-            which incorporates this Privacy Policy. Any terms we use in this Policy without defining
-            them have the definitions given to them in the Terms of Use.
+            Remember that your use of Replay&apos;s Services is at all times subject to our Terms of
+            Use, which incorporates this Privacy Policy. Any terms we use in this Policy without
+            defining them have the definitions given to them in the Terms of Use.
             <br />
             <br />
             If you have a disability, you may access this Privacy Policy in an alternative format by
@@ -104,7 +104,7 @@ export const Policy: FC = () => {
                 <ul>
                   <li>First and last name</li>
                   <li>Email</li>
-                  <li>Google Account information including user's photograph</li>
+                  <li>Google Account information including user&apos;s photograph</li>
                 </ul>
               </td>
               <td className={s.cell}>

@@ -224,7 +224,7 @@ export const TermsOfService: FC = () => {
             translate, publish, broadcast, transmit, distribute, perform, upload, display, license,
             sell, commercialize or otherwise exploit for any purpose any Content not owned by you,
             (i) without the prior consent of the owner of that Content or (ii) in a way that
-            violates someone else’s (including Replay's) rights.
+            violates someone else’s (including Replay&apos;s) rights.
             <br />
             <br />
             Subject to these Terms, we grant each user of the Services a worldwide, non-exclusive,
@@ -254,7 +254,7 @@ export const TermsOfService: FC = () => {
             represent that all User Submissions submitted by you are accurate, complete, up-to-date,
             and in compliance with all applicable laws, rules and regulations. You agree that you
             will not post, upload, share, store, or otherwise provide through the Services any User
-            Submissions that: (i) infringe any third party's copyrights or other rights (e.g.,
+            Submissions that: (i) infringe any third party&apos;s copyrights or other rights (e.g.,
             trademark, privacy rights, etc.); (ii) contain sexually explicit content or pornography;
             (iii) contain hateful, defamatory, or discriminatory content or incite hatred against
             any individual or group; (iv) exploit minors; (v) depict unlawful acts or extreme
@@ -308,18 +308,18 @@ export const TermsOfService: FC = () => {
             Public User Submission accessible to all Replay users and providing the Services
             necessary to do so, as well as all other rights necessary to use and exercise all rights
             in that Public User Submission in connection with the Services and/or otherwise in
-            connection with Replay's business. Also, you grant all other users of the Services a
-            license to access that Public User Submission, and to use and exercise all rights in it,
-            as permitted by the functionality of the Services.
+            connection with Replay&apos;s business. Also, you grant all other users of the Services
+            a license to access that Public User Submission, and to use and exercise all rights in
+            it, as permitted by the functionality of the Services.
             <br />
             <br />
             You agree that the licenses you grant are royalty-free, perpetual, sublicensable,
             irrevocable, and worldwide, provided that when you delete your Replay account, we will
             stop displaying your User Submissions (other than Public User Submissions, which may
             remain fully available) to other users (if applicable), but you understand and agree
-            that it may not be possible to completely delete that content from Replay's records, and
-            that your User Submissions may remain viewable elsewhere to the extent that they were
-            copied or stored by other users.
+            that it may not be possible to completely delete that content from Replay&apos;s
+            records, and that your User Submissions may remain viewable elsewhere to the extent that
+            they were copied or stored by other users.
             <br />
             <br />
             Certain features of the Services allow you to share information with others, including
@@ -358,7 +358,7 @@ export const TermsOfService: FC = () => {
             material or content residing on or accessible through the Services infringes your
             copyright (or the copyright of someone whom you are authorized to act on behalf of),
             please send a notice of copyright infringement containing the following information to
-            Replay's Designated Agent to Receive Notification of Claimed Infringement (our
+            Replay&apos;s Designated Agent to Receive Notification of Claimed Infringement (our
             “Designated Agent,” whose contact details are listed below):
           </p>
           <ul>
@@ -400,7 +400,7 @@ export const TermsOfService: FC = () => {
               disabled access to the applicable material; and
             </li>
             <li>
-              terminate such content provider's access to the Services if he or she is a repeat
+              terminate such content provider&apos;s access to the Services if he or she is a repeat
               offender.
             </li>
           </ul>
@@ -408,9 +408,9 @@ export const TermsOfService: FC = () => {
             <strong>Procedure to Supply a Counter-Notice to the Designated Agent.</strong> If the
             content provider believes that the material that was removed (or to which access was
             disabled) is not infringing, or the content provider believes that it has the right to
-            post and use such material from the copyright owner, the copyright owner's agent, or,
-            pursuant to the law, the content provider may send us a counter-notice containing the
-            following information to the Designated Agent:
+            post and use such material from the copyright owner, the copyright owner&apos;s agent,
+            or, pursuant to the law, the content provider may send us a counter-notice containing
+            the following information to the Designated Agent:
           </p>
           <ul>
             <li>A physical or electronic signature of the content provider;</li>
@@ -424,13 +424,13 @@ export const TermsOfService: FC = () => {
               removed or disabled as a resolt of mistake or misidentification of the material; and
             </li>
             <li>
-              Content provider's name, address, telephone number, and, if available, email address,
-              and a statement that such person or entity consents to the jurisdiction of the Federal
-              Court for the judicial district in which the content provider’s address is located,
-              or, if the content provider's address is located outside the United States, for any
-              judicial district in which Company is located, and that such person or entity will
-              accept service of process from the person who provided notification of the alleged
-              infringement.
+              Content provider&apos;s name, address, telephone number, and, if available, email
+              address, and a statement that such person or entity consents to the jurisdiction of
+              the Federal Court for the judicial district in which the content provider’s address is
+              located, or, if the content provider&apos;s address is located outside the United
+              States, for any judicial district in which Company is located, and that such person or
+              entity will accept service of process from the person who provided notification of the
+              alleged infringement.
             </li>
           </ul>
           <p>
@@ -440,10 +440,10 @@ export const TermsOfService: FC = () => {
             business days. Unless the copyright owner files an action seeking a court order against
             the content provider accused of committing infringement, the removed material may be
             replaced or access to it restored in 10 to 14 business days or more after receipt of the
-            counter-notice, at Company's discretion.
+            counter-notice, at Company&apos;s discretion.
             <br />
             <br />
-            Please contact Replay's Designated Agent at the following address:
+            Please contact Replay&apos;s Designated Agent at the following address:
             <br />
             <br />
             <div className={s.contact}>
@@ -725,8 +725,8 @@ export const TermsOfService: FC = () => {
             such notice shall not eliminate or reduce your indemnification obligations hereunder).
             Assignment. You may not assign, delegate or transfer these Terms or your rights or
             obligations hereunder, or your Services account, in any way (by operation of law or
-            otherwise) without Replay's prior written consent. We may transfer, assign, or delegate
-            these Terms and our rights and obligations without consent.
+            otherwise) without Replay&apos;s prior written consent. We may transfer, assign, or
+            delegate these Terms and our rights and obligations without consent.
             <br />
             <br />
             <strong>Choice of Law.</strong> These Terms are governed by and will be construed under
@@ -738,7 +738,7 @@ export const TermsOfService: FC = () => {
             carefully because it requires you to arbitrate certain disputes and claims with Replay
             and limits the manner in which you can seek relief from Replay. Both you and Replay
             acknowledge and agree that for the purposes of any dispute arising out of or relating to
-            the subject matter of these Terms, Replay's officers, directors, employees and
+            the subject matter of these Terms, Replay&apos;s officers, directors, employees and
             independent contractors (“Personnel”) are third-party beneficiaries of these Terms, and
             that upon your acceptance of these Terms, Personnel will have the right (and will be
             deemed to have accepted the right) to enforce these Terms against you as the third-party
@@ -771,7 +771,7 @@ export const TermsOfService: FC = () => {
               county where you live or work. Furthermore, notwithstanding the foregoing obligation
               to arbitrate disputes, each party shall have the right to pursue injunctive or other
               equitable relief at any time, from any court of competent jurisdiction, to prevent the
-              actual or threatened infringement, misappropriation or violation of a party's
+              actual or threatened infringement, misappropriation or violation of a party&apos;s
               copyrights, trademarks, trade secrets, patents or other intellectual property rights.
             </li>
             <li>

@@ -64,6 +64,8 @@ export const Button = forwardRef(
   }
 ) as Polymorphic.ForwardRefComponent<'button', ButtonProps & JSX.IntrinsicElements['button']>
 
+Button.displayName = 'Button'
+
 export type ButtonLinkProps = ButtonProps &
   Omit<JSX.IntrinsicElements['a'], 'href' | 'ref'> &
   NextLinkProps & { notExternal?: boolean }
@@ -113,6 +115,8 @@ export const ButtonLink = forwardRef<'a', ButtonLinkProps>(
     )
   }
 )
+
+ButtonLink.displayName = 'ButtonLink'
 
 export const ButtonTimer = forwardRef<
   {
@@ -192,3 +196,5 @@ export const ButtonTimer = forwardRef<
 
   return <Button className={s['timer']} {...buttonProps} ref={buttonRef} />
 })
+
+ButtonTimer.displayName = 'ButtonTimer'

@@ -103,8 +103,8 @@ const sections = [
           >
             Glide
           </Link>
-          : Getting replays from QA "has completely revolutionized how we deal with bugs that come
-          in. Now, we can’t even get a report from support unless it comes with a replay."
+          : Getting replays from QA &quot;has completely revolutionized how we deal with bugs that
+          come in. Now, we can’t even get a report from support unless it comes with a replay.&quot;
         </p>
         <p>
           <Link
@@ -113,8 +113,8 @@ const sections = [
           >
             Midnite
           </Link>
-          : "Replay has been instrumental in building our bug reporting system and it’s been a
-          game-changer allowing us to land changes and fix bugs immediately."
+          : &quot;Replay has been instrumental in building our bug reporting system and it’s been a
+          game-changer allowing us to land changes and fix bugs immediately.&quot;
         </p>
         <p>
           <Link
@@ -123,9 +123,9 @@ const sections = [
           >
             Pantheon
           </Link>
-          : Across the org, "from PMs to Engineers, to Customer Support and our CEO, we use Replay
-          to track down bugs with so much more ease and save so much time diagnosing what went
-          wrong."
+          : Across the org, &quot;from PMs to Engineers, to Customer Support and our CEO, we use
+          Replay to track down bugs with so much more ease and save so much time diagnosing what
+          went wrong.&quot;
         </p>
       </>
     )

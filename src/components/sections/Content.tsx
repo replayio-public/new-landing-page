@@ -1,4 +1,4 @@
-import { LandingPageFragment } from '~/lib/basehub-queries'
+import Image from 'next/image'
 
 const blogPosts = [
   {
@@ -58,7 +58,7 @@ export function Content() {
       <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
           <h2 className="text-3xl font-bold tracking-tight text-slate-200 sm:text-4xl">
-            The time traveler's log
+            The time traveler&apos;s log
           </h2>
           <p className="mt-2 text-lg leading-8 text-slate-300">
             Stories of epic debugging adventures
@@ -70,7 +70,8 @@ export function Content() {
               key={post.id}
               className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
             >
-              <img
+              <Image
+                fill={true}
                 src={post.imageUrl}
                 alt=""
                 className="absolute inset-0 -z-10 h-full w-full object-cover"

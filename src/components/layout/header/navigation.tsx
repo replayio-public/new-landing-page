@@ -38,7 +38,7 @@ export const NavigationList = ({ quantity, children }: { quantity: number } & Ch
   )
 }
 
-type NavigationItemProps = {
+type NavigationItemProps = ChildrenProps & {
   className?: string
 }
 

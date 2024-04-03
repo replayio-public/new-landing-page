@@ -125,7 +125,7 @@ export const Hero: FC = () => {
               <span className={s['heading-highlight']}>your test suite.</span>
             </Heading>
             <p>
-              <b>Hate debugging browser tests? </b>Reach out and we'll help set you up which is
+              <b>Hate debugging browser tests? </b>Reach out and we&apos;ll help set you up which is
               basically as easy as swapping vanilla Chrome for our fork of Chromium.
             </p>
 

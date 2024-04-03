@@ -143,3 +143,5 @@ export const Console = forwardRef<HTMLDivElement, ConsoleProps>(
     )
   }
 )
+
+Console.displayName = 'Console'

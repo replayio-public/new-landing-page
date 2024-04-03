@@ -1,4 +1,3 @@
-/* eslint-disable simple-import-sort/imports */
 import clsx from 'clsx'
 import useEmblaCarousel from 'embla-carousel-react'
 import { gsap } from '~/lib/gsap'
@@ -537,9 +536,9 @@ export const DeveloperTools = () => {
           subtitle={{
             children: (
               <span>
-                Replay DevTools is the debugging experience you've always wanted, but never believed
-                was possible. Trace any problem directly back to its root cause, no matter how
-                complex or timing sensitive.{' '}
+                Replay DevTools is the debugging experience you&apos;ve always wanted, but never
+                believed was possible. Trace any problem directly back to its root cause, no matter
+                how complex or timing sensitive.{' '}
               </span>
             )
           }}

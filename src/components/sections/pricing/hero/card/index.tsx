@@ -38,7 +38,7 @@ export const Card: FC<Props> = ({ mode, data }) => {
             <span>{data.mode}</span>
           </>
         ) : (
-          <span>Let's chat</span>
+          <span>Let&apos;s chat</span>
         )}
       </div>
 

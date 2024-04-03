@@ -11,6 +11,8 @@ export const Section = forwardRef<HTMLDivElement, SectionProps>(({ className, ..
   <section className={clsx(s['section'], className)} {...props} ref={ref} />
 ))
 
+Section.displayName = 'Section'
+
 type SectionHeadingProps = {
   title: string
   subtitle?: string | ReactElement

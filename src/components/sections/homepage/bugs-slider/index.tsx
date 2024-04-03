@@ -233,7 +233,7 @@ const AssetSideBugs = () => {
         >
           <div className={s.replayHeader}>
             <span className={s.recordBtn} />
-            <p>"board", flip</p>
+            <p>&quot;board&quot;, flip</p>
             <span className={s.commentBtn}>
               <svg viewBox="0 0 8 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path

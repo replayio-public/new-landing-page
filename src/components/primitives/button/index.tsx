@@ -80,6 +80,8 @@ export const Button = forwardRef(
   }
 )
 
+Button.displayName = 'Button'
+
 type NextLinkProps = Pick<
   LinkProps,
   'href' | 'locale' | 'prefetch' | 'replace' | 'scroll' | 'shallow'

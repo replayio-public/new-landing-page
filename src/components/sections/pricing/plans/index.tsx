@@ -17,12 +17,12 @@ import s from './plans.module.scss'
 type Plan = {
   type: string
   icon: any
-  description: string | Element
+  description: string | React.ReactNode
   cta: string
   link?: string
   content: Array<{
     title?: string
-    description?: string | Element
+    description?: string | React.ReactNode
     features?: {
       title: string
       items: string[]
@@ -351,7 +351,9 @@ export const Plans: FC<{ selectedTab: string }> = ({ selectedTab }) => {
           {selectedPlans.map((plan, i) => (
             <div
               key={i}
-              ref={(divElement) => (plansRefs.current[i] = divElement)}
+              ref={(divElement) => {
+                plansRefs.current[i] = divElement
+              }}
               className={clsx(s.plan)}
               id={plan.type}
             >

@@ -119,3 +119,5 @@ export const Network = forwardRef<HTMLDivElement, NetworkProps>(
     )
   }
 )
+
+Network.displayName = 'Network'

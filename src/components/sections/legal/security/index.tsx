@@ -33,8 +33,8 @@ export const Security: FC = () => {
         </Heading>
         <div className={s.content}>
           <p>
-            Replay employs a secure Software Development Lifecycle ("SDLC") to manage updates to the
-            infrastructure and application. Key features of our SDLC include:
+            Replay employs a secure Software Development Lifecycle (&quot;SDLC&quot;) to manage
+            updates to the infrastructure and application. Key features of our SDLC include:
           </p>
           <ul>
             <li>Code reviews</li>
@@ -85,7 +85,7 @@ export const Security: FC = () => {
         <div className={s.content}>
           <p>
             Replay takes network security very seriously and has worked hard to ensure the network
-            is configured to protect our customer's data. Our controls include:
+            is configured to protect our customer&apos;s data. Our controls include:
           </p>
           <ul>
             <li>Security team reviews of the firewall rules.</li>
@@ -99,14 +99,17 @@ export const Security: FC = () => {
           <p>
             The privacy of everyone who uses our software must be respected. Replay has the power to
             see everything that happens in a program, and with that comes an immense responsibility
-            to keep customer's data safe. We will maintain user privacy even if it prevents certain
-            features from being built. Replay does the following to ensure privacy is maintained:
+            to keep customer&apos;s data safe. We will maintain user privacy even if it prevents
+            certain features from being built. Replay does the following to ensure privacy is
+            maintained:
           </p>
           <ul>
             <li>Minimize data collection</li>
             <li>Replay does not sell customer data</li>
-            <li>Customer data is not accessed through Replay's normal course of business</li>
-            <li>Replay does not view or analyze your Replay's without your explicit permission</li>
+            <li>Customer data is not accessed through Replay&apos;s normal course of business</li>
+            <li>
+              Replay does not view or analyze your Replay&apos;s without your explicit permission
+            </li>
           </ul>
         </div>
         <Heading id="session-replay" as="h2">
@@ -125,16 +128,16 @@ export const Security: FC = () => {
               Intellectual property such as source code, filenames, and runtime data is redacted
             </li>
             <li>
-              Replay's <Link href="https://github.com/RecordReplay/devtools">DevTools</Link> are
-              publicly available and we appreciate feedback on fields that should be redacted
+              Replay&apos;s <Link href="https://github.com/RecordReplay/devtools">DevTools</Link>{' '}
+              are publicly available and we appreciate feedback on fields that should be redacted
             </li>
           </ul>
         </div>
         <Heading as="h2">Additional Information</Heading>
         <div className={s.content}>
           <p>
-            This Security Overview is a summary of our information security framework. Please don't
-            hesitate to reach out with questions at{' '}
+            This Security Overview is a summary of our information security framework. Please
+            don&apos;t hesitate to reach out with questions at{' '}
             <Link href="mailto:security@replay.io">security@replay.io</Link>.
           </p>
         </div>

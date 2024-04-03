@@ -275,3 +275,5 @@ const AnimatedGrid = forwardRef<AnimatedGridProps, unknown>((_, ref) => {
     <Grid3D ref={gridRef} />
   )
 })
+
+AnimatedGrid.displayName = 'AnimatedGrid'

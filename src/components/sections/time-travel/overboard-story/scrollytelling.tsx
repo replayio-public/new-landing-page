@@ -114,6 +114,8 @@ const ViewToggle = forwardRef<HTMLDivElement, unknown>((_, ref) => {
   )
 })
 
+ViewToggle.displayName = 'ViewToggle'
+
 const timelineDuration = 8
 const padding = 16
 const headerHeight = 50

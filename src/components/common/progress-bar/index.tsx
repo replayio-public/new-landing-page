@@ -289,6 +289,8 @@ export const ProgressBar = forwardRef<ProgressAPI, ProgressProps>(
   }
 )
 
+ProgressBar.displayName = 'ProgressBar'
+
 type ProgressMarkerProp = {
   size?: number
   color?: string
@@ -334,6 +336,8 @@ export const ProgressMarker = forwardRef<HTMLSpanElement, ProgressMarkerProp>(
     </span>
   )
 )
+
+ProgressMarker.displayName = 'ProgressMarker'
 
 export type TimelineProps = {
   duration: number
@@ -399,3 +403,5 @@ export const Timeline = forwardRef<UseGsapTimeAPI, TimelineProps>(
     return <ProgressBar animated={false} {...rest} ref={progressRef} />
   }
 )
+
+Timeline.displayName = 'Timeline'

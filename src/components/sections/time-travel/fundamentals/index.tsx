@@ -183,7 +183,7 @@ const data: DataType[] = [
     label: 'What is time travel?',
     title: (
       <>
-        Don't record your app. <span>Record your runtime.</span>
+        Don&apos;t record your app. <span>Record your runtime.</span>
       </>
     ),
     description: (
@@ -217,7 +217,7 @@ const data: DataType[] = [
       <>
         <p>
           99.9% of compute is deterministic and does not need to be recorded. The challenge with
-          recording Chrome is knowing how to capture the .1% that's non-deterministic.
+          recording Chrome is knowing how to capture the .1% that&apos;s non-deterministic.
         </p>
         <p>
           Because 99.9% of compute is deterministic, time travel has the ability to be incredibly

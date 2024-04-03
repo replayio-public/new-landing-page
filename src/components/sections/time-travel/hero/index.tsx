@@ -55,7 +55,8 @@ export const Hero = () => {
               children: (
                 <>
                   Time travel debugging has been the holy grail for the past 60 years because if you
-                  can capture the bug, you can replay it, and inspect it as if it's running live.
+                  can capture the bug, you can replay it, and inspect it as if it&apos;s running
+                  live.
                 </>
               )
             }}

@@ -34,7 +34,7 @@ export const Carousel = forwardRef<EmblaCarouselType | undefined, CarouselProps>
       ...config
     })
 
-    const scrollTo = useCallback((index) => embla && embla.scrollTo(index), [embla])
+    const scrollTo = useCallback((index: number) => embla && embla.scrollTo(index), [embla])
 
     const onSelect = useCallback(() => {
       if (!embla) return
@@ -147,3 +147,5 @@ export const Carousel = forwardRef<EmblaCarouselType | undefined, CarouselProps>
     )
   }
 )
+
+Carousel.displayName = 'Carousel'
