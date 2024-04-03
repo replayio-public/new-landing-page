@@ -52,7 +52,7 @@ export function CostCalculator() {
               max="300000"
               min="10000"
               type="range"
-              value="100000"
+              defaultValue="100000"
             />
             <div className="mt-2 flex justify-between text-sm text-gray-600">
               <span>10k included</span>
