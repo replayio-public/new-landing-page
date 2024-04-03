@@ -20,6 +20,8 @@
       }
     ],
     "paths": {
+      "~/images/*": ["./public/images/*"],
+      "~/public/*": ["./public/*"],
       "~/*": ["./src/*"],
       ".basehub": ["./.basehub"],
       ".basehub/*": ["./.basehub/*"]
