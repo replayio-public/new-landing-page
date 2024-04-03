@@ -14,10 +14,10 @@ import network from '@/images/screenshots/view-network-requests.png'
 import { LandingPageFragment } from '@/lib/basehub-queries'
 
 const images = {
-  expenses: console,
-  payroll: react,
-  reports: testSteps,
-  'vat-returns': network,
+  console: console,
+  react: react,
+  testSteps: testSteps,
+  'network': network,
 }
 
 export function DevTools({ devTools }: LandingPageFragment) {
@@ -46,14 +46,6 @@ export function DevTools({ devTools }: LandingPageFragment) {
       aria-label="Time Travel enabled Browser DevTools"
       className="relative overflow-hidden bg-gray-700 pb-28 pt-20 sm:py-32"
     >
-      {/* <Image
-        className="absolute left-1/2 top-1/2 max-w-none translate-x-[-44%] translate-y-[-42%]"
-        src={backgroundImage}
-        alt=""
-        width={2245}
-        height={1636}
-        unoptimized
-      /> */}
       <Container className="relative">
         <div className="justfify-center flex max-w-2xl flex-col items-center md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-2xl tracking-tight text-white sm:text-3xl md:text-4xl">
@@ -123,7 +115,7 @@ export function DevTools({ devTools }: LandingPageFragment) {
                         className="w-full"
                         src={
                           images[
-                            (feature.image as keyof typeof images) || 'console'
+                          (feature.image as keyof typeof images) || 'console'
                           ]
                         }
                         alt=""

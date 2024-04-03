@@ -66,15 +66,15 @@ const logos = {
 
 export default function FAQ({ faq }: LandingPageFragment) {
     return (
-        <div className="bg-white py-24 sm:py-32">
+        <div className="bg-slate-100 border-t border-slate-300 py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center">
                 <div className="mx-auto max-w-2xl text-center lg:mx-0 ">
                     <h2 className="text-3xl  font-bold tracking-tight text-gray-900 sm:text-4xl">{faq.title}</h2>
-                    <p className="mt-6 text-lg leading-8 text-gray-600">
+                    <p className="mt-4 text-lg leading-8 text-gray-600">
                         {faq.subTitle}
                     </p>
                 </div>
-                <dl className="mx-auto mt-16 text-left grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                <dl className="mx-auto mt-16 text-left grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16  ext-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                     {faq.questions.items.map((question) => (
                         <div key={question._title} className='flex flex-col'>
                             <dt className="font-semibold text-gray-900">{question._title}</dt>
