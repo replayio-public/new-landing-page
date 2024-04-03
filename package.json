@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "postinstall": "basehub --output .basehub",
-    "sync": "basehub --output .basehub"
+    "basehub-gen": "basehub --output .basehub",
+    "dev": "yarn basehub-gen && next dev",
+    "build": "yarn basehub-gen && next build",
+    "start": "yarn basehub-gen && next start",
+    "lint": "next lint"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
@@ -64,12 +63,20 @@
     "zustand": "^4.3.8"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.0",
+    "@types/mousetrap": "^1.6.15",
+    "@types/prismjs": "^1.26.3",
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.0.4",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "sass": "^1.72.0",
-    "sharp": "0.33.1"
+    "sharp": "0.33.1",
+    "stylelint": "14.5.3",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^23.0.0",
+    "stylelint-config-standard-scss": "^2.0.1",
+    "stylelint-prettier": "^1.2.0"
   },
   "volta": {
     "node": "20.12.0",
