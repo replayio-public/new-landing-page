@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { ShortLogo } from './ShortLogo'
 
 type LinkItem = {
@@ -13,9 +14,9 @@ function Category({ name, links }: { name: string; links: LinkItem[] }) {
       <ul role="list" className="mt-6 space-y-4">
         {links.map((item) => (
           <li key={item.name}>
-            <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+            <Link href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
               {item.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -43,8 +44,7 @@ const navigation = {
     { name: 'Support', href: '#' },
     { name: 'Resources', href: '#' },
     { name: 'Guides', href: '#' },
-    { name: 'Security & Compliance', href: '#' },
-    { name: 'Privacy', href: '#' },
+    { name: 'Security & Privacy', href: '/security-and-privacy' },
     { name: 'Terms', href: '#' }
   ],
   integrations: [
