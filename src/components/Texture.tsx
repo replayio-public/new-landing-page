@@ -1,6 +1,7 @@
 export function Texture(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
+      className={props.className}
       width="1920"
       height="1025"
       viewBox="0 0 1920 1025"
