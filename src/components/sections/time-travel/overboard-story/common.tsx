@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default-member */
 import clsx from 'clsx'
-import { gsap } from 'lib/gsap'
+import { gsap } from '~/lib/gsap'
 import Prism, { Grammar } from 'prismjs'
 import { FC, forwardRef, MutableRefObject, useEffect, useMemo } from 'react'
 
@@ -23,7 +23,7 @@ export const SearchBar: FC<JSX.IntrinsicElements['div']> = ({
       borderBottom: '1px solid var(--editor-border-color)',
       color: 'var(--grey-400)',
       minHeight: 35,
-      ...style
+      ...style,
     }}
     {...rest}
   >
@@ -53,8 +53,8 @@ export const logContent = (content: any) => {
           __html: Prism.highlight(
             JSON.stringify(content),
             Prism.languages?.jsx as Grammar,
-            'jsx'
-          )
+            'jsx',
+          ),
         }}
       />
     )
@@ -96,7 +96,7 @@ export type IdentifiedNode<T> = T & {
 export function identifyNodes<T>(
   node: T,
   path?: string,
-  key?: string | number
+  key?: string | number,
 ): IdentifiedNode<T> {
   return {
     ...node,
@@ -106,56 +106,59 @@ export function identifyNodes<T>(
       identifyNodes(
         child,
         (path != undefined ? `${path}.` : '') + `children.${idx}`,
-        (key != undefined ? `${key}-` : '') + idx
-      )
-    )
+        (key != undefined ? `${key}-` : '') + idx,
+      ),
+    ),
   }
 }
 
 export function buildUuids(
   node: ReactNode | HTMLNode,
-  key?: string | number
+  key?: string | number,
 ): ReactNode | HTMLNode {
   return {
     ...node,
     uuid: node.type + (key != undefined ? `-${key}` : ''),
     children: node?.children?.map((child, idx) =>
-      buildUuids(child, (key != undefined ? `${key}-` : '') + idx)
-    )
+      buildUuids(child, (key != undefined ? `${key}-` : '') + idx),
+    ),
   }
 }
 
 export const getStyles = function (elm: Element, stylesProps: string[]) {
   const styles = window.getComputedStyle(elm)
 
-  const stylesObj = stylesProps.reduce((acc, v) => {
-    acc[v] = styles.getPropertyValue(v)
-    return acc
-  }, {} as { [x: string]: string })
+  const stylesObj = stylesProps.reduce(
+    (acc, v) => {
+      acc[v] = styles.getPropertyValue(v)
+      return acc
+    },
+    {} as { [x: string]: string },
+  )
 
   return stylesObj
 }
 
 export const useInspectElement = (
   hoveredComponentBlockId: string | null,
-  scopedInspect?: HTMLElement | null
+  scopedInspect?: HTMLElement | null,
 ) => {
   useEffect(() => {
     const storeSelector = gsap.utils.selector(
-      scopedInspect || document.documentElement
+      scopedInspect || document.documentElement,
     )
 
     const targetInspect = storeSelector(
-      `*[data-box-id='${hoveredComponentBlockId}']`
+      `*[data-box-id='${hoveredComponentBlockId}']`,
     )
 
     gsap.set(targetInspect, {
-      '--inspect': 1
+      '--inspect': 1,
     })
 
     return () => {
       gsap.set(targetInspect, {
-        '--inspect': 0
+        '--inspect': 0,
       })
     }
   }, [hoveredComponentBlockId, scopedInspect])
@@ -173,7 +176,7 @@ export const Header: FC<JSX.IntrinsicElements['div']> = ({
       height: 35,
       background: 'var(--editor-600)',
       borderBottom: '1px solid var(--editor-border-color)',
-      ...style
+      ...style,
     }}
     {...rest}
   >
@@ -193,7 +196,7 @@ export const PanelContainer = forwardRef<
 export const useTimeline = (
   active: boolean,
   timeline: MutableRefObject<GSAPTimeline>,
-  reset?: () => void
+  reset?: () => void,
 ) => {
   useEffect(() => {
     if (active) {
@@ -208,7 +211,7 @@ export const useTimeline = (
 export const useAnimationHover = (
   pause: (() => void) | undefined,
   play: (() => void) | undefined,
-  timelineRef: MutableRefObject<GSAPTimeline>
+  timelineRef: MutableRefObject<GSAPTimeline>,
 ) => {
   return useMemo(() => {
     return {
@@ -219,7 +222,7 @@ export const useAnimationHover = (
       onMouseLeave: () => {
         play?.()
         timelineRef.current?.play()
-      }
+      },
     }
   }, [pause, play, timelineRef])
 }

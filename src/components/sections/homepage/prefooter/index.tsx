@@ -1,4 +1,4 @@
-import { gsap, SplitText } from 'lib/gsap'
+import { gsap, SplitText } from '~/lib/gsap'
 import Link from 'next/link'
 import React, { useEffect, useRef } from 'react'
 
@@ -9,17 +9,17 @@ import { Title } from '~/components/primitives/texts'
 const Sky = dynamic(
   () => import('~/components/common/sky').then((m) => m.Sky) as LoaderComponent,
   {
-    ssr: false
-  }
+    ssr: false,
+  },
 )
 const Grid3D = dynamic(
   () =>
     import('~/components/common/grid-3d').then(
-      (m) => m.Grid3D
+      (m) => m.Grid3D,
     ) as LoaderComponent,
   {
-    ssr: false
-  }
+    ssr: false,
+  },
 )
 
 import dynamic, { LoaderComponent } from 'next/dynamic'
@@ -43,14 +43,14 @@ const Prefooter = () => {
     // gsap split text
     const split = new SplitText(titleRef.current, {
       type: 'chars',
-      charsClass: 'char'
+      charsClass: 'char',
     })
 
     const timelineConfig: gsap.TimelineVars = {
       defaults: {
-        ease: 'power2.inOut'
+        ease: 'power2.inOut',
       },
-      paused: true
+      paused: true,
     }
 
     if (isDesktop) {
@@ -58,7 +58,7 @@ const Prefooter = () => {
         scrub: 1.2,
         trigger: sectionRef.current,
         start: 'top 30%',
-        end: '95% bottom'
+        end: '95% bottom',
       }
     }
 
@@ -69,7 +69,7 @@ const Prefooter = () => {
       [split.chars, ctaRef.current],
       {
         opacity: 0.5,
-        z: -50
+        z: -50,
       },
       {
         z: 0,
@@ -77,9 +77,9 @@ const Prefooter = () => {
         duration: 50,
         stagger: {
           amount: 10,
-          from: 'center'
-        }
-      }
+          from: 'center',
+        },
+      },
     )
 
     return () => {

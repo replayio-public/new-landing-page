@@ -1,7 +1,7 @@
 /* eslint-disable simple-import-sort/imports */
 import clsx from 'clsx'
 import useEmblaCarousel from 'embla-carousel-react'
-import { gsap } from 'lib/gsap'
+import { gsap } from '~/lib/gsap'
 import { omit } from 'lodash'
 import Image, { ImageProps } from 'next/image'
 import { useEffect, useRef, useState } from 'react'
@@ -95,7 +95,7 @@ const chunks: {
             quality={100}
             draggable={false}
           />
-        )
+        ),
       },
       {
         style: { width: topanelperc(681) },
@@ -119,15 +119,15 @@ const chunks: {
               quality={100}
               draggable={false}
             />
-          )
-        ]
-      }
+          ),
+        ],
+      },
     ],
     title: 'Inspect React components',
     shortTitle: 'React DevTools',
     description:
       'Whether you’re using context, state, or hooks, Replay gives you the tools to inspect your components and see why they rendered.',
-    link: 'https://docs.replay.io/reference-guide/react'
+    link: 'https://docs.replay.io/reference-guide/react',
   },
   {
     mobilePanel: ({ className, ...props }) => (
@@ -151,7 +151,7 @@ const chunks: {
             quality={100}
             draggable={false}
           />
-        )
+        ),
       },
       {
         style: { width: topanelperc(618) },
@@ -175,15 +175,15 @@ const chunks: {
               quality={100}
               draggable={false}
             />
-          )
-        ]
-      }
+          ),
+        ],
+      },
     ],
     title: 'Retroactive console logs',
     shortTitle: 'Console logs',
     description:
       'Adding console logs is as simple as clicking on a line of code and adding an expression.',
-    link: 'https://docs.replay.io/reference-guide/print-statements'
+    link: 'https://docs.replay.io/reference-guide/print-statements',
   },
   {
     mobilePanel: ({ className, ...props }) => (
@@ -207,7 +207,7 @@ const chunks: {
             quality={100}
             draggable={false}
           />
-        )
+        ),
       },
       {
         style: { width: topanelperc(448) },
@@ -220,7 +220,7 @@ const chunks: {
             quality={100}
             draggable={false}
           />
-        )
+        ),
       },
       {
         style: { width: topanelperc(474) },
@@ -244,15 +244,15 @@ const chunks: {
               quality={100}
               draggable={false}
             />
-          )
-        ]
-      }
+          ),
+        ],
+      },
     ],
     title: 'De-flake your tests',
     shortTitle: 'Test panel',
     description:
       'With built-in support for Cypress and Playwright, you can jump to steps and into your application event handlers.',
-    link: 'https://docs.replay.io/reference-guide/cypress-panel'
+    link: 'https://docs.replay.io/reference-guide/cypress-panel',
   },
   {
     mobilePanel: ({ className, ...props }) => (
@@ -276,7 +276,7 @@ const chunks: {
             quality={100}
             draggable={false}
           />
-        )
+        ),
       },
       {
         style: { width: topanelperc(412) },
@@ -289,7 +289,7 @@ const chunks: {
             quality={100}
             draggable={false}
           />
-        )
+        ),
       },
       {
         style: { width: topanelperc(540) },
@@ -313,15 +313,15 @@ const chunks: {
               quality={100}
               draggable={false}
             />
-          )
-        ]
-      }
+          ),
+        ],
+      },
     ],
     title: 'Time travel to any point',
     shortTitle: 'Time travel',
     description:
       'When you start jumping to Console logs, React events, and Redux actions, you become a time traveler.',
-    link: 'https://docs.replay.io/reference-guide/events#b1a0e7f432f5426888b80e9b00e7b226'
+    link: 'https://docs.replay.io/reference-guide/events#b1a0e7f432f5426888b80e9b00e7b226',
   },
   {
     mobilePanel: ({ className, ...props }) => (
@@ -345,7 +345,7 @@ const chunks: {
             quality={100}
             draggable={false}
           />
-        )
+        ),
       },
       {
         style: { width: topanelperc(683) },
@@ -369,16 +369,16 @@ const chunks: {
               quality={100}
               draggable={false}
             />
-          )
-        ]
-      }
+          ),
+        ],
+      },
     ],
     title: 'Powerful Browser DevTools',
     shortTitle: 'DevTools',
     description:
       'Inspect UI elements, Network events, Console logs, Call Stacks, and Scopes at any point in time.',
-    link: 'https://docs.replay.io/reference-guide'
-  }
+    link: 'https://docs.replay.io/reference-guide',
+  },
 ]
 
 export const DeveloperTools = () => {
@@ -412,7 +412,7 @@ export const DeveloperTools = () => {
           overwrite: true,
           duration: 0.75,
           '--local-rotation-y': '0deg',
-          '--local-rotation-x': '0deg'
+          '--local-rotation-x': '0deg',
         })
       },
       onChange: (data) => {
@@ -420,9 +420,9 @@ export const DeveloperTools = () => {
           overwrite: 'auto',
           duration: 0.15,
           '--local-rotation-y': data.normalized.x * (360 * 0.05) + 'deg',
-          '--local-rotation-x': data.normalized.y * (360 * 0.05) + 'deg'
+          '--local-rotation-x': data.normalized.y * (360 * 0.05) + 'deg',
         })
-      }
+      },
     })
 
   useEffect(() => {
@@ -433,7 +433,7 @@ export const DeveloperTools = () => {
     const tl = gsap.fromTo(
       progress,
       {
-        value: 0
+        value: 0,
       },
       {
         ease: 'none',
@@ -447,10 +447,10 @@ export const DeveloperTools = () => {
           gsap.set([devtoolsRef.current], {
             overwrite: 'auto',
             '--global-rotation-y': x * 5 + 'deg',
-            '--global-rotation-x': y * 5 + 'deg'
+            '--global-rotation-x': y * 5 + 'deg',
           })
-        }
-      }
+        },
+      },
     )
 
     return () => {
@@ -490,7 +490,7 @@ export const DeveloperTools = () => {
     let count = 0
 
     const renderPanel = (
-      panel: PanelWrapper | PanelWrapper[]
+      panel: PanelWrapper | PanelWrapper[],
     ): React.ReactNode => {
       if (Array.isArray(panel)) {
         return panel.map(renderPanel)
@@ -504,8 +504,8 @@ export const DeveloperTools = () => {
         key,
         style: {
           // @ts-ignore
-          '--delay-factor': key
-        }
+          '--delay-factor': key,
+        },
       })
     }
 
@@ -535,7 +535,7 @@ export const DeveloperTools = () => {
         <TitleAndSubtitle
           title={{
             as: 'h2',
-            children: 'Zero in on the root cause'
+            children: 'Zero in on the root cause',
           }}
           subtitle={{
             children: (
@@ -545,7 +545,7 @@ export const DeveloperTools = () => {
                 directly back to its root cause, no matter how complex or timing
                 sensitive.{' '}
               </span>
-            )
+            ),
           }}
         />
 
@@ -557,8 +557,8 @@ export const DeveloperTools = () => {
                 return chunk.mobilePanel?.({
                   key: idx,
                   className: clsx({
-                    [s['active'] as string]: idx === activeChunk
-                  })
+                    [s['active'] as string]: idx === activeChunk,
+                  }),
                 })
               })}
             </AspectBox>
@@ -581,7 +581,7 @@ export const DeveloperTools = () => {
                   return (
                     <div
                       className={clsx(s['panels'], {
-                        [s['active'] as string]: activeChunk === idx
+                        [s['active'] as string]: activeChunk === idx,
                       })}
                       key={idx}
                     >
@@ -605,7 +605,7 @@ export const DeveloperTools = () => {
                   <div
                     key={idx}
                     className={clsx(s['chunk'], s['embla-slide'], {
-                      [s['active'] as string]: activeChunk === idx
+                      [s['active'] as string]: activeChunk === idx,
                     })}
                   >
                     <button

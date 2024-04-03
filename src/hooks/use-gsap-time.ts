@@ -1,4 +1,4 @@
-import { gsap } from 'lib/gsap'
+import { gsap } from '~/lib/gsap'
 import clamp from 'lodash/clamp'
 import { useMemo, useRef } from 'react'
 
@@ -37,7 +37,7 @@ export const useGsapTime = ({
   onComplete,
   onInterrupt,
   loop = false,
-  duration
+  duration,
 }: UseGsapTimeArgs): UseGsapTimeAPI => {
   const currentPauseTime = useRef<number | undefined>()
   const startTime = useRef<number | undefined>()
@@ -67,7 +67,7 @@ export const useGsapTime = ({
       onUpdateRef.current?.({
         time: timePassed,
         percentage,
-        normalizedTime: timePassed / duration
+        normalizedTime: timePassed / duration,
       })
 
       if (percentage === 100) {
@@ -165,7 +165,7 @@ export const useGsapTime = ({
 
         shiftStartTime(nextDuration)
         update()
-      }
+      },
     }
 
     return api

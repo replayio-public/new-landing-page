@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { clearProps, DURATION, Flip, gsap, ScrollTrigger } from 'lib/gsap'
+import { clearProps, DURATION, Flip, gsap, ScrollTrigger } from '~/lib/gsap'
 import get from 'lodash/get'
 import Image from 'next/image'
 import { forwardRef, useCallback, useRef, useState } from 'react'
@@ -8,7 +8,7 @@ import { AspectBox } from '~/components/common/aspect-box'
 import {
   Marker as ProgressMarker,
   ProgressAPI,
-  ProgressBar
+  ProgressBar,
 } from '~/components/common/progress-bar'
 import { Section } from '~/components/common/section'
 import { IsoLogo } from '~/components/primitives/logo'
@@ -27,13 +27,13 @@ import {
   IdentifiedNode,
   identifyNodes,
   ReactNode,
-  useInspectElement
+  useInspectElement,
 } from './common'
 import { DevTools, DevToolsProps, tabs } from './devtools'
 import {
   OverboardStore,
   OverboardStoreProps,
-  StoreRef
+  StoreRef,
 } from './overboard-store'
 import s from './overboard-story.module.scss'
 
@@ -51,7 +51,7 @@ const ViewToggle = forwardRef<HTMLDivElement, unknown>((_, ref) => {
         padding: 4,
         borderRadius: 8,
         fontSize: 14,
-        textAlign: 'center'
+        textAlign: 'center',
       }}
     >
       <div
@@ -66,13 +66,13 @@ const ViewToggle = forwardRef<HTMLDivElement, unknown>((_, ref) => {
           borderRadius: 8,
           backgroundColor: 'var(--editor-500)',
           color: 'var(--color-white)',
-          transition: 'clip-path 0.16s ease-out'
+          transition: 'clip-path 0.16s ease-out',
         }}
       >
         <span
           style={{
             gridArea: '1 / 1',
-            padding: '4px 16px'
+            padding: '4px 16px',
           }}
         >
           Viewer
@@ -80,7 +80,7 @@ const ViewToggle = forwardRef<HTMLDivElement, unknown>((_, ref) => {
         <span
           style={{
             gridArea: '1 / 2',
-            padding: '4px 16px'
+            padding: '4px 16px',
           }}
         >
           DevTools
@@ -91,14 +91,14 @@ const ViewToggle = forwardRef<HTMLDivElement, unknown>((_, ref) => {
         onClick={() =>
           window.scrollTo({
             top: document.getElementById('overboard-story')?.offsetTop,
-            behavior: 'smooth'
+            behavior: 'smooth',
           })
         }
         style={{
           all: 'unset',
           gridColumn: 1,
           gridRow: 1,
-          padding: '4px 16px'
+          padding: '4px 16px',
         }}
       >
         Viewer
@@ -110,14 +110,14 @@ const ViewToggle = forwardRef<HTMLDivElement, unknown>((_, ref) => {
             top:
               (document.getElementById('overboard-story')?.offsetTop ?? 0) +
               window.innerHeight,
-            behavior: 'smooth'
+            behavior: 'smooth',
           })
         }
         style={{
           all: 'unset',
           gridColumn: 2,
           gridRow: 1,
-          padding: '4px 16px'
+          padding: '4px 16px',
         }}
       >
         DevTools
@@ -167,8 +167,8 @@ const reactTree = identifyNodes(
           rotation: 0,
           isAnimated: true,
           velocity: 20,
-          color: 'green'
-        }
+          color: 'green',
+        },
       },
       {
         type: 'PurchaseForm',
@@ -178,13 +178,13 @@ const reactTree = identifyNodes(
             type: 'PurchaseButton',
             inspectBlockId: 'submit',
             props: {
-              hasError: true
-            }
-          }
-        ]
-      }
-    ]
-  })
+              hasError: true,
+            },
+          },
+        ],
+      },
+    ],
+  }),
 )
 
 export default function ReplayApplication() {
@@ -274,7 +274,7 @@ export default function ReplayApplication() {
     const printTutorial = codeSelector('#dev-tools-print-tutorial')
     const printPanel = codeSelector('#dev-tools-print-panel')
     const [storePurchaseLoader] = storeSelector(
-      `#overboard-store-purchase-${storeId} .loader`
+      `#overboard-store-purchase-${storeId} .loader`,
     )
     const devtoolsTools = appSelector('.toolbar .debugger,.search,.code')
     const devtoolsToolsCode = appSelector('.toolbar .code')
@@ -284,7 +284,7 @@ export default function ReplayApplication() {
     const storeVariables = {
       floorDisplacement: 0,
       hoverboardWaveProgress: 0,
-      hoverboardAnimationMaxArg: 100
+      hoverboardAnimationMaxArg: 100,
     }
 
     const floorAndRotateTimelineDuration = 16
@@ -304,7 +304,7 @@ export default function ReplayApplication() {
 
           storeApiRef.current?.grid?.move(storeVariables.floorDisplacement)
           storeApiRef.current?.hoverboard?.wave(nextProgress)
-        }
+        },
       })
 
     const flipTimeline3 = Flip.fit(
@@ -312,8 +312,8 @@ export default function ReplayApplication() {
       smallRightStoreAreaRef.current,
       {
         simple: false,
-        duration: 4
-      }
+        duration: 4,
+      },
     )
 
     const flipTimeline4 = Flip.fit(
@@ -321,15 +321,15 @@ export default function ReplayApplication() {
       devtoolsAreaRef.current,
       {
         simple: false,
-        duration: 4
-      }
+        duration: 4,
+      },
     )
 
     // Calculate Distance (Percentaje) from the top of the screen to the top of the element
     const { height: pinTargetHeight, top: pinTargetSpaceTop } =
       sectionRef.current.getBoundingClientRect()
     const applicationWindowSpaceBottom = Math.floor(
-      (window.innerHeight - applicationRef.current.clientHeight) / 2
+      (window.innerHeight - applicationRef.current.clientHeight) / 2,
     )
 
     /* Set the spacer height */
@@ -338,7 +338,7 @@ export default function ReplayApplication() {
       height: SCROLLYTELLING_PX_DURATION,
       onComplete: () => {
         ScrollTrigger.refresh()
-      }
+      },
     })
 
     /* Add scrollytelling class to prevent sticky on header */
@@ -353,25 +353,25 @@ export default function ReplayApplication() {
         pinTargetSpaceTop - // Add space from pin to top
         pinTargetHeight - // Remove the pin target height
         applicationWindowSpaceBottom * 2 - // Remove top/bottom space
-        1 // Remove the pixel that we skip on ScrollTrigger start
+        1, // Remove the pixel that we skip on ScrollTrigger start
     )
 
     Flip.fit(targetStoreRef.current, smallRightCenteredStoreRef.current, {
-      simple: false
+      simple: false,
     })
 
     /* Set sticky top on pin element */
     const { height } = pinWrapperRef.current.getBoundingClientRect()
     gsap.set(pinWrapperRef.current, {
       position: 'sticky',
-      top: `calc(50vh - ${height / 2}px)`
+      top: `calc(50vh - ${height / 2}px)`,
     })
 
     const timeline = gsap.timeline({
       smoothChildTiming: true,
       defaults: {
         ease: 'sine.inOut',
-        duration: 2
+        duration: 2,
       },
       scrollTrigger: {
         anticipatePin: 1,
@@ -402,8 +402,8 @@ export default function ReplayApplication() {
         },
         onLeaveBack: () => {
           document.documentElement.classList.remove('hide-header')
-        }
-      }
+        },
+      },
     })
 
     const printTimelineProgress = { progress: 0 }
@@ -419,17 +419,17 @@ export default function ReplayApplication() {
           scale: 1,
           yPercent: 0,
           opacity: 1,
-          duration: 2
+          duration: 2,
         },
-        0
+        0,
       )
       .set(
         [headerUsers[0]],
         {
           xPercent: 0,
-          opacity: 1
+          opacity: 1,
         },
-        0
+        0,
       )
 
       /* Devtools */
@@ -437,7 +437,7 @@ export default function ReplayApplication() {
       .set(
         viewToggleRef.current,
         { clipPath: 'inset(4px 4px 4px 50% round 4px)' },
-        0
+        0,
       )
       .set(
         devtoolsTools,
@@ -446,9 +446,9 @@ export default function ReplayApplication() {
           yPercent: 1,
           opacity: 1,
           // duration: 2,
-          stagger: 0.3
+          stagger: 0.3,
         },
-        0
+        0,
       )
 
       /* Devtools */
@@ -457,17 +457,17 @@ export default function ReplayApplication() {
       .set(
         devtoolsToolsCode,
         {
-          fill: '#05ACFD'
+          fill: '#05ACFD',
         },
-        0
+        0,
       )
 
       .set(
         devtoolsPanelRef.current,
         {
-          opacity: 1
+          opacity: 1,
         },
-        0
+        0,
       )
       .call(() => {
         setHoveredComponentBlockId(null)
@@ -479,7 +479,7 @@ export default function ReplayApplication() {
           setHoveredComponentBlockId('app')
         },
         undefined,
-        '+=1'
+        '+=1',
       )
       .call(
         () => {
@@ -488,14 +488,14 @@ export default function ReplayApplication() {
           setHoveredComponentBlockId('hoverboard')
         },
         undefined,
-        '+=1'
+        '+=1',
       )
       .call(
         () => {
           setActiveComponent(get(reactTree, 'children.0'))
         },
         undefined,
-        '+=1'
+        '+=1',
       )
       .call(
         () => {
@@ -504,14 +504,14 @@ export default function ReplayApplication() {
           setHoveredComponentBlockId('submit')
         },
         undefined,
-        '+=1.5'
+        '+=1.5',
       )
       .call(
         () => {
           setActiveComponent(get(reactTree, 'children.1.children.0'))
         },
         undefined,
-        '+=1'
+        '+=1',
       )
       .call(
         () => {
@@ -519,7 +519,7 @@ export default function ReplayApplication() {
           setHoveredComponentBlockId(null)
         },
         undefined,
-        '>'
+        '>',
       )
       .add(flipTimeline3 as GSAPTimeline, '+=0.5')
 
@@ -532,9 +532,9 @@ export default function ReplayApplication() {
         codeRef.current.elm,
         {
           opacity: 1,
-          duration: 2
+          duration: 2,
         },
-        '<'
+        '<',
       )
       .add(() => {
         setActiveDevtoolTab('console')
@@ -548,13 +548,13 @@ export default function ReplayApplication() {
         {
           x: -5,
           opacity: 0,
-          scale: 0.8
+          scale: 0.8,
         },
         {
           x: 0,
           opacity: 1,
-          scale: 1
-        }
+          scale: 1,
+        },
       )
       .addLabel('prints')
       .fromTo(
@@ -562,32 +562,32 @@ export default function ReplayApplication() {
         {
           xPercent: -10,
           opacity: 0,
-          scale: 0.8
+          scale: 0.8,
         },
         {
           xPercent: 0,
           opacity: 1,
-          scale: 1.0
+          scale: 1.0,
         },
-        '<+=0.2'
+        '<+=0.2',
       )
       .to(addPrintButton, {
         scale: 1.1,
         delay: 0.5,
-        duration: DURATION / 3
+        duration: DURATION / 3,
       })
       .to(addPrintButton, {
         scale: 1,
-        duration: DURATION / 3
+        duration: DURATION / 3,
       })
       .to(
         printTutorial,
         {
           xPercent: -10,
           opacity: 0,
-          scale: 0.8
+          scale: 0.8,
         },
-        '<+=0.5'
+        '<+=0.5',
       )
       .call(
         () => {
@@ -595,7 +595,7 @@ export default function ReplayApplication() {
           setShowPrints(false)
         },
         undefined,
-        '>-50%'
+        '>-50%',
       )
       .call(
         () => {
@@ -603,18 +603,18 @@ export default function ReplayApplication() {
           setShowPrints(true)
         },
         undefined,
-        '>-50%'
+        '>-50%',
       )
       .fromTo(
         printPanel,
         {
           opacity: 1,
           overflow: 'hidden',
-          height: 0
+          height: 0,
         },
         {
-          height: 'auto'
-        }
+          height: 'auto',
+        },
       )
       .set(printPanel, { overflow: 'visible' })
       .set([storePurchaseLoader], { '--play-state': 'paused' })
@@ -626,7 +626,7 @@ export default function ReplayApplication() {
       .fromTo(
         printTimelineProgress,
         {
-          progress: 20
+          progress: 20,
         },
         {
           progress: 50,
@@ -647,7 +647,7 @@ export default function ReplayApplication() {
             }
 
             gsap.set([storePurchaseLoader], {
-              '--rotate-z': `${360 * 4 * (progress / 100)}deg`
+              '--rotate-z': `${360 * 4 * (progress / 100)}deg`,
             })
 
             playPauseRef.current?.classList.remove('pause')
@@ -655,7 +655,7 @@ export default function ReplayApplication() {
 
             floorAndRotateTimeline.current?.seek(
               (floorAndRotateTimelineDuration / 4) * this.progress(),
-              false
+              false,
             )
             ;(codeRef.current?.timeline as ProgressAPI)?.update(progress)
             progressBarRef.current?.update(progress)
@@ -664,8 +664,8 @@ export default function ReplayApplication() {
           onComplete: () => {
             playPauseRef.current?.classList.remove('play')
             playPauseRef.current?.classList.add('pause')
-          }
-        }
+          },
+        },
       )
     /* Add some duration at the end */
     timeline.to({}, {}).addLabel('end', '>')
@@ -712,23 +712,23 @@ export default function ReplayApplication() {
           marker: markersType,
           prepend: 'handleSubmit',
           content: [{ color: 'green' }],
-          hide: !showPrints
+          hide: !showPrints,
         },
         {
           hits: 1,
           marker: 'transparent',
           prepend: 'Error',
           isError: true,
-          content: [{ message: 'Color not found, received: undefined' }]
-        }
-      ]
+          content: [{ message: 'Color not found, received: undefined' }],
+        },
+      ],
     },
     react: {
       tree: reactTree,
       activeComponent,
       onHoverComponent: setHoveredComponentBlockId,
-      onActiveComponentChange: setActiveComponent
-    }
+      onActiveComponentChange: setActiveComponent,
+    },
   }
 
   return (
@@ -805,7 +805,7 @@ export default function ReplayApplication() {
                     // @ts-ignore
                     '--height': `calc(100% - ${
                       padding * 2
-                    }px - ${headerHeight}px - ${timelineHeight}px)`
+                    }px - ${headerHeight}px - ${timelineHeight}px)`,
                   }}
                 >
                   <div className={clsx('toolbar', s['toolbar'])}>
@@ -903,7 +903,7 @@ export default function ReplayApplication() {
                         right: 0,
                         top: '50%',
                         transform: 'translateY(-50%)',
-                        width: '49%'
+                        width: '49%',
                       }}
                       ref={smallRightCenteredStoreRef}
                     />
@@ -911,14 +911,14 @@ export default function ReplayApplication() {
                       ratio={1920 / 1080}
                       style={{
                         gridArea: '1 / 1 / 3 / 6',
-                        alignSelf: 'center'
+                        alignSelf: 'center',
                       }}
                       ref={smallCenteredStoreRef}
                     />
                     <div
                       style={{
                         gridArea: 'code',
-                        position: 'relative'
+                        position: 'relative',
                       }}
                       ref={codeAreaRef}
                     >
@@ -933,7 +933,7 @@ export default function ReplayApplication() {
                           comments: undefined,
                           currentMarker: markersType,
                           onHit: handleHit,
-                          currentHit
+                          currentHit,
                         }}
                         className={s['code']}
                         printIndicators={{
@@ -948,7 +948,7 @@ export default function ReplayApplication() {
                           10: 'not-available',
                           11: 'not-available',
                           15: 'available',
-                          16: 'available'
+                          16: 'available',
                         }}
                         code={codeBlock}
                         ref={codeRef}
@@ -959,7 +959,7 @@ export default function ReplayApplication() {
                           top: 0,
                           left: 0,
                           bottom: 0,
-                          right: 0
+                          right: 0,
                         }}
                         ref={devtoolsPanelRef}
                       >
@@ -981,7 +981,7 @@ export default function ReplayApplication() {
                     </div>
                     <div
                       style={{
-                        gridArea: 'store'
+                        gridArea: 'store',
                       }}
                       ref={smallRightStoreAreaRef}
                     />
@@ -996,7 +996,7 @@ export default function ReplayApplication() {
                   className={s['bottom']}
                   style={{
                     // @ts-ignore
-                    '--height': timelineHeight
+                    '--height': timelineHeight,
                   }}
                 >
                   <div className={s['left']}>
@@ -1054,7 +1054,7 @@ export default function ReplayApplication() {
                     0:{padZeroesToNumber(Number(currentTime.toFixed(0)), 2)} /{' '}
                     <span
                       style={{
-                        color: 'var(--color-white)'
+                        color: 'var(--color-white)',
                       }}
                     >
                       0:

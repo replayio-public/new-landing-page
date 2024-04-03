@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { gsap } from 'lib/gsap'
+import { gsap } from '~/lib/gsap'
 import clamp from 'lodash/clamp'
 import {
   forwardRef,
@@ -8,13 +8,13 @@ import {
   useEffect,
   useImperativeHandle,
   useRef,
-  useState
+  useState,
 } from 'react'
 
 import {
   useGsapTime,
   UseGsapTimeAPI,
-  UseGsapTimeArgs
+  UseGsapTimeArgs,
 } from '~/hooks/use-gsap-time'
 import { useViewportSize } from '~/hooks/use-viewport-size'
 import { isClient } from '~/lib/constants'
@@ -67,7 +67,7 @@ export type ProgressAPI = {
 
 export const ANIMATION_UPDATE_INTERVAL_MS = 1000
 export const ANIMATION_UPDATE_INTERVAL_SEC = msToSecs(
-  ANIMATION_UPDATE_INTERVAL_MS
+  ANIMATION_UPDATE_INTERVAL_MS,
 )
 
 const getElmCoordById = (id: string, axes: 'x' | 'y') => {
@@ -99,9 +99,9 @@ export const ProgressBar = forwardRef<ProgressAPI, ProgressProps>(
       onMarkerUpdate,
       direction = 'horizontal',
       animated = true,
-      thickness = 2
+      thickness = 2,
     },
-    ref
+    ref,
   ) => {
     const [lastActiveMarker, setLastActiveMarker] = useState<
       Marker | undefined
@@ -110,7 +110,7 @@ export const ProgressBar = forwardRef<ProgressAPI, ProgressProps>(
     const progressRef = useRef<HTMLDivElement>(null)
     const prevProgress = useRef(progress || 0)
     const timeline = useRef<GSAPTimeline | GSAP>(
-      animated ? gsap.timeline({ autoRemoveChildren: true }) : gsap
+      animated ? gsap.timeline({ autoRemoveChildren: true }) : gsap,
     )
     const orderedMarkers = useRef<InternalMarker[]>([])
     const { width } = useViewportSize()
@@ -127,7 +127,7 @@ export const ProgressBar = forwardRef<ProgressAPI, ProgressProps>(
           orderedMarkers.current?.some(({ position }) => position <= progress)
         ) {
           const firstCoincidence = orderedMarkers.current.find(
-            ({ position }) => position <= progress
+            ({ position }) => position <= progress,
           )
 
           if (firstCoincidence) {
@@ -136,8 +136,8 @@ export const ProgressBar = forwardRef<ProgressAPI, ProgressProps>(
                 onMarkerUpdate?.(
                   firstCoincidence,
                   orderedMarkers.current?.filter(
-                    ({ position }) => position <= progress
-                  ) || []
+                    ({ position }) => position <= progress,
+                  ) || [],
                 )
 
                 prevValue?.onInactive?.()
@@ -160,7 +160,7 @@ export const ProgressBar = forwardRef<ProgressAPI, ProgressProps>(
             timeline.current[gsapFunc](progressRef.current, {
               '--left': `${progress}%`,
               ease: 'linear',
-              duration
+              duration,
             })
           }
         } else {
@@ -168,14 +168,14 @@ export const ProgressBar = forwardRef<ProgressAPI, ProgressProps>(
             timeline.current[gsapFunc](progressRef.current, {
               '--top': `${progress}%`,
               ease: 'linear',
-              duration
+              duration,
             })
           }
         }
 
         prevProgress.current = progress
       },
-      [direction, onMarkerUpdate, animated]
+      [direction, onMarkerUpdate, animated],
     )
 
     const getPercentageById = useCallback(
@@ -189,18 +189,18 @@ export const ProgressBar = forwardRef<ProgressAPI, ProgressProps>(
         const barSize = direction === 'horizontal' ? width : height
         const markerElmCoord = getElmCoordById(
           id,
-          direction === 'horizontal' ? 'x' : 'y'
+          direction === 'horizontal' ? 'x' : 'y',
         )
 
         return (clamp(markerElmCoord - barCoord, 0, barSize) / barSize) * 100
       },
-      [direction]
+      [direction],
     )
 
     useImperativeHandle(
       ref,
       () => ({ update, getPercentageById, elm: barRef.current }),
-      [update, getPercentageById]
+      [update, getPercentageById],
     )
 
     useEffect(() => {
@@ -217,7 +217,7 @@ export const ProgressBar = forwardRef<ProgressAPI, ProgressProps>(
           const barSize = direction === 'horizontal' ? width : height
           const markerElmCoord = getElmCoordById(
             marker.position,
-            direction === 'horizontal' ? 'x' : 'y'
+            direction === 'horizontal' ? 'x' : 'y',
           )
 
           position =
@@ -229,7 +229,7 @@ export const ProgressBar = forwardRef<ProgressAPI, ProgressProps>(
         return {
           ...marker,
           normalizedPosition: position / 100,
-          position
+          position,
         }
       })
 
@@ -238,7 +238,7 @@ export const ProgressBar = forwardRef<ProgressAPI, ProgressProps>(
 
     useEffect(() => {
       orderedMarkers.current = internalMarkers?.sort(
-        (a, b) => b.position - a.position
+        (a, b) => b.position - a.position,
       )
     }, [internalMarkers])
 
@@ -254,18 +254,18 @@ export const ProgressBar = forwardRef<ProgressAPI, ProgressProps>(
           // @ts-ignore
           '--color-primary': primaryColor,
           '--color-secondary': secondaryColor,
-          '--thickness': thickness + 'px'
+          '--thickness': thickness + 'px',
         }}
         className={clsx(s['progress-bar'], {
           [s['vertical'] as string]: direction === 'vertical',
-          [s['horizontal'] as string]: direction === 'horizontal'
+          [s['horizontal'] as string]: direction === 'horizontal',
         })}
         ref={barRef}
       >
         <div className={s['progress']} ref={progressRef}>
           <div
             className={clsx(s['progress-gradient'], {
-              [s['solid'] as string]: solid
+              [s['solid'] as string]: solid,
             })}
           />
         </div>
@@ -281,7 +281,7 @@ export const ProgressBar = forwardRef<ProgressAPI, ProgressProps>(
                 className,
                 ...rest
               },
-              idx
+              idx,
             ) => {
               const isOnEnds = position === 0 || position === 100
 
@@ -311,7 +311,7 @@ export const ProgressBar = forwardRef<ProgressAPI, ProgressProps>(
                       direction === 'horizontal' && isOnEnds
                         ? normalizedPosition
                         : '0.5',
-                    ...style
+                    ...style,
                   }}
                   className={clsx(s['marker'], className)}
                   {...rest}
@@ -320,11 +320,11 @@ export const ProgressBar = forwardRef<ProgressAPI, ProgressProps>(
                   {children}
                 </ProgressMarker>
               )
-            }
+            },
           )}
       </div>
     )
-  }
+  },
 )
 
 type ProgressMarkerProp = {
@@ -350,14 +350,14 @@ export const ProgressMarker = forwardRef<HTMLSpanElement, ProgressMarkerProp>(
       children,
       ...props
     },
-    ref
+    ref,
   ) => (
     <span
       // @ts-ignore
       style={{ '--color': active ? activeColor || color : color, ...style }}
       className={clsx(s['marker'], s['animated'], className, {
         [s['active'] as string]: active,
-        [s['current'] as string]: current
+        [s['current'] as string]: current,
       })}
       {...props}
       ref={ref}
@@ -370,7 +370,7 @@ export const ProgressMarker = forwardRef<HTMLSpanElement, ProgressMarkerProp>(
         {children && <span>{children}</span>}
       </span>
     </span>
-  )
+  ),
 )
 
 export type TimelineProps = {
@@ -384,7 +384,7 @@ export type TimelineProps = {
 export const Timeline = forwardRef<UseGsapTimeAPI, TimelineProps>(
   (
     { playing = false, duration, onStart, onComplete, loop = true, ...rest },
-    ref
+    ref,
   ) => {
     const progressRef = useRef<ProgressAPI>(null)
 
@@ -392,7 +392,7 @@ export const Timeline = forwardRef<UseGsapTimeAPI, TimelineProps>(
       (progress) => {
         progressRef.current?.update(progress.percentage)
       },
-      []
+      [],
     )
 
     const time = useGsapTime({
@@ -400,7 +400,7 @@ export const Timeline = forwardRef<UseGsapTimeAPI, TimelineProps>(
       onUpdate: handleUpdate,
       onStart,
       onComplete,
-      loop
+      loop,
     })
 
     useImperativeHandle(
@@ -425,10 +425,10 @@ export const Timeline = forwardRef<UseGsapTimeAPI, TimelineProps>(
             }
 
             time.seek(progress)
-          }
+          },
         }
       },
-      [time]
+      [time],
     )
 
     useEffect(() => {
@@ -442,5 +442,5 @@ export const Timeline = forwardRef<UseGsapTimeAPI, TimelineProps>(
     }, [time, playing])
 
     return <ProgressBar animated={false} {...rest} ref={progressRef} />
-  }
+  },
 )

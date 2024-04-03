@@ -1,6 +1,6 @@
 import MuxPlayer from '@mux/mux-player-react'
 import clsx from 'clsx'
-import { gsap } from 'lib/gsap'
+import { gsap } from '~/lib/gsap'
 import dynamic, { LoaderComponent } from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -24,18 +24,18 @@ import s from './hero.module.scss'
 const Sky = dynamic(
   () => import('~/components/common/sky').then((m) => m.Sky) as LoaderComponent,
   {
-    ssr: false
-  }
+    ssr: false,
+  },
 )
 
 const Grid3D = dynamic(
   () =>
     import('~/components/common/grid-3d').then(
-      (m) => m.Grid3D
+      (m) => m.Grid3D,
     ) as LoaderComponent,
   {
-    ssr: false
-  }
+    ssr: false,
+  },
 )
 
 interface VideoProgress {
@@ -47,7 +47,7 @@ interface VideoProgress {
 
 const outlineSvgSize = {
   width: 1442,
-  height: 876
+  height: 876,
 }
 
 const radius = 18 // Radius of the circle
@@ -80,7 +80,7 @@ const subheroes = [
   <span key="variant-1">
     Replay is the only browser that lets you record and retroactively debug your
     application with <b>print statements</b> and <b>Browser DevTools</b>.
-  </span>
+  </span>,
 ]
 
 const playIconSVG = (
@@ -160,7 +160,7 @@ export const Hero = () => {
 
   const [videoProgress, setVideoProgress] = useState<VideoProgress>({
     1: { currentTime: 0, duration: 1 },
-    2: { currentTime: 0, duration: 1 }
+    2: { currentTime: 0, duration: 1 },
   })
 
   const muxPlayerRef = useRef<any>(null)
@@ -182,8 +182,8 @@ export const Hero = () => {
         ...prevState,
         [activeVideo]: {
           currentTime: 0,
-          duration: prevState[activeVideo]?.duration || 0
-        }
+          duration: prevState[activeVideo]?.duration || 0,
+        },
       }))
       // Switch to the new video
       switchVideo(videoNumber as 1 | 2)
@@ -193,11 +193,11 @@ export const Hero = () => {
   const updateVideoProgress = (
     videoNumber: number,
     currentTime: number,
-    duration: number
+    duration: number,
   ) => {
     setVideoProgress((prevState) => ({
       ...prevState,
-      [videoNumber]: { currentTime, duration }
+      [videoNumber]: { currentTime, duration },
     }))
   }
 
@@ -205,13 +205,13 @@ export const Hero = () => {
     1: {
       playbackId: 'QkSFKUrsBI00NzaCuiUelsPsekl6miPCDfC102qLvNxK4',
       muted: true,
-      poster: ''
+      poster: '',
     },
     2: {
       playbackId: 'Z00FHys4XTdt01f01yoi9Mr100014dnrwGIHZV502shtvx02tg',
       muted: false,
-      poster: ''
-    }
+      poster: '',
+    },
   }
 
   const [currentVideo, setCurrentVideo] = useState(videoDetails[1])
@@ -245,13 +245,13 @@ export const Hero = () => {
         trigger: sectionRef.current,
         start: 'top top',
         end: '500px top',
-        scrub: true
-      }
+        scrub: true,
+      },
     })
 
     t.to([firstRef.current], {
       opacity: 0.0,
-      scale: 0.85
+      scale: 0.85,
     })
 
     return () => {
@@ -266,9 +266,9 @@ export const Hero = () => {
 
     const tl = gsap.timeline({
       defaults: {
-        ease: 'power2.inOut'
+        ease: 'power2.inOut',
       },
-      repeat: -1
+      repeat: -1,
     })
 
     const selector = gsap.utils.selector(firstRef.current)
@@ -276,16 +276,16 @@ export const Hero = () => {
 
     const headingTexts = selector(`#heading-container > span > span`)
     const doubleHeadingTexts = selector(
-      `#heading-container-double > div > span > span`
+      `#heading-container-double > div > span > span`,
     )
 
     tl.to(
       [headingIcons[0]],
       {
         opacity: 0,
-        duration: 0.8
+        duration: 0.8,
       },
-      1.8
+      1.8,
     )
 
     tl.to(
@@ -293,36 +293,36 @@ export const Hero = () => {
       {
         x: !isSm ? -48 : -24,
         opacity: 0,
-        duration: 1.2
+        duration: 1.2,
       },
-      '>-0.5'
+      '>-0.5',
     )
 
     tl.to(
       [doubleHeadingTexts[0]],
       {
         x: !isSm ? -48 : -24,
-        duration: 1.2
+        duration: 1.2,
       },
-      '<'
+      '<',
     )
 
     tl.to(
       [headingIcons[1], headingTexts[1]],
       {
         opacity: 1,
-        duration: 1
+        duration: 1,
       },
-      '<'
+      '<',
     )
 
     tl.to(
       [headingIcons[1]],
       {
         opacity: 0,
-        duration: 0.8
+        duration: 0.8,
       },
-      '>+1.8'
+      '>+1.8',
     )
 
     tl.to(
@@ -330,36 +330,36 @@ export const Hero = () => {
       {
         x: !isSm ? -48 : -24,
         opacity: 0,
-        duration: 1.2
+        duration: 1.2,
       },
-      '>-0.5'
+      '>-0.5',
     )
 
     tl.to(
       [doubleHeadingTexts[1]],
       {
         x: !isSm ? -48 : -24,
-        duration: 1.2
+        duration: 1.2,
       },
-      '<'
+      '<',
     )
 
     tl.to(
       [headingIcons[2], headingTexts[2]],
       {
         opacity: 1,
-        duration: 1
+        duration: 1,
       },
-      '<'
+      '<',
     )
 
     tl.to(
       [headingIcons[2]],
       {
         opacity: 0,
-        duration: 0.8
+        duration: 0.8,
       },
-      '>+1.8'
+      '>+1.8',
     )
 
     tl.to(
@@ -367,40 +367,40 @@ export const Hero = () => {
         headingTexts[0],
         headingTexts[1],
         doubleHeadingTexts[0],
-        doubleHeadingTexts[1]
+        doubleHeadingTexts[1],
       ],
       {
         x: 0,
-        duration: 1.2
+        duration: 1.2,
       },
-      '>-0.5'
+      '>-0.5',
     )
 
     tl.to(
       [headingTexts[2]],
       {
         opacity: 0,
-        duration: 1.2
+        duration: 1.2,
       },
-      '<'
+      '<',
     )
 
     tl.to(
       [headingTexts[0]],
       {
         opacity: 1,
-        duration: 1
+        duration: 1,
       },
-      '>-0.8'
+      '>-0.8',
     )
 
     tl.to(
       [headingIcons[0]],
       {
         opacity: 1,
-        duration: 1
+        duration: 1,
       },
-      '<'
+      '<',
     )
 
     return () => {
@@ -424,18 +424,18 @@ export const Hero = () => {
         gsap.to(maskElement, {
           '--radius': '180px',
           webkitMaskImage,
-          duration: 0.45
+          duration: 0.45,
         })
       } else {
         gsap.to(maskElement, {
           '--radius': '180px',
           webkitMaskImage,
-          duration: 0.45
+          duration: 0.45,
         })
       }
     },
     windowAsProxy: true,
-    enableOnlyWhenHovering: false
+    enableOnlyWhenHovering: false,
   })
 
   return (
@@ -496,7 +496,7 @@ export const Hero = () => {
                     <div
                       className={clsx(
                         s['heading-container'],
-                        s['heading-container-double']
+                        s['heading-container-double'],
                       )}
                     >
                       <span className={s['title-section']}>
@@ -512,11 +512,11 @@ export const Hero = () => {
                   </div>
                 </>
               ),
-              hero: true
+              hero: true,
             }}
             subtitle={{
               className: s.subtitle,
-              children: subhero
+              children: subhero,
             }}
           />
 
@@ -593,7 +593,7 @@ export const Hero = () => {
                 updateVideoProgress(
                   activeVideo,
                   target.currentTime,
-                  target.duration
+                  target.duration,
                 )
               }}
               muted={currentVideo.muted}
@@ -651,7 +651,7 @@ export const Hero = () => {
                         style={{
                           strokeDashoffset,
                           transition: 'stroke-dashoffset 0.3s linear',
-                          transformOrigin: 'center' // Adjust the origin based on new size
+                          transformOrigin: 'center', // Adjust the origin based on new size
                         }}
                         fill="none"
                       />

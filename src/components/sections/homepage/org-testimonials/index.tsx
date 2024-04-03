@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import useEmblaCarousel, { EmblaCarouselType } from 'embla-carousel-react'
-import { gsap } from 'lib/gsap'
+import { gsap } from '~/lib/gsap'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
@@ -31,7 +31,7 @@ export const OrganizationTestimonials = () => {
   const [emblaRef, embla] = useEmblaCarousel({
     align: 'center',
     startIndex: initialIdx,
-    loop: true
+    loop: true,
   })
 
   const time = useGsapTime({
@@ -48,9 +48,9 @@ export const OrganizationTestimonials = () => {
 
       gsap.set(activeOrgRef.current, {
         '--progress': `${t.normalizedTime}`,
-        immediateRender: true
+        immediateRender: true,
       })
-    }
+    },
   })
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export const OrganizationTestimonials = () => {
 
   useIsomorphicLayoutEffect(() => {
     const elms = organizationsRef.current?.querySelectorAll(
-      `.${s['organization']}`
+      `.${s['organization']}`,
     )
 
     if (!elms) return
@@ -87,7 +87,7 @@ export const OrganizationTestimonials = () => {
       gsap.to([prevTrgtElm], {
         '--gradient-opacity': '0',
         ease: 'power2.out',
-        duration: 1
+        duration: 1,
       })
     }
 
@@ -96,14 +96,14 @@ export const OrganizationTestimonials = () => {
 
       gsap.set([activeOrgRef.current], {
         '--gradient-grow': '0',
-        '--progress': '0'
+        '--progress': '0',
       })
 
       showGradientTween = gsap.to([activeOrgRef.current], {
         '--gradient-grow': '1',
         '--gradient-opacity': '1',
         ease: 'power2.out',
-        duration: 1
+        duration: 1,
       })
 
       showGradientTween.then(() => {
@@ -153,7 +153,7 @@ export const OrganizationTestimonials = () => {
                 Learn More
               </Link>
             </>
-          )
+          ),
         }}
       />
       <Container className={s['container']}>
@@ -168,7 +168,7 @@ export const OrganizationTestimonials = () => {
                         embla?.scrollTo(idx)
                       }}
                       className={clsx(s['organization'], {
-                        [s['active'] as string]: idx === activeOrg
+                        [s['active'] as string]: idx === activeOrg,
                       })}
                       title={o.org}
                     >
@@ -214,7 +214,7 @@ export const OrganizationTestimonials = () => {
                 options={
                   currOrgTestimonials?.map((t, idx) => ({
                     label: t.name,
-                    value: idx.toString()
+                    value: idx.toString(),
                   })) || []
                 }
                 key={activeOrg}
@@ -246,16 +246,16 @@ const testimonials: {
         title: 'Co-author of Next.js',
         quote:
           '“Next.js App Router is now stable in 13.4. Wouldn’t have been possible without Replay, we investigated so many (over 20) super complicated bugs that using traditional debugging would have cost us days to investigate.”',
-        image: '/images/homepage/testimonials/tim-neutkins.png'
+        image: '/images/homepage/testimonials/tim-neutkins.png',
       },
       {
         name: 'JJ Kasper',
         title: 'Next.js Maintainer',
         quote:
           '“When I see a hard-to-reproduce issue in GitHub, I ask for a replay.”',
-        image: '/images/homepage/testimonials/jj-kasper.png'
-      }
-    ]
+        image: '/images/homepage/testimonials/jj-kasper.png',
+      },
+    ],
   },
   {
     org: 'React',
@@ -265,15 +265,15 @@ const testimonials: {
         name: 'Sebastian Markbåge',
         title: 'React Maintainer',
         quote: `“If I don't immediately know the answer to a bug, I immediately reach for replay.io. It's like HMR for repros.”`,
-        image: '/images/homepage/testimonials/sebastian.png'
+        image: '/images/homepage/testimonials/sebastian.png',
       },
       {
         name: 'Dan Abramov',
         title: 'React Maintainer',
         quote: '“Replay.io is galaxy brain tooling. Real gamechanger”',
-        image: '/images/homepage/testimonials/dan-abramov.png'
-      }
-    ]
+        image: '/images/homepage/testimonials/dan-abramov.png',
+      },
+    ],
   },
   {
     org: 'Replit',
@@ -341,16 +341,16 @@ const testimonials: {
         title: 'Founder Replit',
         quote:
           '"Programmers typically reach for debuggers when they run out of ideas on how to fix their code. Now coders reach for time-travel debugging to understand their programs and not just when they want fix a bug."',
-        image: '/images/homepage/testimonials/amjad.png'
+        image: '/images/homepage/testimonials/amjad.png',
       },
       {
         name: 'Alex Kotliarskyi',
         title: 'Senior engineer at Replit',
         quote:
           '“Morning! Saved another 10 to 20 minutes finding a bug using Replay!”',
-        image: '/images/homepage/testimonials/alex.png'
-      }
-    ]
+        image: '/images/homepage/testimonials/alex.png',
+      },
+    ],
   },
   {
     org: 'Solid',
@@ -361,9 +361,9 @@ const testimonials: {
         title: 'Solid Founder',
         quote:
           '"Fast forwarding and rewinding to breakpoints has saved me days(weeks??) while hunting down issues in @solid_js interruptible concurrent rendering."',
-        image: '/images/homepage/testimonials/ryan-carniato.png'
-      }
-    ]
+        image: '/images/homepage/testimonials/ryan-carniato.png',
+      },
+    ],
   },
   {
     org: 'Redux',
@@ -431,15 +431,15 @@ const testimonials: {
         title: 'Redux Maintainer',
         quote:
           '“Replay.io gives me the tools I need to solve seemingly impossible bugs. It’s like the Redux DevTools, but for every line of code in your app. It’s so good I joined the team to help build out the future of debugging.”',
-        image: '/images/homepage/testimonials/mark-erikson.png'
+        image: '/images/homepage/testimonials/mark-erikson.png',
       },
       {
         name: 'Lenz Weber-Tronic',
         title: 'Redux Redux Toolkit Maintainer',
         quote: `“Replay.io allows me to debug problems that would be impossible to debug by traditional means - it has saved me from countless hours of confusion and frustration.”`,
-        image: '/images/homepage/testimonials/lenz.png'
-      }
-    ]
+        image: '/images/homepage/testimonials/lenz.png',
+      },
+    ],
   },
   {
     org: 'RedwoodJS',
@@ -506,9 +506,9 @@ const testimonials: {
         name: 'Dom Saadi',
         title: 'Building RedwoodJS',
         quote: `“I’m not sure if we could’ve shipped the last major version of RedwoodJS without Replay.”`,
-        image: '/images/homepage/testimonials/dom.png'
-      }
-    ]
+        image: '/images/homepage/testimonials/dom.png',
+      },
+    ],
   },
   {
     org: 'CodeSandbox',
@@ -575,9 +575,9 @@ const testimonials: {
         name: 'Ives van Hoorne',
         title: 'Co-Founder CodeSandbox',
         quote: `“Replay.io is so great! Today I had a hard-to-repro flow in development, so I recorded a replay to see how it works. I didn’t only find the bug, I discovered a performance improvement using Replay.”`,
-        image: '/images/homepage/testimonials/ives.png'
-      }
-    ]
+        image: '/images/homepage/testimonials/ives.png',
+      },
+    ],
   },
   {
     org: 'Typescript',
@@ -644,16 +644,16 @@ const testimonials: {
         name: 'Mateusz Burzyński',
         title: 'Software Engineer at Stately.ai',
         quote: `"Current status: time-travel debugging Typescript's compiler. Replay is the hero tool I don't deserve. My dev life consists of 2 major eras now - I call them pre-Replay and post-Replay."`,
-        image: '/images/homepage/testimonials/mateusz.png'
+        image: '/images/homepage/testimonials/mateusz.png',
       },
 
       {
         name: 'Matt Pockock',
         title: 'Full-time TypeScript educator',
         quote: `“Replay.io is from another planet where bug reports save you time, instead of eating up hours of debugging.”`,
-        image: '/images/homepage/testimonials/matt.png'
-      }
-    ]
+        image: '/images/homepage/testimonials/matt.png',
+      },
+    ],
   },
   {
     org: 'Stately',
@@ -724,15 +724,15 @@ const testimonials: {
         name: 'David Khourshid',
         title: 'Founder of Stately.ai',
         quote: `“Time travel is the obvious next step for the future of collaboratively inspecting and debugging applications.”`,
-        image: '/images/homepage/testimonials/david.png'
+        image: '/images/homepage/testimonials/david.png',
       },
       {
         name: 'Mateusz Burzyński',
         title: 'Software Engineer at Stately.ai',
         quote: `“What the fuck is this, is it the future? is it the past? is it now? don't care this is just freaking amazing!”`,
-        image: '/images/homepage/testimonials/mateusz.png'
-      }
-    ]
+        image: '/images/homepage/testimonials/mateusz.png',
+      },
+    ],
   },
   {
     org: 'RFF',
@@ -819,8 +819,8 @@ const testimonials: {
         name: 'Erik Rasmussen',
         title: 'Author of Redux form and final form',
         quote: `"People use the word "game-changer" waaaaay too often. Very rarely does anything change the game. But holy 🤬, this just might! I'm sharing it to all of my teams, even reaching out to teams at previous employers to make them aware of this magic. Great work!"`,
-        image: '/images/homepage/testimonials/erik.png'
-      }
-    ]
-  }
+        image: '/images/homepage/testimonials/erik.png',
+      },
+    ],
+  },
 ]

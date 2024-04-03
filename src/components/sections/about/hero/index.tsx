@@ -1,4 +1,4 @@
-import { ScrollTrigger } from 'lib/gsap'
+import { ScrollTrigger } from '~/lib/gsap'
 import { FC, useEffect, useMemo, useRef, useState } from 'react'
 
 import { HeadingSet } from '~/components/common/heading-set'
@@ -17,7 +17,7 @@ type ScrollProgressBarProps = {
 }
 
 const ScrollProgressBar: FC<ScrollProgressBarProps> = ({
-  onProgressUpdate
+  onProgressUpdate,
 }) => {
   const isMobile = useMedia('(max-width: 768px)')
 
@@ -28,14 +28,14 @@ const ScrollProgressBar: FC<ScrollProgressBarProps> = ({
       {
         position: isMobile ? 8 : 25,
         onInactive: () => onProgressUpdate(undefined),
-        onActive: () => onProgressUpdate(1)
+        onActive: () => onProgressUpdate(1),
       },
       {
         position: isMobile ? 62 : 57,
-        onActive: () => onProgressUpdate(0)
-      }
+        onActive: () => onProgressUpdate(0),
+      },
     ],
-    [onProgressUpdate, isMobile]
+    [onProgressUpdate, isMobile],
   )
 
   useEffect(() => {
@@ -53,7 +53,7 @@ const ScrollProgressBar: FC<ScrollProgressBarProps> = ({
         if (progressRef.current) {
           progressRef.current.update(stState.progress * 100)
         }
-      }
+      },
     })
 
     return () => {
@@ -73,7 +73,7 @@ const ScrollProgressBar: FC<ScrollProgressBarProps> = ({
 
 export const Hero: FC = () => {
   const [activeHeading, setActiveHeading] = useState<number | undefined>(
-    undefined
+    undefined,
   )
 
   return (
@@ -81,12 +81,12 @@ export const Hero: FC = () => {
       <TitleAndSubtitle
         title={{
           children: <>About Replay</>,
-          hero: true
+          hero: true,
         }}
         subtitle={{
           className: s.subtitle,
           children:
-            'Learn where Replay is right now and where we are going next. Find out about our values. Meet the team and discover opportunities to join us on our journey.'
+            'Learn where Replay is right now and where we are going next. Find out about our values. Meet the team and discover opportunities to join us on our journey.',
         }}
       />
       <Container size="sm">
@@ -97,7 +97,7 @@ export const Hero: FC = () => {
             image={{
               src: future,
               alt: 'The replay team chatting',
-              placeholder: 'blur'
+              placeholder: 'blur',
             }}
             title="Replay in the future"
             description={
@@ -129,7 +129,7 @@ export const Hero: FC = () => {
             image={{
               src: now,
               alt: 'The replay team chatting',
-              placeholder: 'blur'
+              placeholder: 'blur',
             }}
             description={
               <>

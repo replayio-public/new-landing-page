@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { gsap } from 'lib/gsap'
+import { gsap } from '~/lib/gsap'
 import React, { forwardRef, Fragment, useMemo } from 'react'
 
 import { isClient } from '~/lib/constants'
@@ -19,7 +19,7 @@ function renderHtmlTree({
   activeElement,
   onActiveElementChange,
   onHoverElement,
-  isNested = false
+  isNested = false,
 }: {
   node: IdentifiedNode<HTMLNode>
   activeElement: ElementsProps['activeElement']
@@ -33,7 +33,7 @@ function renderHtmlTree({
     <ul className={s['node-tree']}>
       <li
         className={clsx(s['node-line'], {
-          [s['active'] as string]: activeElement?.uuid === node.uuid
+          [s['active'] as string]: activeElement?.uuid === node.uuid,
         })}
         id="node-line"
         style={{ marginLeft: isNested ? 8 : 0 }}
@@ -52,7 +52,7 @@ function renderHtmlTree({
             style={{
               display: 'inline-block',
               transform: 'rotate(180deg)',
-              visibility: node.children?.length ? 'visible' : 'hidden'
+              visibility: node.children?.length ? 'visible' : 'hidden',
             }}
           >
             ▴
@@ -81,7 +81,7 @@ function renderHtmlTree({
                   activeElement,
                   onActiveElementChange,
                   onHoverElement,
-                  isNested: true
+                  isNested: true,
                 })}
               </Fragment>
             ))
@@ -102,7 +102,7 @@ function renderHtmlTree({
               style={{
                 display: 'inline-block',
                 transform: 'rotate(180deg)',
-                visibility: 'hidden'
+                visibility: 'hidden',
               }}
             >
               ▴
@@ -136,7 +136,7 @@ export const Elements = forwardRef<HTMLDivElement, ElementsProps>(
       if (!isClient || !activeElement) return {}
 
       const elm = document.querySelector(
-        `*[data-box-id="${activeElement.inspectBlockId}"]`
+        `*[data-box-id="${activeElement.inspectBlockId}"]`,
       )
 
       if (!elm) return {}
@@ -151,7 +151,7 @@ export const Elements = forwardRef<HTMLDivElement, ElementsProps>(
 
       return {
         ...getStyles(target, activeElement.stylesWhitelist || []),
-        ...activeElement.overrideStyles
+        ...activeElement.overrideStyles,
       }
     }, [activeElement])
 
@@ -165,7 +165,7 @@ export const Elements = forwardRef<HTMLDivElement, ElementsProps>(
             node: tree,
             activeElement,
             onActiveElementChange,
-            onHoverElement
+            onHoverElement,
           })}
         </div>
 
@@ -173,7 +173,7 @@ export const Elements = forwardRef<HTMLDivElement, ElementsProps>(
           style={{
             fontVariantNumeric: 'tabular-nums',
             borderLeft: '1px solid var(--color-gray-lighter)',
-            width: '40%'
+            width: '40%',
           }}
         >
           <div className={s['tabs']}>
@@ -185,7 +185,7 @@ export const Elements = forwardRef<HTMLDivElement, ElementsProps>(
             <ul
               style={{
                 padding: 15,
-                maxHeight: '100%'
+                maxHeight: '100%',
               }}
             >
               {Object.entries(activeStyles || {}).map(([key, value]) => (
@@ -204,5 +204,5 @@ export const Elements = forwardRef<HTMLDivElement, ElementsProps>(
         </div>
       </div>
     )
-  }
+  },
 )

@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { gsap } from 'lib/gsap'
+import { gsap } from '~/lib/gsap'
 
 import { useMouseTracker } from '~/hooks/use-mouse-tracker'
 
@@ -20,23 +20,23 @@ export const Root = ({
       elementRef.current?.classList.add(s.hovering as string)
       gsap.set(elementRef.current, {
         '--x': `${x}px`,
-        '--y': `${y}px`
+        '--y': `${y}px`,
       })
       gsap.to(elementRef.current, {
         overwrite: 'auto',
         '--circle-radius': `${radius}`,
-        duration: 0.3
+        duration: 0.3,
       })
     },
     onLeave: () => {
       elementRef.current?.classList.remove(s.hovering as string)
       gsap.to(elementRef.current, {
         '--circle-radius': '0px',
-        duration: 0.3
+        duration: 0.3,
       })
     },
     windowAsProxy: true,
-    enableOnlyWhenHovering: true
+    enableOnlyWhenHovering: true,
   })
 
   return (
