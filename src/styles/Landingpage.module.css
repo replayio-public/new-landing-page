@@ -1,3 +1,25 @@
 .slate {
   background-color: #4b5563;
 }
+
+.colorStandardGreen {
+  color: #5db53b;
+}
+
+.bgStandardGreen {
+  background-color: #5db53b;
+}
+
+.sectionSubhead {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 2rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  color: #5db53b;
+}
+
+.quoteCallout {
+  font-size: 24px;
+  font-style: italic;
+}
