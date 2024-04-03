@@ -17,7 +17,7 @@ export default function DynamicAnalysis({ dynamicAnalysis }: LandingPageFragment
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
           <div className="px-6 md:px-0 lg:pr-4 lg:pt-4">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-              <h2 className={`${styles.colorStandardGreen} text-base font-semibold leading-7`}>
+              <h2 className={`${styles.colorPrimaryAccent} text-base font-semibold leading-7`}>
                 {dynamicAnalysis.subtitle}
               </h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -31,7 +31,7 @@ export default function DynamicAnalysis({ dynamicAnalysis }: LandingPageFragment
                     <div key={feature._title} className="relative pl-9">
                       <dt className="inline font-semibold text-gray-900">
                         <Icon
-                          className="absolute left-1 top-1 h-5 w-5 text-green-600"
+                          className={`absolute left-1 top-1 h-5 w-5 ${styles.colorPrimaryAccent}`}
                           aria-hidden="true"
                         />
                       </dt>{' '}

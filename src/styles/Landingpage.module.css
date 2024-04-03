@@ -2,12 +2,12 @@
   background-color: #4b5563;
 }
 
-.colorStandardGreen {
-  color: #5db53b;
+.colorPrimaryAccent {
+  color: #F02D5E;
 }
 
-.bgStandardGreen {
-  background-color: #5db53b;
+.bgPrimaryAccent {
+  background-color: #F02D5E;
 }
 
 .sectionSubhead {
@@ -16,7 +16,7 @@
   line-height: 2rem;
   letter-spacing: 0.025em;
   text-transform: uppercase;
-  color: #5db53b;
+  color: #F02D5E;
 }
 
 .quoteCallout {
