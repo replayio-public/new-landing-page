@@ -13,13 +13,7 @@ function Category({ name, links }: { name: string; links: LinkItem[] }) {
       <ul role="list" className="mt-6 space-y-4">
         {links.map((item) => (
           <li key={item.name}>
-
-            <a
-              href={item.href}
-              className="text-sm leading-6 text-gray-600 hover:text-gray-900"
-            >
-
-
+            <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
               {item.name}
             </a>
           </li>
@@ -62,8 +56,7 @@ const navigation = {
     { name: 'NextJS', href: '#' },
     { name: 'Apollo GraphQL', href: '#' },
 
-    { name: 'Zustand', href: '#' },
-
+    { name: 'Zustand', href: '#' }
   ],
   social: [
     {
@@ -132,10 +125,7 @@ const navigation = {
 
 export function Footer() {
   return (
-    <footer
-      className="relative isolate bg-white"
-      aria-labelledby="footer-heading"
-    >
+    <footer className="relative isolate bg-white" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -179,8 +169,7 @@ export function Footer() {
               Subscribe to our newsletter
             </h3>
             <p className="mt-2 text-sm leading-6 text-gray-600">
-              The latest news, articles, and resources, sent to your inbox
-              weekly.
+              The latest news, articles, and resources, sent to your inbox weekly.
             </p>
           </div>
           <form className="mt-6 sm:flex sm:max-w-md lg:mt-0">
@@ -209,11 +198,7 @@ export function Footer() {
         <div className="mt-8 border-t border-gray-900/10 pt-8 md:flex md:items-center md:justify-between">
           <div className="flex space-x-6 md:order-2">
             {navigation.social.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-400 hover:text-gray-500"
-              >
+              <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true" />
               </a>

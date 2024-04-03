@@ -51,10 +51,7 @@ function Plan({
       className={clsx(
         'flex flex-col rounded-3xl px-6 sm:px-8',
 
-        featured
-          ? `${styles.bgStandardGreen} order-first py-8 lg:order-none`
-          : 'lg:py-8',
-
+        featured ? `${styles.bgStandardGreen} order-first py-8 lg:order-none` : 'lg:py-8'
       )}
     >
       <h3 className="mt-5 font-display text-lg text-white">{name}</h3>
@@ -96,9 +93,7 @@ export function PricingHero({ hero }: { hero: PricingPageFragment['hero'] }) {
     <section id="pricing" aria-label="Pricing" className="bg-slate-900 py-20 sm:py-32">
       <Container>
         <div className="md:text-left">
-          <h2 className="text-base font-semibold leading-7 text-indigo-300">
-            Test Suites
-          </h2>
+          <h2 className="text-base font-semibold leading-7 text-indigo-300">Test Suites</h2>
           <SquigglyTitle {...hero.title} />
           <p className="text-md mt-4 text-slate-300 md:max-w-2xl">
             <RichText>{hero.description.json.content}</RichText>

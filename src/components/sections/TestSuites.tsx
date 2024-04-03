@@ -129,18 +129,8 @@ function Feature({
   isActive: boolean
 }) {
   return (
-
-    <div
-      className={clsx(className, !isActive && 'opacity-75 hover:opacity-100')}
-      {...props}
-    >
-      <div
-        className={clsx(
-          'w-9 rounded-lg',
-          isActive ? styles.bgStandardGreen : 'bg-slate-500',
-        )}
-      >
-
+    <div className={clsx(className, !isActive && 'opacity-75 hover:opacity-100')} {...props}>
+      <div className={clsx('w-9 rounded-lg', isActive ? styles.bgStandardGreen : 'bg-slate-500')}>
         <svg aria-hidden="true" className="h-9 w-9" fill="none">
           <feature.icon />
         </svg>
@@ -148,9 +138,8 @@ function Feature({
       <h3
         className={clsx(
           'mt-6 text-sm font-medium',
-          isActive ? styles.colorStandardGreen : 'text-slate-600',
+          isActive ? styles.colorStandardGreen : 'text-slate-600'
         )}
-
       >
         {feature.title}
       </h3>
