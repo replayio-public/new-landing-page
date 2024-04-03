@@ -18,27 +18,26 @@ export default {
       '6xl': ['3.75rem', { lineHeight: '1' }],
       '7xl': ['4.5rem', { lineHeight: '1.1' }],
       '8xl': ['6rem', { lineHeight: '1' }],
-      '9xl': ['8rem', { lineHeight: '1' }],
+      '9xl': ['8rem', { lineHeight: '1' }]
     },
     extend: {
       borderRadius: {
-        '4xl': '2rem',
+        '4xl': '2rem'
       },
       fontFamily: {
         sans: 'var(--font-inter)',
-        display: 'var(--font-lexend)',
+        display: 'var(--font-lexend)'
       },
       maxWidth: {
-        '2xl': '40rem',
-      },
-    },
+        '2xl': '40rem'
+      }
+    }
   },
   plugins: [
     formsPlugin,
     headlessuiPlugin,
-    require("tailwindcss-animate"),
+    require('tailwindcss-animate'),
     require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-
-  ],
+    require('@tailwindcss/typography')
+  ]
 } satisfies Config

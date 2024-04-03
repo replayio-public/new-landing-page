@@ -1,4 +1,4 @@
-import { LandingPageFragment } from '@/lib/basehub-queries'
+import { LandingPageFragment } from '~/lib/basehub-queries'
 
 const blogPosts = [
   {
@@ -14,8 +14,8 @@ const blogPosts = [
     author: {
       name: 'Michael Foster',
       imageUrl:
-        'https://image-forwarder.notaku.so/aHR0cHM6Ly93d3cubm90aW9uLnNvL2ltYWdlL2h0dHBzJTNBJTJGJTJGcHJvZC1maWxlcy1zZWN1cmUuczMudXMtd2VzdC0yLmFtYXpvbmF3cy5jb20lMkZjZDE3NGExMy0wNjJmLTRjNTUtOWU5NC1iNGE4OWVlNWJmMTElMkY2OWFmZDFjNi1mM2UzLTRlMjUtYTY4NS01YWMwNTZmMTE0ZGYlMkZpbXByb3ZlZC5wbmc_dGFibGU9YmxvY2smc3BhY2VJZD1jZDE3NGExMy0wNjJmLTRjNTUtOWU5NC1iNGE4OWVlNWJmMTEmaWQ9YTZlNWEyODItYjM0ZS00MzQwLWFhZDYtYTQ3MzNhYmE0OTg3JmNhY2hlPXYyJndpZHRoPTYwMA==',
-    },
+        'https://image-forwarder.notaku.so/aHR0cHM6Ly93d3cubm90aW9uLnNvL2ltYWdlL2h0dHBzJTNBJTJGJTJGcHJvZC1maWxlcy1zZWN1cmUuczMudXMtd2VzdC0yLmFtYXpvbmF3cy5jb20lMkZjZDE3NGExMy0wNjJmLTRjNTUtOWU5NC1iNGE4OWVlNWJmMTElMkY2OWFmZDFjNi1mM2UzLTRlMjUtYTY4NS01YWMwNTZmMTE0ZGYlMkZpbXByb3ZlZC5wbmc_dGFibGU9YmxvY2smc3BhY2VJZD1jZDE3NGExMy0wNjJmLTRjNTUtOWU5NC1iNGE4OWVlNWJmMTEmaWQ9YTZlNWEyODItYjM0ZS00MzQwLWFhZDYtYTQ3MzNhYmE0OTg3JmNhY2hlPXYyJndpZHRoPTYwMA=='
+    }
   },
   {
     id: 1,
@@ -30,8 +30,8 @@ const blogPosts = [
     author: {
       name: 'Michael Foster',
       imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
+        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+    }
   },
   {
     id: 1,
@@ -46,9 +46,9 @@ const blogPosts = [
     author: {
       name: 'Michael Foster',
       imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
+        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+    }
+  }
   // More posts...
 ]
 
@@ -88,15 +88,12 @@ export function Content() {
           ))}
         </div>
 
-        <div
-          className="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl"
-          aria-hidden="true"
-        >
+        <div className="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl" aria-hidden="true">
           <div
             className="aspect-[1404/767] w-[87.75rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"
             style={{
               clipPath:
-                'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
+                'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)'
             }}
           />
         </div>

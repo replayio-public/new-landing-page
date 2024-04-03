@@ -5,18 +5,12 @@ import Link from 'next/link'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
-import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
-import { Logo } from '@/components/FullLogo'
-import { NavLink } from '@/components/NavLink'
+import { Button } from '~/components/Button'
+import { Container } from '~/components/Container'
+import { Logo } from '~/components/FullLogo'
+import { NavLink } from '~/components/NavLink'
 
-function MobileNavLink({
-  href,
-  children,
-}: {
-  href: string
-  children: React.ReactNode
-}) {
+function MobileNavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <Popover.Button as={Link} href={href} className="block w-full p-2">
       {children}
@@ -35,17 +29,11 @@ function MobileNavIcon({ open }: { open: boolean }) {
     >
       <path
         d="M0 1H14M0 7H14M0 13H14"
-        className={clsx(
-          'origin-center transition',
-          open && 'scale-90 opacity-0',
-        )}
+        className={clsx('origin-center transition', open && 'scale-90 opacity-0')}
       />
       <path
         d="M2 2L12 12M12 2L2 12"
-        className={clsx(
-          'origin-center transition',
-          !open && 'scale-90 opacity-0',
-        )}
+        className={clsx('origin-center transition', !open && 'scale-90 opacity-0')}
       />
     </svg>
   )
@@ -104,7 +92,7 @@ export function Header() {
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
             <Link href="/" aria-label="Home">
-              <Logo className='fill-slate-800' style={{ height: "20px", }} />
+              <Logo className="fill-slate-800" style={{ height: '20px' }} />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
               <NavLink href="/#devtools">Browser DevTools</NavLink>

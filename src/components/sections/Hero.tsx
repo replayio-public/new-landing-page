@@ -1,15 +1,15 @@
 import Image from 'next/image'
 
-import { BaseHubButton } from '@/components/Button'
-import { Container } from '@/components/Container'
-import logoReact from '@/images/logos/react.svg'
-import logoGlide from '@/images/logos/glide.svg'
-import logoApolloGraphql from '@/images/logos/apollo-graphql.svg'
-import logoCodeSandbox from '@/images/logos/code-sandbox.svg'
-import logoMetabase from '@/images/logos/metabase.svg'
-import logoVercel from '@/images/logos/vercel.svg'
-import logoWeightsAndBiases from '@/images/logos/weights-and-biases.svg'
-import { LandingPageFragment } from '@/lib/basehub-queries'
+import { BaseHubButton } from '~/components/Button'
+import { Container } from '~/components/Container'
+import logoReact from '~/images/hero-logos/react.svg'
+import logoGlide from '~/images/hero-logos/glide.svg'
+import logoApolloGraphql from '~/images/hero-logos/apollo-graphql.svg'
+import logoCodeSandbox from '~/images/hero-logos/code-sandbox.svg'
+import logoMetabase from '~/images/hero-logos/metabase.svg'
+import logoVercel from '~/images/hero-logos/vercel.svg'
+import logoWeightsAndBiases from '~/images/hero-logos/weights-and-biases.svg'
+import { LandingPageFragment } from '~/lib/basehub-queries'
 import { RichText } from 'basehub/react-rich-text'
 import styles from '../../styles/Landingpage.module.css'
 
@@ -34,9 +34,11 @@ export function Hero({ hero }: LandingPageFragment) {
         <BaseHubButton {...hero.contactUsLink} />
       </div>
       <div className="mt-36 lg:mt-44">
+
         <p className="hidden font-display text-base text-slate-900">
           {hero.logosTitle}
         </p>
+
         <ul
           role="list"
           className="mt-8 flex items-center justify-center gap-x-8 saturate-0 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0"
@@ -46,13 +48,13 @@ export function Hero({ hero }: LandingPageFragment) {
               { name: 'WeightsBiases', logo: logoWeightsAndBiases },
               { name: 'Vercel', logo: logoVercel },
               { name: 'Metabase', logo: logoMetabase },
-              { name: 'Glide', logo: logoGlide },
+              { name: 'Glide', logo: logoGlide }
             ],
             [
               { name: 'Code Sandbox', logo: logoCodeSandbox },
               { name: 'React', logo: logoReact },
-              { name: 'Apollo GraphQL', logo: logoApolloGraphql },
-            ],
+              { name: 'Apollo GraphQL', logo: logoApolloGraphql }
+            ]
           ].map((group, groupIndex) => (
             <li key={groupIndex}>
               <ul
@@ -68,10 +70,10 @@ export function Hero({ hero }: LandingPageFragment) {
             </li>
           ))}
         </ul>
-      </div>
+      </div >
       <div className={styles.quoteCallout}>
         "This sure would be a great place to put a compelling quote" – Jon Bell
       </div>
-    </Container>
+    </Container >
   )
 }

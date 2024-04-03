@@ -4,14 +4,14 @@ import { useId } from 'react'
 import Image, { type ImageProps } from 'next/image'
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
-import { LandingPageFragment } from '@/lib/basehub-queries'
+import { LandingPageFragment } from '~/lib/basehub-queries'
 import styles from '../../styles/Landingpage.module.css'
 
-import { Container } from '@/components/Container'
-import screenshotDashboard from '@/images/screenshots/dashboard-view.png'
-import screenshotTests from '@/images/screenshots/tests-view.png'
-import screenshotRuns from '@/images/screenshots/runs-view.png'
-import screenshotPRComments from '@/images/screenshots/pr-comments.png'
+import { Container } from '~/components/Container'
+import screenshotDashboard from '~/images/screenshots/dashboard-view.png'
+import screenshotTests from '~/images/screenshots/tests-view.png'
+import screenshotRuns from '~/images/screenshots/runs-view.png'
+import screenshotPRComments from '~/images/screenshots/pr-comments.png'
 
 interface Feature {
   title: React.ReactNode
@@ -25,7 +25,7 @@ const images = {
   dashboard: screenshotDashboard,
   tests: screenshotTests,
   runs: screenshotRuns,
-  pr: screenshotPRComments,
+  pr: screenshotPRComments
 }
 const icons = {
   dashboard: function DasboardIcon() {
@@ -116,7 +116,7 @@ const icons = {
         />
       </>
     )
-  },
+  }
 }
 
 function Feature({
@@ -129,6 +129,7 @@ function Feature({
   isActive: boolean
 }) {
   return (
+
     <div
       className={clsx(className, !isActive && 'opacity-75 hover:opacity-100')}
       {...props}
@@ -139,6 +140,7 @@ function Feature({
           isActive ? styles.bgStandardGreen : 'bg-slate-500',
         )}
       >
+
         <svg aria-hidden="true" className="h-9 w-9" fill="none">
           <feature.icon />
         </svg>
@@ -148,19 +150,18 @@ function Feature({
           'mt-6 text-sm font-medium',
           isActive ? styles.colorStandardGreen : 'text-slate-600',
         )}
+
       >
         {feature.title}
       </h3>
-      <p className="mt-2 font-display text-xl text-slate-900">
-        {feature.subTitle}
-      </p>
+      <p className="mt-2 font-display text-xl text-slate-900">{feature.subTitle}</p>
       <p className="mt-4 text-sm text-slate-600">{feature.description}</p>
     </div>
   )
 }
 
 function FeaturesMobile({
-  features,
+  features
 }: {
   features: LandingPageFragment['testSuites']['features']['items']
 }) {
@@ -174,15 +175,13 @@ function FeaturesMobile({
               subTitle: feature.subtitle,
               description: feature.description,
               image: images[feature.image as keyof typeof images],
-              icon: icons[feature.image as keyof typeof icons],
+              icon: icons[feature.image as keyof typeof icons]
             }}
             className="mx-auto max-w-2xl"
             isActive
           />
           <div className="relative mt-10 pb-10">
-            <div
-              className={`absolute -inset-x-4 bottom-0 top-8  sm:-inset-x-6`}
-            />
+            <div className={`absolute -inset-x-4 bottom-0 top-8  sm:-inset-x-6`} />
 
             <div className="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
               <Image
@@ -200,7 +199,7 @@ function FeaturesMobile({
 }
 
 function FeaturesDesktop({
-  features,
+  features
 }: {
   features: LandingPageFragment['testSuites']['features']['items']
 }) {
@@ -222,7 +221,7 @@ function FeaturesDesktop({
                       <span className="absolute inset-0" />
                       {feature._title}
                     </Tab>
-                  ),
+                  )
                 }}
                 isActive={featureIndex === selectedIndex}
                 className="relative"
@@ -239,10 +238,10 @@ function FeaturesDesktop({
                   key={feature._title}
                   className={clsx(
                     'px-5 transition duration-500 ease-in-out ui-not-focus-visible:outline-none',
-                    featureIndex !== selectedIndex && 'opacity-60',
+                    featureIndex !== selectedIndex && 'opacity-60'
                   )}
                   style={{
-                    transform: `translateX(-${selectedIndex * 100}%)`,
+                    transform: `translateX(-${selectedIndex * 100}%)`
                   }}
                   aria-hidden={featureIndex !== selectedIndex}
                 >
@@ -274,12 +273,14 @@ export function TestSuites({ testSuites }: LandingPageFragment) {
     >
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-3xl">
-            {testSuites.title}
+          <h2 className="mb-4 text-base font-semibold leading-7 text-indigo-600">
+            {testSuites.superTitle}
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
-            {testSuites.subTitle}
-          </p>
+
+          <h3 className="font-display text-3xl tracking-tight text-slate-900 sm:text-3xl">
+            {testSuites.title}
+          </h3>
+          <p className="mt-4 text-lg tracking-tight text-slate-700">{testSuites.subTitle}</p>
         </div>
         <FeaturesMobile features={testSuites.features.items} />
         <FeaturesDesktop features={testSuites.features.items} />

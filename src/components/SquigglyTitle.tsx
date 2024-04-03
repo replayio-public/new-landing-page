@@ -1,12 +1,6 @@
-
 export function SwirlyDoodle(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 281 40"
-      preserveAspectRatio="none"
-      {...props}
-    >
+    <svg aria-hidden="true" viewBox="0 0 281 40" preserveAspectRatio="none" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -16,12 +10,14 @@ export function SwirlyDoodle(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export function SquigglyTitle({ left, right }: { left: string, right: string }) {
-  return <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
-    <span className="relative whitespace-nowrap">
-      <SwirlyDoodle className="absolute left-0 top-1/2 h-[1em] w-full fill-blue-400" />
-      <span className="relative">{left}</span>
-    </span>{' '}
-    {right}
-  </h2>
+export function SquigglyTitle({ left, right }: { left: string; right: string }) {
+  return (
+    <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
+      <span className="relative whitespace-nowrap">
+        <SwirlyDoodle className="absolute left-0 top-1/2 h-[1em] w-full fill-blue-400" />
+        <span className="relative">{left}</span>
+      </span>{' '}
+      {right}
+    </h2>
+  )
 }

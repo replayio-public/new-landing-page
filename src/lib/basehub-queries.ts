@@ -7,25 +7,24 @@ import {
   LinkComponent,
   LinkComponentGenqlSelection,
   PricingPage,
-  PricingPageGenqlSelection,
-} from ".basehub";
-
+  PricingPageGenqlSelection
+} from '.basehub'
 
 export const linkFragment = {
   _id: true,
   href: true,
   label: true,
-  variant: true,
-} satisfies LinkComponentGenqlSelection;
+  variant: true
+} satisfies LinkComponentGenqlSelection
 
 export const landingPageFragment = {
   hero: {
     subtitle: {
-      json: { content: true },
+      json: { content: true }
     },
     getStartedLink: linkFragment,
     contactUsLink: linkFragment,
-    logosTitle: true,
+    logosTitle: true
   },
   devTools: {
     title: true,
@@ -35,12 +34,13 @@ export const landingPageFragment = {
         _title: true,
         subTitle: true,
         image: true
-      },
+      }
     }
   },
   testSuites: {
     title: true,
     subTitle: true,
+    superTitle: true,
     features: {
       items: {
         _title: true,
@@ -103,8 +103,7 @@ export const landingPageFragment = {
       }
     }
   }
-} satisfies LandingPageGenqlSelection;
-
+} satisfies LandingPageGenqlSelection
 
 export const pricingPageFragment = {
   hero: {
@@ -113,23 +112,22 @@ export const pricingPageFragment = {
       right: true
     },
     label: true,
-    description: { json: { content: true }, }
+    description: { json: { content: true } }
   }
-} satisfies PricingPageGenqlSelection;
-
+} satisfies PricingPageGenqlSelection
 
 export const aboutPageFragment = {
   hero: {
     title: true,
     subTitle: true,
     title1: true,
-    description1: { json: { content: true }, },
+    description1: { json: { content: true } },
     title2: true,
-    description2: { json: { content: true }, },
+    description2: { json: { content: true } }
   }
 } satisfies AboutPageGenqlSelection
 
-export type LandingPageFragment = FieldsSelection<LandingPage, typeof landingPageFragment>;
-export type LinkFragment = FieldsSelection<LinkComponent, typeof linkFragment>;
-export type PricingPageFragment = FieldsSelection<PricingPage, typeof pricingPageFragment>;
-export type AboutPageFragment = FieldsSelection<AboutPage, typeof aboutPageFragment>;
+export type LandingPageFragment = FieldsSelection<LandingPage, typeof landingPageFragment>
+export type LinkFragment = FieldsSelection<LinkComponent, typeof linkFragment>
+export type PricingPageFragment = FieldsSelection<PricingPage, typeof pricingPageFragment>
+export type AboutPageFragment = FieldsSelection<AboutPage, typeof aboutPageFragment>
