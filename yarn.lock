@@ -20,11 +20,11 @@ __metadata:
   linkType: hard
 
 "@babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.24.0":
-  version: 7.24.1
-  resolution: "@babel/runtime@npm:7.24.1"
+  version: 7.24.4
+  resolution: "@babel/runtime@npm:7.24.4"
   dependencies:
     regenerator-runtime: "npm:^0.14.0"
-  checksum: 10/3a8d61400c636d1ce3a42895a106cd4dfb4e9b88832a8a754a724c68652f821d7a46dce394305d7623f9f0d3597bf0a98aeb5f9c150ef60e14bbbf66caab4654
+  checksum: 10/8ec8ce2c145bc7e31dd39ab66df124f357f65c11489aefacb30f431bae913b9aaa66aa5efe5321ea2bf8878af3fcee338c87e7599519a952e3a6f83aa1b03308
   languageName: node
   linkType: hard
 
@@ -2456,8 +2456,8 @@ __metadata:
   linkType: hard
 
 "basehub@npm:^3.1.3":
-  version: 3.1.8
-  resolution: "basehub@npm:3.1.8"
+  version: 3.1.9
+  resolution: "basehub@npm:3.1.9"
   dependencies:
     "@basehub/mutation-api-helpers": "npm:0.0.4"
     "@genql/cli": "npm:6.3.2"
@@ -2476,7 +2476,7 @@ __metadata:
     react-dom: ^18.2.0
   bin:
     basehub: dist/bin.js
-  checksum: 10/e2f4afb3d04536c9ffc508fd7dbab8c6ffb75733aa5a9b8a45bbb07080d26e232e569ad6eef28af29ee50a113917c787379be793cd61325a04547afc30ad6610
+  checksum: 10/a6b86c1aae4e2e742f544e757a8f48d19f886a7a3ac7fc87f4b19740a2502111b4587a486481cf4fe23c7adf380f7359cf4edff26265acbef7bfb2dfd5750dd2
   languageName: node
   linkType: hard
 
@@ -3460,11 +3460,11 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-react-hooks@npm:^4.5.0 || 5.0.0-canary-7118f5dd7-20230705":
-  version: 5.0.0-canary-7118f5dd7-20230705
-  resolution: "eslint-plugin-react-hooks@npm:5.0.0-canary-7118f5dd7-20230705"
+  version: 4.6.0
+  resolution: "eslint-plugin-react-hooks@npm:4.6.0"
   peerDependencies:
     eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
-  checksum: 10/0e0e80c21552998b7af2b92a74aec5e862b33f6f16c3e1303d42b5821d68b7ba11c2037bd73e3581fc7d97d9a2e64dd19e202d47d6885f53e33aac87c048d641
+  checksum: 10/3c63134e056a6d98d66e2c475c81f904169db817e89316d14e36269919e31f4876a2588aa0e466ec8ef160465169c627fe823bfdaae7e213946584e4a165a3ac
   languageName: node
   linkType: hard
 
