@@ -1,0 +1,203 @@
+{
+    "annualDiscount": 0.9,
+    "tiers": [
+        {
+            "name": "Free",
+            "featured": false,
+            "price": "0",
+            "description": "For small teams with a handful of flaky E2E tests.",
+            "href": "/register",
+            "features": [
+                {
+                    "name": "Users",
+                    "value": 50,
+                    "description": ""
+                },
+                {
+                    "name": "Test runs",
+                    "value": "Unlimited",
+                    "description": ""
+                },
+                {
+                    "name": "Uploaded recordings",
+                    "value": 100,
+                    "description": ""
+                },
+                {
+                    "name": "Root cause analysis *",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "name": "Perf regression detection *",
+                    "value": 0,
+                    "description": ""
+                }
+            ],
+            "included": [
+                {
+                    "name": "Recent runs dashboard",
+                    "description": ""
+                },
+                {
+                    "name": "Replay DevTools",
+                    "description": ""
+                },
+                {
+                    "name": "Discord support",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "name": "Team",
+            "price": "75",
+            "description": "For growing teams beginning to feel the pain of maintaining a test suite.",
+            "href": "/register",
+            "featured": true,
+            "features": [
+                {
+                    "name": "Users",
+                    "value": 50,
+                    "description": ""
+                },
+                {
+                    "name": "Test runs",
+                    "value": "Unlimited",
+                    "description": ""
+                },
+                {
+                    "name": "Uploaded recordings",
+                    "value": 1000,
+                    "description": ""
+                },
+                {
+                    "name": "Root cause analysis *",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "name": "Perf regression detection *",
+                    "value": 0,
+                    "description": ""
+                }
+            ],
+            "included": [
+                {
+                    "name": "Flake detection",
+                    "description": ""
+                },
+                {
+                    "name": "Flaky Tests Dashboard",
+                    "description": ""
+                },
+                {
+                    "name": "Email support",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "name": "Pro",
+            "price": "350",
+            "description": "For businesses who want to set E2E reliability goals.",
+            "href": "/register",
+            "features": [
+                {
+                    "name": "Users",
+                    "value": 50,
+                    "description": ""
+                },
+                {
+                    "name": "Test runs",
+                    "value": "Unlimited",
+                    "description": ""
+                },
+                {
+                    "name": "Uploaded recordings",
+                    "value": 20000,
+                    "description": ""
+                },
+                {
+                    "name": "Root cause analysis",
+                    "value": 100,
+                    "description": ""
+                },
+                {
+                    "name": "Perf regression detection *",
+                    "value": 500,
+                    "description": ""
+                }
+            ],
+            "included": [
+                {
+                    "name": "Test Suite insights",
+                    "description": ""
+                },
+                {
+                    "name": "SSO",
+                    "description": ""
+                },
+                {
+                    "name": "Debugging office hours",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "name": "Enterprise",
+            "price": -1,
+            "description": "For organizations with custom needs at an enterprise scale.",
+            "href": "/register",
+            "features": [
+                {
+                    "name": "Users",
+                    "value": "Unlimited",
+                    "description": ""
+                },
+                {
+                    "name": "Test runs",
+                    "value": "Unlimited",
+                    "description": ""
+                },
+                {
+                    "name": "Uploaded recordings",
+                    "value": "Custom",
+                    "description": ""
+                },
+                {
+                    "name": "Root cause analysis *",
+                    "value": "Custom",
+                    "description": ""
+                },
+                {
+                    "name": "Perf regression detection *",
+                    "value": "Custom",
+                    "description": ""
+                }
+            ],
+            "included": [
+                {
+                    "name": "Premium Support",
+                    "description": ""
+                },
+                {
+                    "name": "Host your own storage",
+                    "description": ""
+                },
+                {
+                    "name": "Custom Legal Terms",
+                    "description": ""
+                },
+                {
+                    "name": "Account Manager",
+                    "description": ""
+                },
+                {
+                    "name": "Pairing Root cause analysis and workshops",
+                    "description": ""
+                }
+            ]
+        }
+    ]
+}

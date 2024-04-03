@@ -7,6 +7,7 @@ import { Header } from '~/components/Header'
 import { CostCalculator } from '~/components/pricing/sections/CostCalculator'
 import { Footer } from '~/components/Footer'
 import { PricingFAQ } from '~/components/pricing/PricingFAQ'
+import { PricingCalculator2 } from '~/components/pricing-calculator2'
 
 export default function Home() {
   return (
@@ -22,7 +23,8 @@ export default function Home() {
             <main>
               <Header />
               <PricingHero {...pricingPage} />
-              <CostCalculator />
+              {/* <CostCalculator /> */}
+              <PricingCalculator2 />
               <PricingTable />
               <PricingFAQ />
               <Footer />
