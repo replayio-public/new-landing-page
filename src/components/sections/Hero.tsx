@@ -11,21 +11,12 @@ import logoVercel from '@/images/logos/vercel.svg'
 import logoWeightsAndBiases from '@/images/logos/weights-and-biases.svg'
 import { LandingPageFragment } from '@/lib/basehub-queries'
 import { RichText } from 'basehub/react-rich-text'
-import { Texture } from '@/components/Texture'
 import styles from '../../styles/Landingpage.module.css'
 
-/*transform: rotate(-7.5deg);
-        transform-origin: bottom right;*/
 export function Hero({ hero }: LandingPageFragment) {
   return (
     <Container className="pb-16 pt-20 text-center lg:pt-32">
       <h1 className="mx-auto max-w-4xl font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-        {/* Move fast and don’t <span className='inline-block' style={{
-          whiteSpace: 'nowrap',
-          transform: "rotate(-7.5deg)",
-          transformOrigin: "bottom right"
-
-        }}>break</span> things. */}
         Move fast{' '}
         <span className="relative whitespace-nowrap">
           <span className={`${styles.colorStandardGreen} relative`}>
