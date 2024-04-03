@@ -45,7 +45,7 @@ const navigation = {
     { name: 'Resources', href: '#' },
     { name: 'Guides', href: '#' },
     { name: 'Security & Privacy', href: '/security-and-privacy' },
-    { name: 'Terms', href: '#' }
+    { name: 'Terms of Use', href: '/terms-of-use' }
   ],
   integrations: [
     { name: 'React', href: '#' },
