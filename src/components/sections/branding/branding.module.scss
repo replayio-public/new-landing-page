@@ -1,0 +1,168 @@
+@import 'css/variables';
+
+.section {
+  margin: auto;
+  overflow: hidden;
+  max-width: 900px;
+
+  .container {
+    .heading {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      place-content: center;
+      max-width: 620px;
+      margin: auto;
+      margin-bottom: 112px;
+      text-align: center;
+
+      p {
+        line-height: 138%;
+      }
+    }
+
+    .container {
+      width: 66.67%;
+      margin: auto;
+    }
+
+    .replay-svg {
+      max-width: 480px;
+      height: auto;
+    }
+  }
+
+  .widgetWrapper {
+    margin: 60px 0;
+    border-radius: 12px;
+    position: relative;
+  }
+
+  .title {
+    font-size: 32px;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.04em;
+    font-family: var(--font-heading);
+  }
+
+  .widget {
+    background-color: #333;
+    border-radius: 6px;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  .logo-container {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #efefef;
+    padding: 2rem;
+    border-radius: 6px;
+
+    .logo {
+      width: 100%;
+    }
+  }
+
+  .options-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: flex-start;
+    margin-left: 24px;
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  .dark {
+    background-color: #444;
+  }
+
+  button {
+    margin-top: 2rem;
+    background-color: var(--color-pink-crayon);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  button:hover {
+    box-shadow: 0px 4px 6px rgb(0 0 0 / 0.1);
+  }
+
+  .hr-styled {
+    height: 1px;
+    width: 100%;
+    margin: 16px 0;
+    border: none;
+    border-bottom: 1px solid #555;
+  }
+
+  .subtitle {
+    font-weight: 600;
+  }
+}
+
+.flexItem {
+  flex: 1;
+}
+
+.copy-table,
+.copy-table td,
+.copy-table th {
+  border: 1px solid #444;
+  text-align: left;
+  padding: 4px 6px;
+}
+
+.copy-table {
+  width: 100%;
+  margin-bottom: 300px;
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: var(--color-pink-crayon);
+}
+
+@media screen and (max-width: 800px) {
+  .widget {
+    margin: 0 20px;
+  }
+
+  .options-container {
+    margin-left: 0 !important;
+  }
+
+  .logo-container {
+    border: 10px solid red;
+    display: none !important;
+  }
+
+  .title {
+    margin-left: 20px;
+  }
+
+  .copy-table {
+    margin: 0 20px;
+    width: 90%;
+  }
+}

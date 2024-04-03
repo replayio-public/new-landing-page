@@ -1,0 +1,112 @@
+@use 'sass:string';
+@use 'sass:math';
+
+@function tovw($target, $context: 1920px, $min: 'placeholder') {
+  @if $context == 'desktop-large' {
+    $context: 1920px;
+  }
+
+  @if $context == 'desktop' {
+    $context: 1440px;
+  }
+
+  @if $context == 'tablet' {
+    $context: 620px;
+  }
+
+  @if $context == 'mobile' {
+    $context: 375px;
+  }
+
+  @if $target == 0 {
+    @return 0;
+  }
+
+  @if $min != 'placeholder' {
+    @return string.unquote(
+      'max(' + $min + ', ' + (math.div($target, $context) * 100) + 'vw)'
+    );
+  }
+
+  @return string.unquote((math.div($target, $context) * 100) + 'vw');
+}
+
+@function torem($target, $context: 16px) {
+  @if $target == 0 {
+    @return 0;
+  }
+
+  @return math.div($target, $context) + 0rem;
+}
+
+@function toem($target, $context) {
+  @if $target == 0 {
+    @return 0;
+  }
+
+  @return math.div($target, $context) + 0em;
+}
+
+@mixin space-x($px) {
+  & > *:not(:first-child) {
+    margin-left: $px;
+  }
+}
+
+@mixin space-y($px) {
+  & > *:not(:first-child) {
+    margin-top: $px;
+  }
+}
+
+$breakpoints: (
+  'mobile': (
+    max-width: 480px
+  ),
+  'min-mobile-lg': (
+    min-width: 540px
+  ),
+  'mobile-lg': (
+    max-width: 539px
+  ),
+  'min-tablet': (
+    min-width: 769px
+  ),
+  'tablet': (
+    max-width: 768px
+  ),
+  'min-tablet-lg': (
+    min-width: 1025px
+  ),
+  'tablet-lg': (
+    max-width: 1024px
+  ),
+  'desktop-sm': (
+    max-width: 1280px
+  ),
+  'min-desktop-sm': (
+    min-width: 1281px
+  ),
+  'desktop': (
+    max-width: 1440px
+  ),
+  'desktop-xl': (
+    min-width: 1920px
+  )
+);
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. ' + 'Available breakpoints are: #{map-keys($breakpoints)}.';
+  }
+}
+
+@mixin hoverable-mouse {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}

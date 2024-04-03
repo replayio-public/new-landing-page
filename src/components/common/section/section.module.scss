@@ -1,0 +1,21 @@
+.section {
+  display: block;
+  max-width: 100vw;
+}
+
+.section-heading {
+  .subtitle {
+    max-width: 620px;
+    margin-top: 24px;
+
+    &.centered {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  div.subtitle p {
+    margin-top: 1rem;
+  }
+}
