@@ -5,13 +5,13 @@ import Image from 'next/image'
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
 
-import { Container } from '@/components/Container'
-// import backgroundImage from '@/images/background-features.jpg'
-import console from '@/images/screenshots/add-console-logs.png'
-import react from '@/images/screenshots/inspect-react-components.png'
-import testSteps from '@/images/screenshots/jump-to-test-steps.png'
-import network from '@/images/screenshots/view-network-requests.png'
-import { LandingPageFragment } from '@/lib/basehub-queries'
+import { Container } from '~/components/Container'
+// import backgroundImage from '~/images/background-features.jpg'
+import console from '~/images/screenshots/add-console-logs.png'
+import react from '~/images/screenshots/inspect-react-components.png'
+import testSteps from '~/images/screenshots/jump-to-test-steps.png'
+import network from '~/images/screenshots/view-network-requests.png'
+import { LandingPageFragment } from '~/lib/basehub-queries'
 
 const images = {
   expenses: console,

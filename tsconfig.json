@@ -20,7 +20,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
+      "~/*": ["./src/*"],
       ".basehub": ["./.basehub"],
       ".basehub/*": ["./.basehub/*"]
     }

@@ -1,7 +1,7 @@
 import { Inter, Lexend } from 'next/font/google'
 import clsx from 'clsx'
 
-import '@/styles/tailwind.css'
+import '~/styles/tailwind.css'
 import { type Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -9,8 +9,7 @@ export const metadata: Metadata = {
     template: '%s - Replay',
     default: 'Replay - Time Travel Browser DevTools',
   },
-  description:
-    'Record and replay the web.',
+  description: 'Record and replay the web.',
 }
 
 const inter = Inter({

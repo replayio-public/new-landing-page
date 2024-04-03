@@ -1,8 +1,8 @@
 import clsx from 'clsx'
 
-import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
-import { PricingPageFragment } from '@/lib/basehub-queries'
+import { Button } from '~/components/Button'
+import { Container } from '~/components/Container'
+import { PricingPageFragment } from '~/lib/basehub-queries'
 import { RichText } from 'basehub/react-rich-text'
 import { SquigglyTitle } from '../../SquigglyTitle'
 
@@ -106,9 +106,11 @@ export function PricingHero({ hero }: { hero: PricingPageFragment['hero'] }) {
     >
       <Container>
         <div className="md:text-left">
-          <h2 className="text-base font-semibold leading-7 text-indigo-300">Test Suites</h2>
+          <h2 className="text-base font-semibold leading-7 text-indigo-300">
+            Test Suites
+          </h2>
           <SquigglyTitle {...hero.title} />
-          <p className="mt-4 md:max-w-2xl text-md text-slate-300">
+          <p className="text-md mt-4 text-slate-300 md:max-w-2xl">
             <RichText>{hero.description.json.content}</RichText>
           </p>
         </div>
@@ -159,5 +161,4 @@ export function PricingHero({ hero }: { hero: PricingPageFragment['hero'] }) {
       </Container>
     </section>
   )
-
 }

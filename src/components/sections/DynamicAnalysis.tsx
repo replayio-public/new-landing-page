@@ -3,9 +3,9 @@ import {
   LockClosedIcon,
   ServerIcon,
 } from '@heroicons/react/20/solid'
-import screenshotRca from '@/images/screenshots/rca-1.png'
+import screenshotRca from '~/images/screenshots/rca-1.png'
 import Image from 'next/image'
-import { LandingPageFragment } from '@/lib/basehub-queries'
+import { LandingPageFragment } from '~/lib/basehub-queries'
 import { RichText } from 'basehub/react-rich-text'
 
 const images = {

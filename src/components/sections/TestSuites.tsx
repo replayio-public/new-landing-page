@@ -4,14 +4,14 @@ import { useId } from 'react'
 import Image, { type ImageProps } from 'next/image'
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
-import { LandingPageFragment } from '@/lib/basehub-queries'
+import { LandingPageFragment } from '~/lib/basehub-queries'
 import styles from '../../styles/Landingpage.module.css'
 
-import { Container } from '@/components/Container'
-import screenshotDashboard from '@/images/screenshots/dashboard-view.png'
-import screenshotTests from '@/images/screenshots/tests-view.png'
-import screenshotRuns from '@/images/screenshots/runs-view.png'
-import screenshotPRComments from '@/images/screenshots/pr-comments.png'
+import { Container } from '~/components/Container'
+import screenshotDashboard from '~/images/screenshots/dashboard-view.png'
+import screenshotTests from '~/images/screenshots/tests-view.png'
+import screenshotRuns from '~/images/screenshots/runs-view.png'
+import screenshotPRComments from '~/images/screenshots/pr-comments.png'
 
 interface Feature {
   title: React.ReactNode

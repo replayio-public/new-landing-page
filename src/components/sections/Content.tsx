@@ -1,4 +1,4 @@
-import { LandingPageFragment } from '@/lib/basehub-queries'
+import { LandingPageFragment } from '~/lib/basehub-queries'
 
 const blogPosts = [
   {

@@ -1,6 +1,6 @@
-import { BaseHubButton } from '@/components/Button'
-import { Container } from '@/components/Container'
-import { LandingPageFragment } from "@/lib/basehub-queries"
+import { BaseHubButton } from '~/components/Button'
+import { Container } from '~/components/Container'
+import { LandingPageFragment } from '~/lib/basehub-queries'
 
 export function CallToAction({ cta }: LandingPageFragment) {
   return (
@@ -15,10 +15,17 @@ export function CallToAction({ cta }: LandingPageFragment) {
               {cta.title}
             </h2>
 
-            <BaseHubButton className='mt-10' color="white" {...cta.getStartedLink} />
+            <BaseHubButton
+              className="mt-10"
+              color="white"
+              {...cta.getStartedLink}
+            />
           </div>
         </Container>
-        <div className="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl" aria-hidden="true">
+        <div
+          className="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl"
+          aria-hidden="true"
+        >
           <div
             className="aspect-[1404/767] w-[87.75rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"
             style={{

@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
-import { Button } from '@/components/Button'
-import { TextField } from '@/components/Fields'
-import { Logo } from '@/components/FullLogo'
-import { SlimLayout } from '@/components/SlimLayout'
+import { Button } from '~/components/Button'
+import { TextField } from '~/components/Fields'
+import { Logo } from '~/components/FullLogo'
+import { SlimLayout } from '~/components/SlimLayout'
 import { type Metadata } from 'next'
 
 export const metadata: Metadata = {
