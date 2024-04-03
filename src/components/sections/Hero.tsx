@@ -12,7 +12,8 @@ import logoWeightsAndBiases from '@/images/logos/weights-and-biases.svg'
 import { LandingPageFragment } from '@/lib/basehub-queries'
 import { RichText } from 'basehub/react-rich-text'
 import { Texture } from '@/components/Texture'
-import { SwirlyDoodle } from '../SquigglyTitle'
+import styles from '../../styles/Landingpage.module.css'
+
 /*transform: rotate(-7.5deg);
         transform-origin: bottom right;*/
 export function Hero({ hero }: LandingPageFragment) {
@@ -25,12 +26,13 @@ export function Hero({ hero }: LandingPageFragment) {
           transformOrigin: "bottom right"
 
         }}>break</span> things. */}
-        Move fast and{' '}
+        Move fast{' '}
         <span className="relative whitespace-nowrap">
-          <SwirlyDoodle className="absolute left-0 top-3/4 h-[1/2em] w-full fill-red-400" />
-          <span className="relative">don't</span>
+          <span className={`${styles.colorStandardGreen} relative`}>
+            without
+          </span>
         </span>{' '}
-        break things.
+        breaking things.
       </h1>
       <div className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
         <RichText>{hero.subtitle.json.content}</RichText>

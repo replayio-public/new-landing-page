@@ -1,6 +1,6 @@
 import { LandingPageFragment } from '@/lib/basehub-queries'
 import Image from 'next/image'
-
+import styles from '../styles/Landingpage.module.css'
 import alex from '@/images/testimonials/alex.png'
 import algodaily from '@/images/testimonials/algodaily.png'
 import amjad from '@/images/testimonials/amjad.png'
@@ -234,7 +234,7 @@ export function Testimonials({ testimonials }: LandingPageFragment) {
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-lg font-semibold leading-8 tracking-tight text-indigo-600">
+          <h2 className={styles.sectionSubhead}>
             {testimonials.caseStudySubTitle}
           </h2>
           <p className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -254,9 +254,7 @@ export function Testimonials({ testimonials }: LandingPageFragment) {
         </div>
 
         <div className="mx-auto mt-32 max-w-2xl text-center">
-          <h2 className="text-lg font-semibold leading-8 tracking-tight text-indigo-600">
-            {testimonials.subtitle}
-          </h2>
+          <h2 className={styles.sectionSubhead}>{testimonials.subtitle}</h2>
           <p className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             {testimonials.title}
           </p>
