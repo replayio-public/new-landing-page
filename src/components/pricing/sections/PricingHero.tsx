@@ -51,7 +51,7 @@ function Plan({
       className={clsx(
         'flex flex-col rounded-3xl px-6 sm:px-8',
 
-        featured ? `${styles.bgStandardGreen} order-first py-8 lg:order-none` : 'lg:py-8'
+        featured ? `${styles.bgPrimaryAccent} order-first py-8 lg:order-none` : 'lg:py-8'
       )}
     >
       <h3 className="mt-5 font-display text-lg text-white">{name}</h3>

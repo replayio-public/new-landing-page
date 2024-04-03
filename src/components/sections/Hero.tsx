@@ -19,7 +19,7 @@ export function Hero({ hero }: LandingPageFragment) {
       <h1 className="mx-auto max-w-4xl font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">
         Move fast{' '}
         <span className="relative whitespace-nowrap">
-          <span className={`${styles.colorStandardGreen} relative`}>without</span>
+          <span className={`${styles.colorPrimaryAccent} relative`}>without</span>
         </span>{' '}
         breaking things.
       </h1>
