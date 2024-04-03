@@ -259,9 +259,13 @@ export function TestSuites({ testSuites }: LandingPageFragment) {
     >
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-3xl">
-            {testSuites.title}
+          <h2 className="mb-4 text-base font-semibold leading-7 text-indigo-600">
+            {testSuites.superTitle}
           </h2>
+
+          <h3 className="font-display text-3xl tracking-tight text-slate-900 sm:text-3xl">
+            {testSuites.title}
+          </h3>
           <p className="mt-4 text-lg tracking-tight text-slate-700">{testSuites.subTitle}</p>
         </div>
         <FeaturesMobile features={testSuites.features.items} />
