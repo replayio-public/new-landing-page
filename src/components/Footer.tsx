@@ -41,9 +41,11 @@ const navigation = {
     { name: 'Case Studies', href: '#' }
   ],
   information: [
+    { name: 'Support', href: '#' },
     { name: 'Contact', href: '/contact' },
     { name: 'Resources', href: '#' },
     { name: 'Guides', href: '#' },
+    { name: 'Branding', href: '/branding' },
     { name: 'Security & Privacy', href: '/security-and-privacy' },
     { name: 'Terms of Use', href: '/terms-of-use' }
   ],
