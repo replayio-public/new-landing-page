@@ -64,13 +64,13 @@ const images = {
   tablecheck,
   timh,
   timn,
-  zack,
+  zack
 }
 
 function CaseStudy({
   testimonial,
   colStart,
-  rowEnd,
+  rowEnd
 }: {
   testimonial: any
   colStart: number
@@ -94,11 +94,7 @@ function CaseStudy({
           <div className="font-semibold">{testimonial.author.name}</div>
           <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
         </div>
-        <img
-          className="h-10 w-auto flex-none"
-          src={testimonial.author.logoUrl}
-          alt=""
-        />
+        <img className="h-10 w-auto flex-none" src={testimonial.author.logoUrl} alt="" />
         {/* Remove the duplicate Image component if it's not needed */}
       </figcaption>
     </figure>
@@ -112,7 +108,7 @@ function classNames(...classes: string[]) {
 function Testimonial({
   testimonial,
   columnIdx,
-  columnGroupIdx,
+  columnGroupIdx
 }: {
   testimonial: any
   columnIdx: number
@@ -157,28 +153,22 @@ function FeaturedTestimonial({ testimonial }: { testimonial: any }) {
           <div className="font-semibold">{testimonial.author.name}</div>
           <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
         </div>
-        <img
-          className="h-10 w-auto flex-none"
-          src={testimonial.author.logoUrl}
-          alt=""
-        />
+        <img className="h-10 w-auto flex-none" src={testimonial.author.logoUrl} alt="" />
       </figcaption>
     </figure>
   )
 }
 
 export function Testimonials({ testimonials }: LandingPageFragment) {
-  const newTestimonials = testimonials.testimonials.items.map(
-    (testimonial) => ({
-      body: testimonial.quote,
-      author: {
-        name: testimonial._title,
-        handle: testimonial.title,
-        image: images[testimonial.image as keyof typeof images],
-      },
-      featured: testimonial.featured,
-    }),
-  )
+  const newTestimonials = testimonials.testimonials.items.map((testimonial) => ({
+    body: testimonial.quote,
+    author: {
+      name: testimonial._title,
+      handle: testimonial.title,
+      image: images[testimonial.image as keyof typeof images]
+    },
+    featured: testimonial.featured
+  }))
 
   const newCaseStudies = testimonials.caseStudies.items.map((testimonial) => ({
     body: testimonial.quote,
@@ -186,8 +176,8 @@ export function Testimonials({ testimonials }: LandingPageFragment) {
       name: testimonial._title,
       handle: testimonial.handle,
       image: images[testimonial.image as keyof typeof images],
-      logo: images[testimonial.logo as keyof typeof images],
-    },
+      logo: images[testimonial.logo as keyof typeof images]
+    }
   }))
 
   const breaks = [0, 6, 10, 14, 19]
@@ -198,12 +188,12 @@ export function Testimonials({ testimonials }: LandingPageFragment) {
   const baseHubTestimonials = [
     [
       notFeaturedTestimonials.slice(breaks[0], breaks[1]),
-      notFeaturedTestimonials.slice(breaks[1], breaks[2]),
+      notFeaturedTestimonials.slice(breaks[1], breaks[2])
     ],
     [
       notFeaturedTestimonials.slice(breaks[2], breaks[3]),
-      notFeaturedTestimonials.slice(breaks[3], breaks[4]),
-    ],
+      notFeaturedTestimonials.slice(breaks[3], breaks[4])
+    ]
   ]
 
   return (
@@ -216,7 +206,7 @@ export function Testimonials({ testimonials }: LandingPageFragment) {
           className="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc]"
           style={{
             clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)'
           }}
         />
       </div>
@@ -228,7 +218,7 @@ export function Testimonials({ testimonials }: LandingPageFragment) {
           className="ml-[-22rem] aspect-[1313/771] w-[82.0625rem] flex-none origin-top-right rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] xl:ml-0 xl:mr-[calc(50%-12rem)]"
           style={{
             clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)'
           }}
         />
       </div>
@@ -244,12 +234,7 @@ export function Testimonials({ testimonials }: LandingPageFragment) {
 
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-1 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-3">
           {newCaseStudies.map((caseStudy, index) => (
-            <CaseStudy
-              testimonial={caseStudy}
-              colStart={index + 1}
-              rowEnd={1}
-              key={index}
-            />
+            <CaseStudy testimonial={caseStudy} colStart={index + 1} rowEnd={1} key={index} />
           ))}
         </div>
 
@@ -264,10 +249,7 @@ export function Testimonials({ testimonials }: LandingPageFragment) {
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
           {<FeaturedTestimonial testimonial={featuredTestimonial} />}
           {baseHubTestimonials.map((columnGroup, columnGroupIdx) => (
-            <div
-              key={columnGroupIdx}
-              className="space-y-8 xl:contents xl:space-y-0"
-            >
+            <div key={columnGroupIdx} className="space-y-8 xl:contents xl:space-y-0">
               {columnGroup.map((column, columnIdx) => (
                 <div
                   key={columnIdx}
@@ -277,7 +259,7 @@ export function Testimonials({ testimonials }: LandingPageFragment) {
                         columnIdx === columnGroup.length - 1)
                       ? 'xl:row-span-2'
                       : 'xl:row-start-1',
-                    'space-y-8',
+                    'space-y-8'
                   )}
                 >
                   {column.map((testimonial) => (

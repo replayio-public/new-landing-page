@@ -7,11 +7,9 @@ import s from './section.module.scss'
 
 type SectionProps = JSX.IntrinsicElements['section']
 
-export const Section = forwardRef<HTMLDivElement, SectionProps>(
-  ({ className, ...props }, ref) => (
-    <section className={clsx(s['section'], className)} {...props} ref={ref} />
-  )
-)
+export const Section = forwardRef<HTMLDivElement, SectionProps>(({ className, ...props }, ref) => (
+  <section className={clsx(s['section'], className)} {...props} ref={ref} />
+))
 
 type SectionHeadingProps = {
   title: string
@@ -22,11 +20,7 @@ function sluggify(str: string) {
   return str.toLowerCase().replace(/[^a-z0-9]+/g, '-')
 }
 
-export const SectionHeading: FC<SectionHeadingProps> = ({
-  centered,
-  title,
-  subtitle
-}) => {
+export const SectionHeading: FC<SectionHeadingProps> = ({ centered, title, subtitle }) => {
   const DescriptionElm = typeof subtitle === 'string' ? 'p' : 'div'
 
   return (

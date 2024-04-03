@@ -48,12 +48,7 @@ const bugreportingPlans = [
     type: 'Enterprise',
     cta: 'Email Us',
     link: 'mailto:sales@replay.io',
-    features: [
-      'Ability to host your own storage',
-      'Custom contract',
-      'Dedicated support',
-      'SLAs'
-    ]
+    features: ['Ability to host your own storage', 'Custom contract', 'Dedicated support', 'SLAs']
   }
 ]
 
@@ -112,8 +107,7 @@ const testsuitePlans = [
 ]
 
 export const Hero: FC<{ selectedTab: string }> = ({ selectedTab }) => {
-  const selectedPlans =
-    selectedTab === 'tests' ? testsuitePlans : bugreportingPlans
+  const selectedPlans = selectedTab === 'tests' ? testsuitePlans : bugreportingPlans
 
   return (
     <Section className={s.section}>

@@ -8,15 +8,9 @@ import {
   SelectTrigger,
   SelectItem,
   SelectContent,
-  Select,
+  Select
 } from '~/components/ui/select'
-import {
-  CardTitle,
-  CardDescription,
-  CardHeader,
-  CardFooter,
-  Card,
-} from '~/components/ui/card'
+import { CardTitle, CardDescription, CardHeader, CardFooter, Card } from '~/components/ui/card'
 
 export function CostCalculator() {
   return (
@@ -73,18 +67,11 @@ export function CostCalculator() {
           <Card className="w-full rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-800">
             <CardHeader>
               <CardTitle>Team</CardTitle>
-              <CardDescription className="text-blue-600">
-                $615 / month
-              </CardDescription>
-              <p className="mt-1 text-sm text-gray-500">
-                *Save around $6,041/year on annual plan
-              </p>
+              <CardDescription className="text-blue-600">$615 / month</CardDescription>
+              <p className="mt-1 text-sm text-gray-500">*Save around $6,041/year on annual plan</p>
             </CardHeader>
             <CardFooter className="mt-6 border-t pt-4">
-              <Button
-                className="border-blue-600 text-blue-600"
-                variant="outline"
-              >
+              <Button className="border-blue-600 text-blue-600" variant="outline">
                 Get Started
               </Button>
             </CardFooter>
@@ -92,18 +79,11 @@ export function CostCalculator() {
           <Card className="w-full rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-800">
             <CardHeader>
               <CardTitle className="text-purple-600">Business</CardTitle>
-              <CardDescription className="text-purple-600">
-                $750 / month
-              </CardDescription>
-              <p className="mt-1 text-sm text-gray-500">
-                *Save around $5,351/year on annual plan
-              </p>
+              <CardDescription className="text-purple-600">$750 / month</CardDescription>
+              <p className="mt-1 text-sm text-gray-500">*Save around $5,351/year on annual plan</p>
             </CardHeader>
             <CardFooter className="mt-6 border-t pt-4">
-              <Button
-                className="border-purple-600 text-purple-600"
-                variant="outline"
-              >
+              <Button className="border-purple-600 text-purple-600" variant="outline">
                 Get Started
               </Button>
             </CardFooter>

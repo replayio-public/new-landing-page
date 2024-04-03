@@ -1,5 +1,4 @@
-import { ShortLogo } from "./ShortLogo"
-
+import { ShortLogo } from './ShortLogo'
 
 type LinkItem = {
   name: string
@@ -7,21 +6,22 @@ type LinkItem = {
   icon?: (props: any) => JSX.Element
 }
 
-function Category({ name, links }: { name: string, links: LinkItem[] }) {
-  return <>
-    <h3 className="text-sm font-semibold leading-6 text-gray-900">{name}</h3>
-    <ul role="list" className="mt-6 space-y-4">
-      {links.map((item) => (
-        <li key={item.name}>
-          <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
-            {item.name}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </>
+function Category({ name, links }: { name: string; links: LinkItem[] }) {
+  return (
+    <>
+      <h3 className="text-sm font-semibold leading-6 text-gray-900">{name}</h3>
+      <ul role="list" className="mt-6 space-y-4">
+        {links.map((item) => (
+          <li key={item.name}>
+            <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </>
+  )
 }
-
 
 const navigation = {
   product: [
@@ -31,13 +31,13 @@ const navigation = {
     { name: 'Replay Bug Reports', href: '#' },
     { name: 'Status', href: '#' },
     { name: 'Documentation', href: '#' },
-    { name: 'Pricing', href: '#' },
+    { name: 'Pricing', href: '#' }
   ],
   company: [
     { name: 'Blog', href: '#' },
     { name: 'Changelog', href: '#' },
     { name: 'Engineering blog', href: '#' },
-    { name: 'Case Studies', href: '#' },
+    { name: 'Case Studies', href: '#' }
   ],
   information: [
     { name: 'Support', href: '#' },
@@ -45,7 +45,7 @@ const navigation = {
     { name: 'Guides', href: '#' },
     { name: 'Security & Compliance', href: '#' },
     { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
+    { name: 'Terms', href: '#' }
   ],
   integrations: [
     { name: 'React', href: '#' },
@@ -55,8 +55,7 @@ const navigation = {
     { name: 'Selenium WebDriver', href: '#' },
     { name: 'NextJS', href: '#' },
     { name: 'Apollo GraphQL', href: '#' },
-    { name: 'Zustand', href: '#' },
-
+    { name: 'Zustand', href: '#' }
   ],
   social: [
     {
@@ -70,7 +69,7 @@ const navigation = {
             clipRule="evenodd"
           />
         </svg>
-      ),
+      )
     },
     {
       name: 'Instagram',
@@ -83,7 +82,7 @@ const navigation = {
             clipRule="evenodd"
           />
         </svg>
-      ),
+      )
     },
     {
       name: 'X',
@@ -92,7 +91,7 @@ const navigation = {
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
         </svg>
-      ),
+      )
     },
     {
       name: 'GitHub',
@@ -105,7 +104,7 @@ const navigation = {
             clipRule="evenodd"
           />
         </svg>
-      ),
+      )
     },
     {
       name: 'YouTube',
@@ -118,9 +117,9 @@ const navigation = {
             clipRule="evenodd"
           />
         </svg>
-      ),
-    },
-  ],
+      )
+    }
+  ]
 }
 
 export function Footer() {
@@ -137,14 +136,13 @@ export function Footer() {
           className="ml-[max(20%,10rem)] aspect-[1313/600] w-[70.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc]"
           style={{
             clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)'
           }}
         />
       </div>
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <ShortLogo className='fill-slate-800' style={{ height: "20px", }} />
+          <ShortLogo className="fill-slate-800" style={{ height: '20px' }} />
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
@@ -166,7 +164,9 @@ export function Footer() {
         </div>
         <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
           <div>
-            <h3 className="text-sm font-semibold leading-6 text-gray-900">Subscribe to our newsletter</h3>
+            <h3 className="text-sm font-semibold leading-6 text-gray-900">
+              Subscribe to our newsletter
+            </h3>
             <p className="mt-2 text-sm leading-6 text-gray-600">
               The latest news, articles, and resources, sent to your inbox weekly.
             </p>

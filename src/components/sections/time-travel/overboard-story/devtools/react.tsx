@@ -1,13 +1,7 @@
 import clsx from 'clsx'
 import { forwardRef, Fragment } from 'react'
 
-import {
-  IdentifiedNode,
-  identifyNodes,
-  logContent,
-  ReactNode,
-  SearchBar
-} from '../common'
+import { IdentifiedNode, identifyNodes, logContent, ReactNode, SearchBar } from '../common'
 import s from './devtools.module.scss'
 
 const reactTree = {
@@ -127,16 +121,10 @@ export type ReactDevToolsProps = {
 
 export const ReactDevTools = forwardRef<HTMLDivElement, ReactDevToolsProps>(
   (
-    {
-      activeComponent,
-      onActiveComponentChange,
-      onHoverComponent,
-      tree = identifyNodes(reactTree)
-    },
+    { activeComponent, onActiveComponentChange, onHoverComponent, tree = identifyNodes(reactTree) },
     ref
   ) => {
-    const activeCompHasProps =
-      Object.keys(activeComponent?.props || {}).length > 0
+    const activeCompHasProps = Object.keys(activeComponent?.props || {}).length > 0
 
     return (
       <div className={s['react-dev-tools']} ref={ref}>
@@ -177,19 +165,14 @@ export const ReactDevTools = forwardRef<HTMLDivElement, ReactDevToolsProps>(
             >
               props:
               <ul style={{ paddingLeft: 16, textAlign: 'left' }}>
-                {Object.entries(activeComponent?.props || {}).map(
-                  ([key, value]) => (
-                    <li key={key}>
-                      {key}:{' '}
-                      <span
-                        id="hoverboard-rotate"
-                        style={{ color: 'var(--editor-variable)' }}
-                      >
-                        {logContent(value)}
-                      </span>
-                    </li>
-                  )
-                )}
+                {Object.entries(activeComponent?.props || {}).map(([key, value]) => (
+                  <li key={key}>
+                    {key}:{' '}
+                    <span id="hoverboard-rotate" style={{ color: 'var(--editor-variable)' }}>
+                      {logContent(value)}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
           )}

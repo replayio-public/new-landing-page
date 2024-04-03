@@ -1,8 +1,4 @@
-import {
-  CloudArrowUpIcon,
-  LockClosedIcon,
-  ServerIcon,
-} from '@heroicons/react/20/solid'
+import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
 import screenshotRca from '~/images/screenshots/rca-1.png'
 import Image from 'next/image'
 import { LandingPageFragment } from '~/lib/basehub-queries'
@@ -10,12 +6,10 @@ import { RichText } from 'basehub/react-rich-text'
 
 const images = {
   cloudUp: CloudArrowUpIcon,
-  server: ServerIcon,
+  server: ServerIcon
 }
 
-export default function DynamicAnalysis({
-  dynamicAnalysis,
-}: LandingPageFragment) {
+export default function DynamicAnalysis({ dynamicAnalysis }: LandingPageFragment) {
   return (
     <div className="overflow-hidden border-t border-slate-300 bg-slate-100 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
@@ -28,9 +22,7 @@ export default function DynamicAnalysis({
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 {dynamicAnalysis.title}
               </p>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                {dynamicAnalysis.description}
-              </p>
+              <p className="mt-6 text-lg leading-8 text-gray-600">{dynamicAnalysis.description}</p>
               <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                 {dynamicAnalysis.features.items.map((feature) => {
                   const Icon = images[feature.icon as keyof typeof images]

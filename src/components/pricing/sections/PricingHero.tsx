@@ -6,17 +6,11 @@ import { PricingPageFragment } from '~/lib/basehub-queries'
 import { RichText } from 'basehub/react-rich-text'
 import { SquigglyTitle } from '../../SquigglyTitle'
 
-function CheckIcon({
-  className,
-  ...props
-}: React.ComponentPropsWithoutRef<'svg'>) {
+function CheckIcon({ className, ...props }: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
       aria-hidden="true"
-      className={clsx(
-        'h-6 w-6 flex-none fill-current stroke-current',
-        className,
-      )}
+      className={clsx('h-6 w-6 flex-none fill-current stroke-current', className)}
       {...props}
     >
       <path
@@ -42,7 +36,7 @@ function Plan({
   description,
   href,
   features,
-  featured = false,
+  featured = false
 }: {
   name: string
   price: string
@@ -55,16 +49,11 @@ function Plan({
     <section
       className={clsx(
         'flex flex-col rounded-3xl px-6 sm:px-8',
-        featured ? 'order-first bg-blue-600 py-8 lg:order-none' : 'lg:py-8',
+        featured ? 'order-first bg-blue-600 py-8 lg:order-none' : 'lg:py-8'
       )}
     >
       <h3 className="mt-5 font-display text-lg text-white">{name}</h3>
-      <p
-        className={clsx(
-          'mt-2 text-base',
-          featured ? 'text-white' : 'text-slate-400',
-        )}
-      >
+      <p className={clsx('mt-2 text-base', featured ? 'text-white' : 'text-slate-400')}>
         {description}
       </p>
       <p className="order-first font-display text-5xl font-light tracking-tight text-white">
@@ -74,7 +63,7 @@ function Plan({
         role="list"
         className={clsx(
           'order-last mt-10 flex flex-col gap-y-3 text-sm',
-          featured ? 'text-white' : 'text-slate-200',
+          featured ? 'text-white' : 'text-slate-200'
         )}
       >
         {features.map((feature) => (
@@ -99,16 +88,10 @@ function Plan({
 
 export function PricingHero({ hero }: { hero: PricingPageFragment['hero'] }) {
   return (
-    <section
-      id="pricing"
-      aria-label="Pricing"
-      className="bg-slate-900 py-20 sm:py-32"
-    >
+    <section id="pricing" aria-label="Pricing" className="bg-slate-900 py-20 sm:py-32">
       <Container>
         <div className="md:text-left">
-          <h2 className="text-base font-semibold leading-7 text-indigo-300">
-            Test Suites
-          </h2>
+          <h2 className="text-base font-semibold leading-7 text-indigo-300">Test Suites</h2>
           <SquigglyTitle {...hero.title} />
           <p className="text-md mt-4 text-slate-300 md:max-w-2xl">
             <RichText>{hero.description.json.content}</RichText>
@@ -126,7 +109,7 @@ export function PricingHero({ hero }: { hero: PricingPageFragment['hero'] }) {
               'Connect up to 2 bank accounts',
               'Track up to 15 expenses per month',
               'Manual payroll support',
-              'Export up to 3 reports',
+              'Export up to 3 reports'
             ]}
           />
           <Plan
@@ -141,7 +124,7 @@ export function PricingHero({ hero }: { hero: PricingPageFragment['hero'] }) {
               'Automated payroll support',
               'Export up to 12 reports',
               'Bulk reconcile transactions',
-              'Track in multiple currencies',
+              'Track in multiple currencies'
             ]}
           />
           <Plan
@@ -154,7 +137,7 @@ export function PricingHero({ hero }: { hero: PricingPageFragment['hero'] }) {
               'Connect up to 15 bank accounts',
               'Track up to 200 expenses per month',
               'Automated payroll support',
-              'Export up to 25 reports, including TPS',
+              'Export up to 25 reports, including TPS'
             ]}
           />
         </div>

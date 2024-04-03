@@ -40,10 +40,7 @@ const StyleGuide: FC = () => {
           <tr>
             <td>Typeface</td>
             <td>
-              <a
-                href="https://fonts.google.com/specimen/Space+Grotesk"
-                className={s['link']}
-              >
+              <a href="https://fonts.google.com/specimen/Space+Grotesk" className={s['link']}>
                 Space Grotesk
               </a>
             </td>

@@ -9,13 +9,7 @@ import Head from 'next/head'
 import * as React from 'react'
 
 import { useAppStore } from '~/context/use-app-store'
-import {
-  basementLog,
-  gaTrackingId,
-  isClient,
-  isDev,
-  isProd
-} from '~/lib/constants'
+import { basementLog, gaTrackingId, isClient, isDev, isProd } from '~/lib/constants'
 import { GAScripts, useAppGA } from '~/lib/ga'
 
 /* MISC */
@@ -156,8 +150,7 @@ const App = ({ Component, pageProps, ...rest }: AppProps) => {
   }, [])
 
   const getLayout: GetLayoutFn =
-    (Component as any).getLayout ||
-    (({ Component, pageProps }) => <Component {...pageProps} />)
+    (Component as any).getLayout || (({ Component, pageProps }) => <Component {...pageProps} />)
 
   return (
     <>
@@ -237,8 +230,7 @@ const usePauseAnimationOnTabChange = () => {
 
     window.addEventListener('visibilitychange', handleVisibilityChange)
 
-    return () =>
-      window.removeEventListener('visibilitychange', handleVisibilityChange)
+    return () => window.removeEventListener('visibilitychange', handleVisibilityChange)
   }, [setTabIsFocused])
 }
 

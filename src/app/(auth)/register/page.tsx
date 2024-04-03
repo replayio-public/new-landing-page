@@ -7,7 +7,7 @@ import { SlimLayout } from '~/components/SlimLayout'
 import { type Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Sign Up',
+  title: 'Sign Up'
 }
 
 export default function Register() {
@@ -18,23 +18,15 @@ export default function Register() {
           <Logo className="h-10 w-auto" />
         </Link>
       </div>
-      <h2 className="mt-20 text-lg font-semibold text-gray-900">
-        Get started for free
-      </h2>
+      <h2 className="mt-20 text-lg font-semibold text-gray-900">Get started for free</h2>
       <p className="mt-2 text-sm text-gray-700">
         Already registered?{' '}
-        <Link
-          href="/login"
-          className="font-medium text-blue-600 hover:underline"
-        >
+        <Link href="/login" className="font-medium text-blue-600 hover:underline">
           Sign in
         </Link>{' '}
         to your account.
       </p>
-      <form
-        action="#"
-        className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2"
-      >
+      <form action="#" className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
         <TextField
           label="First name"
           name="first_name"

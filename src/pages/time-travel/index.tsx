@@ -12,8 +12,7 @@ const TimeTravel = () => {
     <PageLayout>
       <div
         style={{
-          background:
-            'linear-gradient(180deg, #000000 0%, #111827 40.63%, #000000 100%)'
+          background: 'linear-gradient(180deg, #000000 0%, #111827 40.63%, #000000 100%)'
         }}
       >
         <div style={{ position: 'relative' }}>

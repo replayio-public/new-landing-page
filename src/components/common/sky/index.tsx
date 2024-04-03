@@ -21,11 +21,7 @@ type SkyElement =
       x2: number
     }
 
-export const Sky = ({
-  withGradient = true,
-  count = 40,
-  withAsteroids = true,
-}) => {
+export const Sky = ({ withGradient = true, count = 40, withAsteroids = true }) => {
   const skyRef = useRef<HTMLDivElement>(null)
   const [measureRef, bounds] = useMeasure()
   const [render, setRender] = useState(false)
@@ -37,15 +33,13 @@ export const Sky = ({
       if (isAsteroid) {
         const x1 = gsap.utils.random(-1, 1)
         const x2 = gsap.utils.random(
-          ...(x1 < 0
-            ? ([0, 1] as [number, number])
-            : ([-1, 0] as [number, number])),
+          ...(x1 < 0 ? ([0, 1] as [number, number]) : ([-1, 0] as [number, number]))
         )
 
         return {
           type: 'asteroid',
           x1,
-          x2,
+          x2
         }
       }
 
@@ -56,7 +50,7 @@ export const Sky = ({
         x: gsap.utils.random(-1, 1),
         y: gsap.utils.random(-1, 1),
         delayFactor: gsap.utils.random(0, 1),
-        isSmall,
+        isSmall
       }
     })
 
@@ -66,15 +60,13 @@ export const Sky = ({
   useEffect(() => {
     if (!skyRef.current || !render || generated === null) return
 
-    const asteroids = skyRef.current.querySelectorAll(
-      `.${s['asteroid-wrapper']}`,
-    )
+    const asteroids = skyRef.current.querySelectorAll(`.${s['asteroid-wrapper']}`)
 
     const tl = gsap.timeline({
       repeat: -1,
       delay: 2,
       repeatDelay: 10,
-      defaults: { ease: 'none', duration: 1.25 },
+      defaults: { ease: 'none', duration: 1.25 }
     })
 
     asteroids.forEach((a) => {
@@ -85,10 +77,10 @@ export const Sky = ({
           ['--progress']: 1,
           ['--brightness-factor']: 1,
           modifiers: {
-            ['--brightness-factor']: (v) => Math.sin(v * Math.PI),
-          },
+            ['--brightness-factor']: (v) => Math.sin(v * Math.PI)
+          }
         },
-        `>+=${gsap.utils.random(0, 1)}`,
+        `>+=${gsap.utils.random(0, 1)}`
       )
     })
 
@@ -112,7 +104,7 @@ export const Sky = ({
   return (
     <div
       className={clsx(s['sky'], {
-        [s['with-gradient'] as string]: withGradient,
+        [s['with-gradient'] as string]: withGradient
       })}
       ref={mergeRefs([skyRef, measureRef])}
     >
@@ -132,7 +124,7 @@ export const Sky = ({
               style={{
                 ['--x1' as string]: g.x1,
                 ['--x2' as string]: g.x2,
-                ['--angle' as string]: `${angle}deg`,
+                ['--angle' as string]: `${angle}deg`
               }}
             >
               <span className={s['asteroid'] as string}>
@@ -147,12 +139,12 @@ export const Sky = ({
           <span
             key={i}
             className={clsx(s['star'], {
-              [s['small'] as string]: g.isSmall,
+              [s['small'] as string]: g.isSmall
             })}
             style={{
               ['--x' as string]: g.x,
               ['--y' as string]: g.y,
-              ['--delay-factor' as string]: g.delayFactor,
+              ['--delay-factor' as string]: g.delayFactor
             }}
           />
         )

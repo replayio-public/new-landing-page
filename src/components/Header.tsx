@@ -10,13 +10,7 @@ import { Container } from '~/components/Container'
 import { Logo } from '~/components/FullLogo'
 import { NavLink } from '~/components/NavLink'
 
-function MobileNavLink({
-  href,
-  children,
-}: {
-  href: string
-  children: React.ReactNode
-}) {
+function MobileNavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <Popover.Button as={Link} href={href} className="block w-full p-2">
       {children}
@@ -35,17 +29,11 @@ function MobileNavIcon({ open }: { open: boolean }) {
     >
       <path
         d="M0 1H14M0 7H14M0 13H14"
-        className={clsx(
-          'origin-center transition',
-          open && 'scale-90 opacity-0',
-        )}
+        className={clsx('origin-center transition', open && 'scale-90 opacity-0')}
       />
       <path
         d="M2 2L12 12M12 2L2 12"
-        className={clsx(
-          'origin-center transition',
-          !open && 'scale-90 opacity-0',
-        )}
+        className={clsx('origin-center transition', !open && 'scale-90 opacity-0')}
       />
     </svg>
   )

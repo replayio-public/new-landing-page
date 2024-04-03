@@ -8,7 +8,7 @@ const stats = [
   { label: 'Founded', value: '2021' },
   { label: 'Employees', value: '37' },
   { label: 'Countries', value: '12' },
-  { label: 'Raised', value: '$25M' },
+  { label: 'Raised', value: '$25M' }
 ]
 
 function Panel({
@@ -17,7 +17,7 @@ function Panel({
   title,
   description,
   orientation,
-  imageSrc,
+  imageSrc
 }: {
   className: string
   superTitle: string
@@ -29,9 +29,7 @@ function Panel({
   const body = (
     <div>
       <div className="text-base leading-7 text-slate-300 lg:max-w-lg">
-        <p className="text-base font-semibold leading-7 text-indigo-400">
-          {superTitle}
-        </p>
+        <p className="text-base font-semibold leading-7 text-indigo-400">{superTitle}</p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-200 sm:text-4xl">
           {title}
         </h1>
@@ -80,9 +78,7 @@ export function Hero({ hero }: { hero: AboutPageFragment['hero'] }) {
             <h2 className="text-3xl  font-bold tracking-tight text-slate-100 sm:text-4xl">
               {hero.title}
             </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-300">
-              {hero.subTitle}
-            </p>
+            <p className="mt-6 text-lg leading-8 text-slate-300">{hero.subTitle}</p>
           </div>
         </div>
 

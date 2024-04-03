@@ -193,14 +193,12 @@ export const testsuitePlans: Plan[] = [
   {
     type: 'Starter',
     icon: team,
-    description:
-      'For small teams with fewer than 50 end-to-end tests running in CI',
+    description: 'For small teams with fewer than 50 end-to-end tests running in CI',
     cta: 'Get in touch',
     content: [
       {
         title: 'Fast start times',
-        description:
-          'Everything in the free tier but faster and with more recordings.'
+        description: 'Everything in the free tier but faster and with more recordings.'
       }
     ]
   },
@@ -216,10 +214,9 @@ export const testsuitePlans: Plan[] = [
         description: (
           <div>
             <p>
-              Decide which recordings are uploaded and processed based on commit
-              and merge strategies. This is most useful once you have a large
-              suite and want to more control over which recordings start
-              quickly.
+              Decide which recordings are uploaded and processed based on commit and merge
+              strategies. This is most useful once you have a large suite and want to more control
+              over which recordings start quickly.
             </p>
           </div>
         )
@@ -229,8 +226,7 @@ export const testsuitePlans: Plan[] = [
   {
     type: 'Enterprise',
     icon: enterprise,
-    description:
-      'For large engineering teams looking to manage their test suite at scale.',
+    description: 'For large engineering teams looking to manage their test suite at scale.',
     cta: 'Email Us',
     link: 'mailto:sales@replay.io',
     content: [
@@ -253,20 +249,13 @@ export const testsuitePlans: Plan[] = [
   }
 ]
 
-const bugreportingTabs = [
-  'Individual',
-  'Team',
-  'Organization',
-  'Enterprise',
-  'Open Source'
-]
+const bugreportingTabs = ['Individual', 'Team', 'Organization', 'Enterprise', 'Open Source']
 const testsuiteTabs = ['Free', 'Starter', 'Pro', 'Enterprise']
 
 export const Plans: FC<{ selectedTab: string }> = ({ selectedTab }) => {
   const [activeKey, setActiveKey] = useState(0)
   const [isStuck, setIsStuck] = useState(false)
-  const selectedPlans =
-    selectedTab === 'tests' ? testsuitePlans : bugreportingPlans
+  const selectedPlans = selectedTab === 'tests' ? testsuitePlans : bugreportingPlans
   const tabs = selectedTab === 'tests' ? testsuiteTabs : bugreportingTabs
 
   const tabsRef = useRef<HTMLDivElement>(null)

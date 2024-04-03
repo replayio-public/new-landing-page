@@ -18,51 +18,51 @@ const logos = {
     {
       image: playwright,
       alt: 'Playwright',
-      height: 45,
+      height: 45
     },
 
     {
       image: cypress,
       alt: 'Cypress',
-      height: 40,
+      height: 40
     },
     {
       image: selenium,
       alt: 'Selenium',
-      height: 35,
-    },
+      height: 35
+    }
   ],
   'ci-environment': [
     {
       image: circle,
       alt: 'CircleCI',
-      height: 32,
+      height: 32
     },
     {
       image: github,
       alt: 'Github',
-      height: 45,
+      height: 45
     },
     {
       image: gitlab,
       alt: 'Gitlab',
-      height: 35,
+      height: 35
     },
     {
       image: sauce,
       alt: 'Sauce Labs',
-      height: 40,
+      height: 40
     },
     {
       image: semaphore,
       alt: 'Semaphore',
-      height: 35,
-    },
+      height: 35
+    }
   ],
   security: [
     { image: gdpr, alt: 'GDPR', height: 45 },
-    { image: soc2, alt: 'SOC2', height: 45 },
-  ],
+    { image: soc2, alt: 'SOC2', height: 45 }
+  ]
 }
 
 export default function FAQ({ faq }: LandingPageFragment) {
@@ -90,17 +90,11 @@ export default function FAQ({ faq }: LandingPageFragment) {
                 <dd className="mt-1 text-gray-600">
                   {
                     <div className="mt-4 flex flex-row items-center">
-                      {logos[question.logos as keyof typeof logos].map(
-                        (logo, i) => (
-                          <div key={i} className="mr-2">
-                            <Image
-                              src={logo.image}
-                              alt={logo.alt}
-                              height={logo.height}
-                            />
-                          </div>
-                        ),
-                      )}
+                      {logos[question.logos as keyof typeof logos].map((logo, i) => (
+                        <div key={i} className="mr-2">
+                          <Image src={logo.image} alt={logo.alt} height={logo.height} />
+                        </div>
+                      ))}
                     </div>
                   }
                 </dd>

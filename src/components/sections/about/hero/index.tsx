@@ -16,9 +16,7 @@ type ScrollProgressBarProps = {
   onProgressUpdate: (num: number | undefined) => void
 }
 
-const ScrollProgressBar: FC<ScrollProgressBarProps> = ({
-  onProgressUpdate,
-}) => {
+const ScrollProgressBar: FC<ScrollProgressBarProps> = ({ onProgressUpdate }) => {
   const isMobile = useMedia('(max-width: 768px)')
 
   const progressRef = useRef<any>(null)
@@ -28,14 +26,14 @@ const ScrollProgressBar: FC<ScrollProgressBarProps> = ({
       {
         position: isMobile ? 8 : 25,
         onInactive: () => onProgressUpdate(undefined),
-        onActive: () => onProgressUpdate(1),
+        onActive: () => onProgressUpdate(1)
       },
       {
         position: isMobile ? 62 : 57,
-        onActive: () => onProgressUpdate(0),
-      },
+        onActive: () => onProgressUpdate(0)
+      }
     ],
-    [onProgressUpdate, isMobile],
+    [onProgressUpdate, isMobile]
   )
 
   useEffect(() => {
@@ -53,7 +51,7 @@ const ScrollProgressBar: FC<ScrollProgressBarProps> = ({
         if (progressRef.current) {
           progressRef.current.update(stState.progress * 100)
         }
-      },
+      }
     })
 
     return () => {
@@ -61,32 +59,23 @@ const ScrollProgressBar: FC<ScrollProgressBarProps> = ({
     }
   }, [])
 
-  return (
-    <ProgressBar
-      ref={progressRef}
-      markers={markers}
-      direction="vertical"
-      animated={false}
-    />
-  )
+  return <ProgressBar ref={progressRef} markers={markers} direction="vertical" animated={false} />
 }
 
 export const Hero: FC = () => {
-  const [activeHeading, setActiveHeading] = useState<number | undefined>(
-    undefined,
-  )
+  const [activeHeading, setActiveHeading] = useState<number | undefined>(undefined)
 
   return (
     <Section id="values" className={s['section']}>
       <TitleAndSubtitle
         title={{
           children: <>About Replay</>,
-          hero: true,
+          hero: true
         }}
         subtitle={{
           className: s.subtitle,
           children:
-            'Learn where Replay is right now and where we are going next. Find out about our values. Meet the team and discover opportunities to join us on our journey.',
+            'Learn where Replay is right now and where we are going next. Find out about our values. Meet the team and discover opportunities to join us on our journey.'
         }}
       />
       <Container size="sm">
@@ -97,22 +86,21 @@ export const Hero: FC = () => {
             image={{
               src: future,
               alt: 'The replay team chatting',
-              placeholder: 'blur',
+              placeholder: 'blur'
             }}
             title="Replay in the future"
             description={
               <>
                 <p>
-                  We see a world where collaborating with Replay is second
-                  nature. When a bug is reported, the bug report includes a
-                  replay. When a test fails, there is a link to the replay. When
-                  a question is asked on Stack Overflow, teams can discuss it
+                  We see a world where collaborating with Replay is second nature. When a bug is
+                  reported, the bug report includes a replay. When a test fails, there is a link to
+                  the replay. When a question is asked on Stack Overflow, teams can discuss it
                   directly in the replay. You see where we’re going with this.
                 </p>
                 <p>
-                  At its heart, Replay provides the unparalleled ability to
-                  understand your software. We are sparking fundamental change
-                  by challenging the ways we think about software development.
+                  At its heart, Replay provides the unparalleled ability to understand your
+                  software. We are sparking fundamental change by challenging the ways we think
+                  about software development.
                 </p>
               </>
             }
@@ -129,21 +117,20 @@ export const Hero: FC = () => {
             image={{
               src: now,
               alt: 'The replay team chatting',
-              placeholder: 'blur',
+              placeholder: 'blur'
             }}
             description={
               <>
                 <p>
-                  We believe people understand what they can see, and if you
-                  cannot see what your software is doing, you cannot understand
-                  it. With Replay, we are making software easier to understand
-                  whether you are writing your first application, or challenging
-                  what’s possible.
+                  We believe people understand what they can see, and if you cannot see what your
+                  software is doing, you cannot understand it. With Replay, we are making software
+                  easier to understand whether you are writing your first application, or
+                  challenging what’s possible.
                 </p>
                 <p>
-                  Great software development isn’t about 10x more output. It’s
-                  about 10x more insight, insight derived from being able to
-                  visualize, communicate, and collaborate 10x more effectively.
+                  Great software development isn’t about 10x more output. It’s about 10x more
+                  insight, insight derived from being able to visualize, communicate, and
+                  collaborate 10x more effectively.
                 </p>
               </>
             }

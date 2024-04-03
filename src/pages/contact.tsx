@@ -10,9 +10,7 @@ const Contact = () => {
       <Script
         src="https://tally.so/widgets/embed.js"
         strategy="lazyOnload"
-        onLoad={() =>
-          console.log(`script loaded correctly, window.Tally is now available`)
-        }
+        onLoad={() => console.log(`script loaded correctly, window.Tally is now available`)}
       />
 
       <PageLayout>

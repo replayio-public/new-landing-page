@@ -15,11 +15,7 @@ export const Title = forwardRef<HTMLHeadingElement, TitleProps>(
     const Comp = as
 
     return (
-      <Comp
-        {...rest}
-        className={clsx(s.title, className, { [s.hero as string]: hero })}
-        ref={ref}
-      >
+      <Comp {...rest} className={clsx(s.title, className, { [s.hero as string]: hero })} ref={ref}>
         {children}
       </Comp>
     )

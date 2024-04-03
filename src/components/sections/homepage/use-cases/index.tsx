@@ -10,8 +10,8 @@ const UseCases = () => {
     title: (
       <>
         <span>
-          Bugs reported with Replay are fully actionable and quickly understood
-          by developers. Never close issues again for a lack of information.
+          Bugs reported with Replay are fully actionable and quickly understood by developers. Never
+          close issues again for a lack of information.
         </span>
       </>
     ),
@@ -25,8 +25,7 @@ const UseCases = () => {
       </>
     ),
     videoPoster: '/images/homepage/bug-report.png',
-    videoHref:
-      'https://stream.mux.com/OirCesKgI2uAA01r9AvrO1Vh6VaJ46sf00tozLJNbAWrY.m3u8'
+    videoHref: 'https://stream.mux.com/OirCesKgI2uAA01r9AvrO1Vh6VaJ46sf00tozLJNbAWrY.m3u8'
   }
 
   const testSuiteData = {
@@ -34,8 +33,8 @@ const UseCases = () => {
     title: (
       <>
         <span>
-          Stop wasting time looking at failures you can’t figure out, or
-          suppressing tests because they don’t pass reliably.
+          Stop wasting time looking at failures you can’t figure out, or suppressing tests because
+          they don’t pass reliably.
         </span>
       </>
     ),
@@ -54,8 +53,7 @@ const UseCases = () => {
       </>
     ),
     videoPoster: '/images/homepage/flaky-tests.png',
-    videoHref:
-      'https://stream.mux.com/M8pzl7FMFEocw3LEZ523ylfk3Db8019hNP2yfB018JUmI.m3u8'
+    videoHref: 'https://stream.mux.com/M8pzl7FMFEocw3LEZ523ylfk3Db8019hNP2yfB018JUmI.m3u8'
   }
 
   return (
@@ -71,12 +69,7 @@ const UseCases = () => {
           }}
         />
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <Image
-            src={bugReportData.videoPoster}
-            alt="Bug Report Video"
-            width={900}
-            height={504}
-          />
+          <Image src={bugReportData.videoPoster} alt="Bug Report Video" width={900} height={504} />
         </div>
       </section>
 
@@ -94,12 +87,7 @@ const UseCases = () => {
           }}
         />
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <Image
-            src={testSuiteData.videoPoster}
-            alt="Test Suite Video"
-            width={900}
-            height={504}
-          />
+          <Image src={testSuiteData.videoPoster} alt="Test Suite Video" width={900} height={504} />
         </div>
       </section>
       <br />

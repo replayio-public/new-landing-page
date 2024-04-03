@@ -10,9 +10,7 @@ type BaseProps = {
   className?: string
 }
 
-type TabProps = BaseProps &
-  TabsPrimitives.TabsTriggerProps &
-  HTMLAttributes<HTMLDivElement>
+type TabProps = BaseProps & TabsPrimitives.TabsTriggerProps & HTMLAttributes<HTMLDivElement>
 
 export const Tab: FC<TabProps> = ({ children, className, ...rest }) => (
   <TabsPrimitives.Trigger className={clsx(s['tab'], className)} {...rest}>
@@ -25,11 +23,7 @@ type TabListProps = BaseProps & TabsPrimitives.TabsListProps
 export const TabList = forwardRef<HTMLDivElement, TabListProps>(
   ({ children, className, ...rest }, ref) => (
     <ScrollXGradient offset={32} className={s['wrapper']}>
-      <TabsPrimitives.List
-        className={clsx(s['tabs'], className)}
-        {...rest}
-        ref={ref}
-      >
+      <TabsPrimitives.List className={clsx(s['tabs'], className)} {...rest} ref={ref}>
         {children}
       </TabsPrimitives.List>
     </ScrollXGradient>

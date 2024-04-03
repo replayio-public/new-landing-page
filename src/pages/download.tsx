@@ -40,10 +40,7 @@ const Download = () => {
             />
           </svg>
 
-          <a
-            href="/downloads/windows-replay.zip"
-            className={s['downloadButton']}
-          >
+          <a href="/downloads/windows-replay.zip" className={s['downloadButton']}>
             Download for Windows (Beta)
           </a>
         </div>
@@ -65,10 +62,7 @@ const Download = () => {
             <path d="M7.02586 4.45333C6.77626 4.6016 6.53934 4.77051 6.31799 4.95836C6.27064 4.99321 6.23199 5.03874 6.20546 5.0912C6.17893 5.14367 6.16553 5.20155 6.16553 5.26034C6.16553 5.31913 6.17893 5.37713 6.20546 5.42959C6.23199 5.48206 6.27064 5.52759 6.31799 5.56243C6.57262 5.81161 6.84975 6.03683 7.14565 6.23525C7.26811 6.33977 7.42072 6.4026 7.58126 6.41471C7.7418 6.42682 7.9019 6.3876 8.03865 6.30263C8.4336 6.12978 9.11497 5.74507 9.11497 5.74507C9.11497 5.74507 9.85563 5.14889 9.11497 4.81248C8.37432 4.47607 8.51957 4.50481 8.03865 4.32174C7.87646 4.2381 7.69326 4.2059 7.51229 4.2294C7.33132 4.25289 7.16132 4.33105 7.02586 4.45333Z" />
           </svg>
 
-          <a
-            href="/downloads/linux-replay.tar.bz2"
-            className={s['downloadButton']}
-          >
+          <a href="/downloads/linux-replay.tar.bz2" className={s['downloadButton']}>
             Download for Linux
           </a>
         </div>

@@ -29,10 +29,9 @@ export const Work: FC = () => {
             <Image src={codeImg} alt="Code icon" />
             <h2>The code behind our code</h2>
             <p>
-              Integrity, honesty, and decency. Our principles are not
-              aspirations but constraints. They lie behind every action we take,
-              or decision we make. They ensure that we remain true to our course
-              and true to ourselves.
+              Integrity, honesty, and decency. Our principles are not aspirations but constraints.
+              They lie behind every action we take, or decision we make. They ensure that we remain
+              true to our course and true to ourselves.
             </p>
             <ButtonLink
               href="https://replayio.notion.site/Replay-s-Principles-Values-7b20c16430524356a28bbe842b1d5f06#4af5092d36214ce4a780e9c144014e58"
@@ -48,10 +47,9 @@ export const Work: FC = () => {
               Our values anchor our aspirations and drive us forward.
               <br />
               <br />
-              We are making software development faster, more accessible, more
-              inclusive, and more exciting. We are dedicated to building a world
-              where everyone is technically literate, a world where we are
-              better equipped to overcome the greatest of challenges.
+              We are making software development faster, more accessible, more inclusive, and more
+              exciting. We are dedicated to building a world where everyone is technically literate,
+              a world where we are better equipped to overcome the greatest of challenges.
             </p>
             <ButtonLink
               href="https://replayio.notion.site/Replay-s-Principles-Values-7b20c16430524356a28bbe842b1d5f06#4af5092d36214ce4a780e9c144014e58"
@@ -73,10 +71,7 @@ export const Work: FC = () => {
               <br />
               Check out our open roles.
             </p>
-            <ButtonLink
-              href="mailto:hiring@replay.io"
-              variant="tertiary-inverted-alt"
-            >
+            <ButtonLink href="mailto:hiring@replay.io" variant="tertiary-inverted-alt">
               hiring@replay.io
             </ButtonLink>
           </div>

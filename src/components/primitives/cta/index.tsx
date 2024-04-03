@@ -1,13 +1,7 @@
 import type * as Polymorphic from '@radix-ui/react-polymorphic'
 import clsx from 'clsx'
 import Link, { LinkProps as NextLinkProps } from 'next/link'
-import {
-  forwardRef,
-  useEffect,
-  useImperativeHandle,
-  useMemo,
-  useRef
-} from 'react'
+import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef } from 'react'
 import mergeRefs from 'react-merge-refs'
 
 import type { IconNames } from '~/components/icons'
@@ -29,14 +23,7 @@ type ButtonProps = {
 
 export const Button = forwardRef(
   (
-    {
-      as: Comp = 'button',
-      mode = 'primary',
-      size = 'small',
-      iconPrefix,
-      iconSuffix,
-      ...rest
-    },
+    { as: Comp = 'button', mode = 'primary', size = 'small', iconPrefix, iconSuffix, ...rest },
     ref
   ) => {
     const { elementRef } = useMouseTracker<HTMLButtonElement>({
@@ -66,23 +53,16 @@ export const Button = forwardRef(
         ref={mergeRefs([ref, elementRef])}
       >
         <div className={s.content}>
-          {iconPrefix && (
-            <span className={s.iconPrefix}>{IconsLibrary[iconPrefix]}</span>
-          )}
+          {iconPrefix && <span className={s.iconPrefix}>{IconsLibrary[iconPrefix]}</span>}
 
           {rest.children}
 
-          {iconSuffix && (
-            <span className={s.iconSuffix}>{IconsLibrary[iconSuffix]}</span>
-          )}
+          {iconSuffix && <span className={s.iconSuffix}>{IconsLibrary[iconSuffix]}</span>}
         </div>
       </Comp>
     )
   }
-) as Polymorphic.ForwardRefComponent<
-  'button',
-  ButtonProps & JSX.IntrinsicElements['button']
->
+) as Polymorphic.ForwardRefComponent<'button', ButtonProps & JSX.IntrinsicElements['button']>
 
 export type ButtonLinkProps = ButtonProps &
   Omit<JSX.IntrinsicElements['a'], 'href' | 'ref'> &

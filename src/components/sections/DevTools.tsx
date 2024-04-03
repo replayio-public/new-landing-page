@@ -17,13 +17,11 @@ const images = {
   expenses: console,
   payroll: react,
   reports: testSteps,
-  'vat-returns': network,
+  'vat-returns': network
 }
 
 export function DevTools({ devTools }: LandingPageFragment) {
-  let [tabOrientation, setTabOrientation] = useState<'horizontal' | 'vertical'>(
-    'horizontal',
-  )
+  let [tabOrientation, setTabOrientation] = useState<'horizontal' | 'vertical'>('horizontal')
 
   useEffect(() => {
     let lgMediaQuery = window.matchMedia('(min-width: 1024px)')
@@ -79,7 +77,7 @@ export function DevTools({ devTools }: LandingPageFragment) {
                         'group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6',
                         selectedIndex === featureIndex
                           ? 'bg-white lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10'
-                          : 'hover:bg-white/10 lg:hover:bg-white/5',
+                          : 'hover:bg-white/10 lg:hover:bg-white/5'
                       )}
                     >
                       <h3>
@@ -88,7 +86,7 @@ export function DevTools({ devTools }: LandingPageFragment) {
                             'font-display text-lg ui-not-focus-visible:outline-none',
                             selectedIndex === featureIndex
                               ? 'text-blue-600 lg:text-white'
-                              : 'text-blue-100 hover:text-white lg:text-white',
+                              : 'text-blue-100 hover:text-white lg:text-white'
                           )}
                         >
                           <span className="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none" />
@@ -100,7 +98,7 @@ export function DevTools({ devTools }: LandingPageFragment) {
                           'mt-2 hidden text-sm lg:block',
                           selectedIndex === featureIndex
                             ? 'text-white'
-                            : 'text-blue-100 group-hover:text-white',
+                            : 'text-blue-100 group-hover:text-white'
                         )}
                       >
                         {feature.subTitle}
@@ -121,11 +119,7 @@ export function DevTools({ devTools }: LandingPageFragment) {
                     <div className="mt-10 w-[45rem] overflow-hidden rounded-xl shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
                       <Image
                         className="w-full"
-                        src={
-                          images[
-                            (feature.image as keyof typeof images) || 'console'
-                          ]
-                        }
+                        src={images[(feature.image as keyof typeof images) || 'console']}
                         alt=""
                         priority
                         sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"

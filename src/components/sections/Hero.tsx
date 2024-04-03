@@ -41,9 +41,7 @@ export function Hero({ hero }: LandingPageFragment) {
         <BaseHubButton {...hero.contactUsLink} />
       </div>
       <div className="mt-36 lg:mt-44">
-        <p className="font-display text-base text-slate-900">
-          {hero.logosTitle}
-        </p>
+        <p className="font-display text-base text-slate-900">{hero.logosTitle}</p>
         <ul
           role="list"
           className="mt-8 flex items-center justify-center gap-x-8 saturate-0 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0"
@@ -53,13 +51,13 @@ export function Hero({ hero }: LandingPageFragment) {
               { name: 'WeightsBiases', logo: logoWeightsAndBiases },
               { name: 'Vercel', logo: logoVercel },
               { name: 'Metabase', logo: logoMetabase },
-              { name: 'Glide', logo: logoGlide },
+              { name: 'Glide', logo: logoGlide }
             ],
             [
               { name: 'Code Sandbox', logo: logoCodeSandbox },
               { name: 'React', logo: logoReact },
-              { name: 'Apollo GraphQL', logo: logoApolloGraphql },
-            ],
+              { name: 'Apollo GraphQL', logo: logoApolloGraphql }
+            ]
           ].map((group, groupIndex) => (
             <li key={groupIndex}>
               <ul

@@ -43,9 +43,7 @@ export const MuxVideo = React.forwardRef<HTMLVideoElement, MuxVideoProps>(
       }
     }, [videoRef, muxSrc])
 
-    return (
-      <video ref={mergeRefs([videoRef, ref])} className={className} {...rest} />
-    )
+    return <video ref={mergeRefs([videoRef, ref])} className={className} {...rest} />
   }
 )
 
