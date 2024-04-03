@@ -23,9 +23,7 @@ export function Hero({ hero }: LandingPageFragment) {
       <h1 className="mx-auto max-w-4xl font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">
         Move fast{' '}
         <span className="relative whitespace-nowrap">
-          <span className={`${styles.colorStandardGreen} relative`}>
-            without
-          </span>
+          <span className={`${styles.colorStandardGreen} relative`}>without</span>
         </span>{' '}
         breaking things.
       </h1>
@@ -38,9 +36,7 @@ export function Hero({ hero }: LandingPageFragment) {
         <BaseHubButton {...hero.contactUsLink} />
       </div>
       <div className="mt-36 lg:mt-44">
-        <p className="hidden font-display text-base text-slate-900">
-          {hero.logosTitle}
-        </p>
+        <p className="hidden font-display text-base text-slate-900">{hero.logosTitle}</p>
 
         <ul
           role="list"
@@ -51,13 +47,13 @@ export function Hero({ hero }: LandingPageFragment) {
               { name: 'WeightsBiases', logo: logoWeightsAndBiases },
               { name: 'Vercel', logo: logoVercel },
               { name: 'Metabase', logo: logoMetabase },
-              { name: 'Glide', logo: logoGlide },
+              { name: 'Glide', logo: logoGlide }
             ],
             [
               { name: 'Code Sandbox', logo: logoCodeSandbox },
               { name: 'React', logo: logoReact },
-              { name: 'Apollo GraphQL', logo: logoApolloGraphql },
-            ],
+              { name: 'Apollo GraphQL', logo: logoApolloGraphql }
+            ]
           ].map((group, groupIndex) => (
             <li key={groupIndex}>
               <ul
