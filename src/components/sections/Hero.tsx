@@ -43,7 +43,7 @@ export function Hero({ hero }: LandingPageFragment) {
         <BaseHubButton {...hero.contactUsLink} />
       </div>
       <div className="mt-36 lg:mt-44">
-        <p className="font-display text-base text-slate-900">
+        <p className="hidden font-display text-base text-slate-900">
           {hero.logosTitle}
         </p>
         <ul
@@ -78,8 +78,8 @@ export function Hero({ hero }: LandingPageFragment) {
           ))}
         </ul>
       </div>
-      <div className="absolute inset-x-0 top-0 -z-10 ">
-        <Texture />
+      <div className={styles.quoteCallout}>
+        "This sure would be a great place to put a compelling quote" – Jon Bell
       </div>
     </Container>
   )

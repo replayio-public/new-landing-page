@@ -41,7 +41,7 @@ export default function DynamicAnalysis({
                     <div key={feature._title} className="relative pl-9">
                       <dt className="inline font-semibold text-gray-900">
                         <Icon
-                          className="absolute left-1 top-1 h-5 w-5 text-indigo-600"
+                          className="absolute left-1 top-1 h-5 w-5 text-green-600"
                           aria-hidden="true"
                         />
                       </dt>{' '}

@@ -1,5 +1,4 @@
-import { ShortLogo } from "./ShortLogo"
-
+import { ShortLogo } from './ShortLogo'
 
 type LinkItem = {
   name: string
@@ -7,21 +6,25 @@ type LinkItem = {
   icon?: (props: any) => JSX.Element
 }
 
-function Category({ name, links }: { name: string, links: LinkItem[] }) {
-  return <>
-    <h3 className="text-sm font-semibold leading-6 text-gray-900">{name}</h3>
-    <ul role="list" className="mt-6 space-y-4">
-      {links.map((item) => (
-        <li key={item.name}>
-          <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
-            {item.name}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </>
+function Category({ name, links }: { name: string; links: LinkItem[] }) {
+  return (
+    <>
+      <h3 className="text-sm font-semibold leading-6 text-gray-900">{name}</h3>
+      <ul role="list" className="mt-6 space-y-4">
+        {links.map((item) => (
+          <li key={item.name}>
+            <a
+              href={item.href}
+              className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </>
+  )
 }
-
 
 const navigation = {
   product: [
@@ -56,7 +59,6 @@ const navigation = {
     { name: 'NextJS', href: '#' },
     { name: 'Apollo GraphQL', href: '#' },
     { name: 'Zustand', href: '#' },
-
   ],
   social: [
     {
@@ -125,7 +127,10 @@ const navigation = {
 
 export function Footer() {
   return (
-    <footer className="relative isolate bg-white" aria-labelledby="footer-heading">
+    <footer
+      className="relative isolate bg-white"
+      aria-labelledby="footer-heading"
+    >
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -142,9 +147,8 @@ export function Footer() {
         />
       </div>
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <ShortLogo className='fill-slate-800' style={{ height: "20px", }} />
+          <ShortLogo className="fill-slate-800" style={{ height: '20px' }} />
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
@@ -166,9 +170,12 @@ export function Footer() {
         </div>
         <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
           <div>
-            <h3 className="text-sm font-semibold leading-6 text-gray-900">Subscribe to our newsletter</h3>
+            <h3 className="text-sm font-semibold leading-6 text-gray-900">
+              Subscribe to our newsletter
+            </h3>
             <p className="mt-2 text-sm leading-6 text-gray-600">
-              The latest news, articles, and resources, sent to your inbox weekly.
+              The latest news, articles, and resources, sent to your inbox
+              weekly.
             </p>
           </div>
           <form className="mt-6 sm:flex sm:max-w-md lg:mt-0">
@@ -187,7 +194,7 @@ export function Footer() {
             <div className="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
               <button
                 type="submit"
-                className="flex w-full items-center justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full items-center justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
               >
                 Subscribe
               </button>
@@ -197,7 +204,11 @@ export function Footer() {
         <div className="mt-8 border-t border-gray-900/10 pt-8 md:flex md:items-center md:justify-between">
           <div className="flex space-x-6 md:order-2">
             {navigation.social.map((item) => (
-              <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-gray-400 hover:text-gray-500"
+              >
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true" />
               </a>
