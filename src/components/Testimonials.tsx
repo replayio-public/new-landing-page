@@ -1,40 +1,71 @@
-import { LandingPageFragment } from "@/lib/basehub-queries"
-import Image from "next/image"
+import { LandingPageFragment } from '@/lib/basehub-queries'
+import Image from 'next/image'
 
-import alex from "@/images/testimonials/alex.png"
-import algodaily from "@/images/testimonials/algodaily.png"
-import amjad from "@/images/testimonials/amjad.png"
-import cypress from "@/images/testimonials/cypress.png"
-import dan from "@/images/testimonials/dan-abramov.png"
-import david from "@/images/testimonials/david.png"
-import dom from "@/images/testimonials/dom.png"
-import erik from "@/images/testimonials/erik.png"
-import gleb from "@/images/testimonials/gleb.jpg"
-import glide from "@/images/testimonials/glide-apps.png"
-import guillermo from "@/images/testimonials/guillermo-rauch.jpg"
-import harald from "@/images/testimonials/harald.jpg"
-import ives from "@/images/testimonials/ives.png"
-import jacob from "@/images/testimonials/jacob.jpg"
-import jj from "@/images/testimonials/jj-kasper.png"
-import kenneth from "@/images/testimonials/kenneth.jpg"
-import lenz from "@/images/testimonials/lenz.png"
-import marke from "@/images/testimonials/mark-erikson.png"
-import markp from "@/images/testimonials/mark-probst.jpg"
-import mateusz from "@/images/testimonials/mateusz.png"
-import matt from "@/images/testimonials/matt.png"
-import ryan from "@/images/testimonials/ryan-carniato.png"
-import sebastian from "@/images/testimonials/sebastian.png"
-import shane from "@/images/testimonials/shane.jpg"
-import shawn from "@/images/testimonials/shawn.png"
-import simeon from "@/images/testimonials/simeon.jpg"
-import timh from "@/images/testimonials/tim-haines.jpg"
-import timn from "@/images/testimonials/tim-neutkins.png"
-import zack from "@/images/testimonials/zack-rosen.jpg"
-import pantheon from "@/images/testimonials/pantheon.png"
-import tablecheck from "@/images/testimonials/tablecheck.png"
+import alex from '@/images/testimonials/alex.png'
+import algodaily from '@/images/testimonials/algodaily.png'
+import amjad from '@/images/testimonials/amjad.png'
+import cypress from '@/images/testimonials/cypress.png'
+import dan from '@/images/testimonials/dan-abramov.png'
+import david from '@/images/testimonials/david.png'
+import dom from '@/images/testimonials/dom.png'
+import erik from '@/images/testimonials/erik.png'
+import gleb from '@/images/testimonials/gleb.jpg'
+import glide from '@/images/testimonials/glide-apps.png'
+import guillermo from '@/images/testimonials/guillermo-rauch.jpg'
+import harald from '@/images/testimonials/harald.jpg'
+import ives from '@/images/testimonials/ives.png'
+import jacob from '@/images/testimonials/jacob.jpg'
+import jj from '@/images/testimonials/jj-kasper.png'
+import kenneth from '@/images/testimonials/kenneth.jpg'
+import lenz from '@/images/testimonials/lenz.png'
+import marke from '@/images/testimonials/mark-erikson.png'
+import markp from '@/images/testimonials/mark-probst.jpg'
+import mateusz from '@/images/testimonials/mateusz.png'
+import matt from '@/images/testimonials/matt.png'
+import ryan from '@/images/testimonials/ryan-carniato.png'
+import sebastian from '@/images/testimonials/sebastian.png'
+import shane from '@/images/testimonials/shane.jpg'
+import shawn from '@/images/testimonials/shawn.png'
+import simeon from '@/images/testimonials/simeon.jpg'
+import timh from '@/images/testimonials/tim-haines.jpg'
+import timn from '@/images/testimonials/tim-neutkins.png'
+import zack from '@/images/testimonials/zack-rosen.jpg'
+import pantheon from '@/images/testimonials/pantheon.png'
+import tablecheck from '@/images/testimonials/tablecheck.png'
 
-const images = { alex, algodaily, amjad, cypress, dan, david, dom, erik, gleb, glide, guillermo, harald, ives, jacob, jj, kenneth, lenz, marke, markp, mateusz, matt, pantheon, ryan, sebastian, shane, shawn, simeon, tablecheck, timh, timn, zack }
-
+const images = {
+  alex,
+  algodaily,
+  amjad,
+  cypress,
+  dan,
+  david,
+  dom,
+  erik,
+  gleb,
+  glide,
+  guillermo,
+  harald,
+  ives,
+  jacob,
+  jj,
+  kenneth,
+  lenz,
+  marke,
+  markp,
+  mateusz,
+  matt,
+  pantheon,
+  ryan,
+  sebastian,
+  shane,
+  shawn,
+  simeon,
+  tablecheck,
+  timh,
+  timn,
+  zack,
+}
 
 function CaseStudy({
   testimonial,
@@ -47,13 +78,17 @@ function CaseStudy({
 }) {
   return (
     <figure
-      className={`rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 xl:col-start-${colStart} xl:row-end-${rowEnd}`}
+      className={`flex min-h-[desiredHeight] flex-col justify-between rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 xl:col-start-${colStart} xl:row-end-${rowEnd}`}
     >
       <blockquote className="p-6 text-lg font-semibold leading-7 tracking-tight text-gray-900 sm:p-12 sm:text-xl sm:leading-8">
         <p>{`“${testimonial.body}”`}</p>
       </blockquote>
       <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
-        <Image src={testimonial.author.image} className="h-10 w-10 rounded-full bg-gray-50" alt="" />
+        <Image
+          src={testimonial.author.image}
+          className="h-10 w-10 rounded-full bg-gray-50"
+          alt=""
+        />
 
         <div className="flex-auto">
           <div className="font-semibold">{testimonial.author.name}</div>
@@ -64,8 +99,7 @@ function CaseStudy({
           src={testimonial.author.logoUrl}
           alt=""
         />
-        <Image src={testimonial.author.logo} className="h-10 w-auto flex-none" alt="" />
-
+        {/* Remove the duplicate Image component if it's not needed */}
       </figcaption>
     </figure>
   )
@@ -75,86 +109,102 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-function Testimonial({ testimonial, columnIdx, columnGroupIdx }: { testimonial: any, columnIdx: number, columnGroupIdx: number }) {
-  return <figure
-    key={`${testimonial.author.handle}-${columnIdx}-${columnGroupIdx}`}
-    className="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5"
-  >
-    <blockquote className="text-gray-900">
-      <p>{`“${testimonial.body}”`}</p>
-    </blockquote>
-    <figcaption className="mt-6 flex items-center gap-x-4">
-      <Image src={testimonial.author.image} className="h-10 w-10 rounded-full bg-gray-50" alt="" />
-      <div>
-        <div className="font-semibold">
-          {testimonial.author.name}
+function Testimonial({
+  testimonial,
+  columnIdx,
+  columnGroupIdx,
+}: {
+  testimonial: any
+  columnIdx: number
+  columnGroupIdx: number
+}) {
+  return (
+    <figure
+      key={`${testimonial.author.handle}-${columnIdx}-${columnGroupIdx}`}
+      className="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5"
+    >
+      <blockquote className="text-gray-900">
+        <p>{`“${testimonial.body}”`}</p>
+      </blockquote>
+      <figcaption className="mt-6 flex items-center gap-x-4">
+        <Image
+          src={testimonial.author.image}
+          className="h-10 w-10 rounded-full bg-gray-50"
+          alt=""
+        />
+        <div>
+          <div className="font-semibold">{testimonial.author.name}</div>
+          <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
         </div>
-        <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
-      </div>
-    </figcaption>
-  </figure>
+      </figcaption>
+    </figure>
+  )
 }
 
 function FeaturedTestimonial({ testimonial }: { testimonial: any }) {
-  return <figure className="rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 sm:col-span-2 xl:col-start-2 xl:row-end-1">
-    <blockquote className="p-6 text-lg font-semibold leading-7 tracking-tight text-gray-900 sm:p-12 sm:text-xl sm:leading-8">
-      <p>{`“${testimonial.body}”`}</p>
-    </blockquote>
-    <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
-
-      <Image src={testimonial.author.image} className="h-10 w-10 rounded-full bg-gray-50" alt="" />
-      <div className="flex-auto">
-        <div className="font-semibold">
-          {testimonial.author.name}
+  return (
+    <figure className="rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 sm:col-span-2 xl:col-start-2 xl:row-end-1">
+      <blockquote className="p-6 text-lg font-semibold leading-7 tracking-tight text-gray-900 sm:p-12 sm:text-xl sm:leading-8">
+        <p>{`“${testimonial.body}”`}</p>
+      </blockquote>
+      <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
+        <Image
+          src={testimonial.author.image}
+          className="h-10 w-10 rounded-full bg-gray-50"
+          alt=""
+        />
+        <div className="flex-auto">
+          <div className="font-semibold">{testimonial.author.name}</div>
+          <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
         </div>
-        <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
-      </div>
-      <img
-        className="h-10 w-auto flex-none"
-        src={testimonial.author.logoUrl}
-        alt=""
-      />
-    </figcaption>
-  </figure>
+        <img
+          className="h-10 w-auto flex-none"
+          src={testimonial.author.logoUrl}
+          alt=""
+        />
+      </figcaption>
+    </figure>
+  )
 }
 
 export function Testimonials({ testimonials }: LandingPageFragment) {
-  const newTestimonials = testimonials.testimonials.items.map(testimonial => ({
-    body: testimonial.quote,
-    author: {
-      name: testimonial._title,
-      handle: testimonial.title,
-      image: images[testimonial.image as keyof typeof images]
-    },
-    featured: testimonial.featured
-  }))
+  const newTestimonials = testimonials.testimonials.items.map(
+    (testimonial) => ({
+      body: testimonial.quote,
+      author: {
+        name: testimonial._title,
+        handle: testimonial.title,
+        image: images[testimonial.image as keyof typeof images],
+      },
+      featured: testimonial.featured,
+    }),
+  )
 
-  const newCaseStudies = testimonials.caseStudies.items.map(testimonial => ({
+  const newCaseStudies = testimonials.caseStudies.items.map((testimonial) => ({
     body: testimonial.quote,
     author: {
       name: testimonial._title,
       handle: testimonial.handle,
       image: images[testimonial.image as keyof typeof images],
-      logo: images[testimonial.logo as keyof typeof images]
+      logo: images[testimonial.logo as keyof typeof images],
     },
   }))
 
   const breaks = [0, 6, 10, 14, 19]
 
-  const featuredTestimonial = newTestimonials.filter(t => t.featured)[0];
-  const notFeaturedTestimonials = newTestimonials.filter(t => !t.featured)
+  const featuredTestimonial = newTestimonials.filter((t) => t.featured)[0]
+  const notFeaturedTestimonials = newTestimonials.filter((t) => !t.featured)
 
   const baseHubTestimonials = [
     [
       notFeaturedTestimonials.slice(breaks[0], breaks[1]),
-      notFeaturedTestimonials.slice(breaks[1], breaks[2])
+      notFeaturedTestimonials.slice(breaks[1], breaks[2]),
     ],
     [
       notFeaturedTestimonials.slice(breaks[2], breaks[3]),
-      notFeaturedTestimonials.slice(breaks[3], breaks[4])
-    ]
+      notFeaturedTestimonials.slice(breaks[3], breaks[4]),
+    ],
   ]
-
 
   return (
     <div className="relative isolate bg-white pb-32 pt-24 sm:pt-32">
@@ -231,7 +281,11 @@ export function Testimonials({ testimonials }: LandingPageFragment) {
                   )}
                 >
                   {column.map((testimonial) => (
-                    <Testimonial testimonial={testimonial} columnIdx={columnIdx} columnGroupIdx={columnGroupIdx} />
+                    <Testimonial
+                      testimonial={testimonial}
+                      columnIdx={columnIdx}
+                      columnGroupIdx={columnGroupIdx}
+                    />
                   ))}
                 </div>
               ))}
