@@ -4,8 +4,8 @@ import { Button } from '~/components/Button'
 import { Container } from '~/components/Container'
 import { PricingPageFragment } from '~/lib/basehub-queries'
 import { RichText } from 'basehub/react-rich-text'
-import { SquigglyTitle } from '../../SquigglyTitle'
-import styles from '../../styles/Landingpage.module.css'
+import { SquigglyTitle } from '~/components/SquigglyTitle'
+import styles from '~/styles/Landingpage.module.css'
 
 function CheckIcon({ className, ...props }: React.ComponentPropsWithoutRef<'svg'>) {
   return (
