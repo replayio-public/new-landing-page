@@ -1,9 +1,11 @@
 import { ReactNode } from 'react'
+import { type ClassValue, clsx } from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
 import { isClient } from '~/lib/constants'
 
 export const formatError = (
-  error: unknown
+  error: unknown,
 ): { message: string; name?: string } => {
   try {
     if (error instanceof Error) {
@@ -19,7 +21,7 @@ export const isApiSupported = (api: string) => isClient && api in window
 
 /* Builds responsive sizes string for images */
 export const getSizes = (
-  entries: ({ breakpoint: string; width: string } | string | number)[]
+  entries: ({ breakpoint: string; width: string } | string | number)[],
 ) => {
   const sizes = entries.map((entry) => {
     if (!entry) {
@@ -58,7 +60,7 @@ export const rangeMap = (
   inputStart: number,
   inputEnd: number,
   outputStart: number,
-  outputEnd: number
+  outputEnd: number,
 ) =>
   ((input - inputStart) / (inputEnd - inputStart)) * (outputEnd - outputStart) +
   outputStart
@@ -76,7 +78,7 @@ export const processString = (options: Option[]) => {
 
   function processInputWithRegex(
     option: Option,
-    input: string | string[]
+    input: string | string[],
   ): string | (ReactNode | string)[] {
     if (!option.fn || typeof option.fn !== 'function') return input
 
@@ -111,7 +113,7 @@ export const processString = (options: Option[]) => {
     options.forEach(
       (option: Option) =>
         ((input as ReturnType<typeof processInputWithRegex>) =
-          processInputWithRegex(option, input))
+          processInputWithRegex(option, input)),
     )
 
     return input
@@ -128,4 +130,8 @@ export const dummyImage = (config: {
   foreground: string
 }) => {
   return `https://dummyimage.com/${config.width}x${config.height}/${config.background}/${config.foreground}`
+}
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
 }
