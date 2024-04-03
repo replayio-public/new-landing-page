@@ -11,6 +11,7 @@ import logoVercel from '~/images/hero-logos/vercel.svg'
 import logoWeightsAndBiases from '~/images/hero-logos/weights-and-biases.svg'
 import { LandingPageFragment } from '~/lib/basehub-queries'
 import { RichText } from 'basehub/react-rich-text'
+import { Texture } from '~/components/Texture'
 import styles from '../../styles/Landingpage.module.css'
 
 export function Hero({ hero }: LandingPageFragment) {
@@ -66,8 +67,8 @@ export function Hero({ hero }: LandingPageFragment) {
           ))}
         </ul>
       </div>
-      <div className={styles.quoteCallout}>
-        &quot;This sure would be a great place to put a compelling quote&quot; – Jon Bell
+      <div className="absolute inset-x-0 top-0 -z-10 ">
+        <Texture />
       </div>
     </Container>
   )
