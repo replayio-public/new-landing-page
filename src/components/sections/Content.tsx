@@ -4,7 +4,7 @@ const blogPosts = [
   {
     id: 1,
     title: 'A Journey of Driving Down Test Flakes to 0% at Metabase',
-    href: '#',
+    href: 'https://blog.replay.io/a-journey-of-driving-down-test-flakes-to-0percent-at-metabase-part-3',
     description:
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     imageUrl:
@@ -20,7 +20,7 @@ const blogPosts = [
   {
     id: 1,
     title: 'Finding “false positive” tests with Replay.io',
-    href: '#',
+    href: 'https://blog.replay.io/finding-%22false-positive%22-tests-with-replay.io',
     description:
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     imageUrl:
@@ -36,7 +36,7 @@ const blogPosts = [
   {
     id: 1,
     title: 'Debugging a Flaky Test with Replay',
-    href: '#',
+    href: 'https://blog.replay.io/debugging-a-flaky-test-with-replay',
     description:
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     imageUrl:
