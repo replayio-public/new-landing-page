@@ -1,11 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { CreditCardIcon } from '@heroicons/react/20/solid'
-
-type CostField = {
-  label: string
-  value: number
-}
+import clsx from 'clsx'
 
 const daysInTheMonth = 20
 const costPerRun = 0.006
@@ -39,16 +35,17 @@ const costs = {
 }
 
 const fields = {
-  specs: { label: 'Specs in the suite', value: 50 },
-  testsPerSpec: { label: 'Tests per spec', value: 3 },
-  devs: { label: 'Number of developers', value: 16 },
-  pushes: { label: 'Pushes per day', value: 15 },
-  retries: { label: 'Retry limit', value: 3 },
-  flakyTests: { label: 'Flaky tests in the suite', value: 10 },
-  failingTests: { label: 'Failing tests in the suite', value: 5 },
-  uploaded: { label: 'Uploaded recordings', value: 420 },
-  processed: { label: 'Processed recordings', value: 120 }
+  specs: { label: 'Specs in the suite', defaultValue: 50 },
+  testsPerSpec: { label: 'Tests per spec', defaultValue: 3 },
+  devs: { label: 'Number of developers', defaultValue: 16 },
+  pushes: { label: 'Pushes per day', defaultValue: 15 },
+  retries: { label: 'Retry limit', defaultValue: 3 },
+  flakyTests: { label: 'Flaky tests in the suite', defaultValue: 10 },
+  failingTests: { label: 'Failing tests in the suite', defaultValue: 5 },
+  uploaded: { label: 'Uploaded recordings', defaultValue: 420 },
+  processed: { label: 'Processed recordings', defaultValue: 120 }
 }
+
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
@@ -76,32 +73,42 @@ const Emphasis = ({
 const Field = ({
   className,
   label,
-  value
+  value,
+  onEdit
 }: {
   className?: string
   label: string
-  value: CostField['value']
+  value: number
+  onEdit: (value: number) => void
 }) => {
-  const [editMode, setEditMode] = useState(false)
+  const [editValue, setEditValue] = useState(value)
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = parseInt(e.target.value) ?? 0
+    setEditValue(newValue)
+  }
+
+  const handleBlur = () => {
+    onEdit(editValue)
+  }
 
   return (
-    <div className="mt-4 flex flex w-full gap-x-4 px-6">
-      <dt className={`flex ${className}`}>
+    <div className="mt-4 flex w-full gap-x-4 px-6">
+      <dt className={clsx('flex', className)}>
         <span className="sr-only">Status</span>
-        {label != '' && <CreditCardIcon className="h-6 w-5 text-gray-400" aria-hidden="true" />}
+        {label && <CreditCardIcon className="h-6 w-5 text-gray-400" aria-hidden="true" />}
       </dt>
       <dd className="flex-grow text-sm leading-6 text-gray-500">{label}</dd>
-      <dd className="text-sm leading-6 text-gray-500">
-        {editMode ? (
-          <input
-            type="text"
-            name="replayCost"
-            className="rounded-md  shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-            value={value}
-          />
-        ) : (
-          value
-        )}
+      <dd className="shrink text-sm leading-6 text-gray-500">
+        <input
+          size={4}
+          type="number"
+          name="value"
+          className="border-none bg-transparent outline-none [font-family:inherit] [font-size:inherit]"
+          value={editValue}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
       </dd>
     </div>
   )
@@ -111,25 +118,34 @@ function Panel({
   title,
   subtitle,
   fields,
+  values,
   summary,
+  onFieldEdit,
   className
 }: {
   title: string
   subtitle: string
-  fields: CostField[]
+  fields: Record<string, string>
+  values: Record<string, number>
   summary: React.ReactNode
+  onFieldEdit: (label: string, newValue: number) => void
   className?: string
 }) {
   return (
     <div className={`max-w-lg lg:row-end-1 ${className}`}>
-      <div className="rounded-lg bg-gray-50 shadow-sm ring-1 ring-gray-900/5 ">
+      <div className="rounded-lg bg-gray-50 shadow-sm ring-1 ring-gray-900/5">
         <dl className="flex flex-wrap">
           <div className="flex-auto border-b border-gray-900/5 pb-3 pl-6 pt-6">
             <dt className="text-lg font-semibold leading-6 text-gray-900">{title}</dt>
             <dt className="font text-sm leading-6 text-gray-900">{subtitle}</dt>
           </div>
-          {fields.map(({ label, value }) => (
-            <Field key={label} label={label} value={value} />
+          {Object.entries(fields).map(([key, field]) => (
+            <Field
+              key={key}
+              label={field}
+              value={values[key]}
+              onEdit={(newValue) => onFieldEdit(key, newValue)}
+            />
           ))}
         </dl>
         <div className="mt-6 border-t border-gray-900/5 px-6 py-6">{summary}</div>
@@ -139,24 +155,36 @@ function Panel({
 }
 
 export function CostCalculator() {
+  const [costDrivers, setCostDrivers] = useState({
+    specs: fields.specs.defaultValue,
+    testsPerSpec: fields.testsPerSpec.defaultValue,
+    devs: fields.devs.defaultValue,
+    pushes: fields.pushes.defaultValue,
+    retries: fields.retries.defaultValue,
+    flakyTests: fields.flakyTests.defaultValue,
+    failingTests: fields.failingTests.defaultValue,
+    uploaded: fields.uploaded.defaultValue,
+    processed: fields.processed.defaultValue
+  })
+
   const testRunsPerDay =
-    (fields.specs.value +
-      (fields.retries.value - 1) * (fields.failingTests.value + fields.flakyTests.value)) *
-    fields.testsPerSpec.value *
-    fields.devs.value *
-    fields.pushes.value
+    (costDrivers.specs +
+      (costDrivers.retries - 1) * (costDrivers.failingTests + costDrivers.flakyTests)) *
+    costDrivers.testsPerSpec *
+    costDrivers.devs *
+    costDrivers.pushes
   const testRunsPerMonth = testRunsPerDay * daysInTheMonth
   const cypressCost = testRunsPerMonth * costs.cypressTeamPerRun
-  const numTests = fields.specs.value * fields.testsPerSpec.value
+  const numTests = costDrivers.specs * costDrivers.testsPerSpec
 
   const recordingsUploadedPerDay =
-    fields.specs.value +
-    (fields.flakyTests.value * (fields.retries.value - 1) +
-      fields.failingTests.value * fields.retries.value)
+    costDrivers.specs +
+    (costDrivers.flakyTests * (costDrivers.retries - 1) +
+      costDrivers.failingTests * costDrivers.retries)
 
   const recordingsUploadedPerMonth = recordingsUploadedPerDay * daysInTheMonth
   const recordingsProcessedPerDay =
-    (fields.failingTests.value + fields.flakyTests.value) * (fields.retries.value - 1)
+    (costDrivers.failingTests + costDrivers.flakyTests) * (costDrivers.retries - 1)
 
   const recordingsProcessedPerMonth = recordingsProcessedPerDay * daysInTheMonth
 
@@ -164,6 +192,13 @@ export function CostCalculator() {
     costs.plans.team.cost.plan +
     recordingsUploadedPerMonth * costs.plans.team.cost.uploaded +
     recordingsProcessedPerMonth * costs.plans.team.cost.processed
+
+  const handleCostDriverUpdate = (fieldName: string, newValue: number) => {
+    setCostDrivers((prevFields) => ({
+      ...prevFields,
+      [fieldName]: newValue
+    }))
+  }
 
   return (
     <div className="mx-auto mt-10 max-w-4xl">
@@ -185,7 +220,15 @@ export function CostCalculator() {
             title="Cypress"
             subtitle="Cypress and other tools charge by test runs in CI."
             className="lg:col-start-1"
-            fields={[fields.specs, fields.testsPerSpec, fields.devs, fields.pushes]}
+            fields={{
+              specs: fields.specs.label,
+              testsPerSpec: fields.testsPerSpec.label,
+              devs: fields.devs.label,
+              pushes: fields.pushes.label,
+              retries: fields.retries.label
+            }}
+            values={costDrivers}
+            onFieldEdit={handleCostDriverUpdate}
             summary={
               <div className="text-sm font-medium leading-6 text-gray-800">
                 In the typical month, the
@@ -201,7 +244,14 @@ export function CostCalculator() {
             title="Replay"
             subtitle="Replay charges by recordings uploaded and processed."
             className="lg:col-start-2"
-            fields={[fields.failingTests, fields.flakyTests, fields.uploaded, fields.processed]}
+            fields={{
+              failingTests: fields.failingTests.label,
+              flakyTests: fields.flakyTests.label,
+              uploaded: fields.uploaded.label,
+              processed: fields.processed.label
+            }}
+            values={costDrivers}
+            onFieldEdit={handleCostDriverUpdate}
             summary={
               <div className="text-sm font-medium leading-6 text-gray-900">
                 With Replay,
