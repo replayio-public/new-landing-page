@@ -5,7 +5,7 @@ import { Header } from '~/components/Header'
 import { TermsOfService } from '~/components/sections/legal/terms'
 
 export const metadata: Metadata = {
-  title: 'Terms of Use'
+  title: 'Terms of Service'
 }
 
 const Terms = () => {

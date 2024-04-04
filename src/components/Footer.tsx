@@ -27,18 +27,24 @@ function Category({ name, links }: { name: string; links: LinkItem[] }) {
 
 const navigation = {
   product: [
-    { name: 'Replay DevTools', href: '#' },
-    { name: 'Replay Browser', href: '#' },
-    { name: 'Replay Test Suites', href: '#' },
-    { name: 'Replay Bug Reports', href: '#' },
+    { name: 'Replay DevTools', href: 'https://docs.replay.io/reference-guide/dev-tools' },
+    {
+      name: 'Replay Browser',
+      href: 'https://docs.replay.io/reference-guide/recording/replay-browser'
+    },
+    { name: 'Replay Test Suites', href: 'https://docs.replay.io/test-suites' },
+    {
+      name: 'Replay Bug Reports',
+      href: 'https://docs.replay.io/learn-more/workflows/recording-bug-reports'
+    },
     { name: 'Status', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Pricing', href: '#' }
+    { name: 'Documentation', href: 'https://docs.replay.io#' },
+    { name: 'Pricing', href: '/pricing' }
   ],
   company: [
-    { name: 'Blog', href: '#' },
-    { name: 'Changelog', href: '#' },
-    { name: 'Engineering blog', href: '#' },
+    { name: 'Blog', href: 'https://blog.replay.io/' },
+    { name: 'Changelog', href: '#' }, //TODO: Changelog is a category in our blog but we don't have a direct link to it
+    { name: 'Engineering blog', href: '#' }, //TODO: It's also a category in our blog but we don't have a direct link to itt
     { name: 'Case Studies', href: '#' }
   ],
   information: [
@@ -49,7 +55,7 @@ const navigation = {
     { name: 'Branding', href: '/branding' },
     { name: 'Security', href: '/security-and-privacy' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
-    { name: 'Terms of Use', href: '/terms-of-use' }
+    { name: 'Terms of Use', href: '/terms-of-service' }
   ],
   integrations: [
     { name: 'React', href: '#' },
@@ -64,43 +70,17 @@ const navigation = {
   ],
   social: [
     {
-      name: 'Facebook',
-      href: '#',
+      name: 'Discord',
+      href: '/discord',
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-            clipRule="evenodd"
-          />
-        </svg>
-      )
-    },
-    {
-      name: 'Instagram',
-      href: '#',
-      icon: (props: any) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-            clipRule="evenodd"
-          />
-        </svg>
-      )
-    },
-    {
-      name: 'X',
-      href: '#',
-      icon: (props: any) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
+          <path d="M20.559,1.564A20.311,20.311,0,0,0,15.762,0a13.949,13.949,0,0,0-.65,1.323,18.933,18.933,0,0,0-8.107,0A14.024,14.024,0,0,0,5.882,0,20.506,20.506,0,0,0,3.753,1.57C.539,6.329-.331,10.96.105,15.534h0A20.458,20.458,0,0,0,6.325,18.659a15.045,15.045,0,0,0,1.34-2.172,13.243,13.243,0,0,1-2.102-1A14.62,14.62,0,0,0,12.466,15.6a14.621,14.621,0,0,0,6.9,0c.168.137.341.27.515.39a13.262,13.262,0,0,1-2.105,1,14.885,14.885,0,0,0,1.334,2.157A20.314,20.314,0,0,0,24.4,15.535h0C24.869,10.219,23.711,5.629,20.559,1.564ZM8.229,12.7c-1.224,0-2.089-1.1-2.089-2.48s1.021-2.468,2.209-2.468,2.1,1.108,2.089,2.481S9.453,12.7,8.229,12.7Zm8.164,0c-1.224,0-2.089-1.1-2.089-2.48s1.021-2.468,2.209-2.468,2.1,1.108,2.089,2.481S17.617,12.7,16.393,12.7Z" />
         </svg>
       )
     },
     {
       name: 'GitHub',
-      href: '#',
+      href: 'https://github.com/replayio',
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -112,13 +92,35 @@ const navigation = {
       )
     },
     {
+      name: 'X',
+      href: 'https://twitter.com/replayio',
+      icon: (props: any) => (
+        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+          <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
+        </svg>
+      )
+    },
+    {
       name: 'YouTube',
-      href: '#',
+      href: 'https://www.youtube.com/@replayio',
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
             d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
+            clipRule="evenodd"
+          />
+        </svg>
+      )
+    },
+    {
+      name: 'LinkedIn',
+      href: '#',
+      icon: (props: any) => (
+        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+          <path
+            fillRule="evenodd"
+            d="M19.938 3H4.063C3.476 3 3 3.476 3 4.063v15.875C3 20.524 3.476 21 4.063 21h15.875c.587 0 1.063-.476 1.063-1.063V4.063C21 3.476 20.524 3 19.938 3zM8.097 18.53H5.47V9h2.627v9.53zm-1.315-10.75a1.514 1.514 0 110-3.028c.836 0 1.515.678 1.515 1.514 0 .836-.679 1.514-1.515 1.514zm11.343 10.75h-2.627v-4.379c0-1.043-.021-2.387-1.455-2.387-1.456 0-1.679 1.138-1.679 2.309v4.457H9.937V9h2.522v1.281h.036c.351-.664 1.208-1.366 2.486-1.366 2.656 0 3.145 1.749 3.145 4.023v5.592z"
             clipRule="evenodd"
           />
         </svg>
