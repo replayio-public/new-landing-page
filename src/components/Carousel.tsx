@@ -5,8 +5,12 @@ import vamsi from '~/images/vamsi.jpeg'
 
 const images = { vamsi }
 
-export default function Carousel({ testimonials }: LandingPageFragment['hero']) {
-  const testimonial = testimonials.items[0].testimonial
+export function Carousel({
+  testimonials
+}: {
+  testimonials: LandingPageFragment['hero']['testimonials']['items']
+}) {
+  const testimonial = testimonials[0].testimonial
   return (
     <section className="overflow-hiddenpx-6 isolate lg:px-8">
       <div className="relative mx-auto max-w-2xl py-4 text-left sm:py-4 lg:max-w-2xl ">

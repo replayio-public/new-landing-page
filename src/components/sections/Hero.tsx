@@ -11,8 +11,9 @@ import logoVercel from '~/images/hero-logos/vercel.svg'
 import logoWeightsAndBiases from '~/images/hero-logos/weights-and-biases.svg'
 import { LandingPageFragment } from '~/lib/basehub-queries'
 import { RichText } from 'basehub/react-rich-text'
-import Carousel from '~/components/Carousel'
+import { Carousel } from '~/components/Carousel'
 import styles from '../../styles/Landingpage.module.css'
+import Cal from './hero/Cal'
 
 export function Hero({ hero }: LandingPageFragment) {
   return (
@@ -40,9 +41,9 @@ export function Hero({ hero }: LandingPageFragment) {
 
         <div className="mb-16 mt-10 flex justify-center gap-x-6">
           <BaseHubButton {...hero.getStartedLink} />
-          <BaseHubButton {...hero.contactUsLink} />
+          <Cal link={hero.contactUsLink} />
         </div>
-        <Carousel testimonials={hero.testimonials} />
+        <Carousel testimonials={hero.testimonials.items} />
         <div className="mt-4">
           <p className="hidden font-display text-base text-slate-900">{hero.logosTitle}</p>
 
