@@ -24,7 +24,19 @@ export const landingPageFragment = {
     },
     getStartedLink: linkFragment,
     contactUsLink: linkFragment,
-    logosTitle: true
+    logosTitle: true,
+    testimonials: {
+      items: {
+        testimonial: {
+          name: true,
+          title: true,
+          quote: {
+            json: { content: true }
+          },
+          image: true
+        }
+      }
+    }
   },
   devTools: {
     title: true,
