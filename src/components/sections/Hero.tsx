@@ -12,6 +12,7 @@ import logoWeightsAndBiases from '~/images/hero-logos/weights-and-biases.svg'
 import { LandingPageFragment } from '~/lib/basehub-queries'
 import { RichText } from 'basehub/react-rich-text'
 import { Texture } from '~/components/Texture'
+import Carousel from '~/components/Carousel'
 import styles from '../../styles/Landingpage.module.css'
 
 export function Hero({ hero }: LandingPageFragment) {
@@ -37,7 +38,7 @@ export function Hero({ hero }: LandingPageFragment) {
 
         <ul
           role="list"
-          className="mt-8 flex items-center justify-center gap-x-8 saturate-0 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0"
+          className="mt-0 flex items-center justify-center gap-x-8 saturate-0 sm:flex-col sm:gap-x-0 sm:gap-y-0 xl:flex-row xl:gap-x-12 xl:gap-y-0"
         >
           {[
             [
@@ -67,6 +68,9 @@ export function Hero({ hero }: LandingPageFragment) {
           ))}
         </ul>
       </div>
+
+      <Carousel />
+
       <div className="absolute inset-x-0 top-0 -z-10 h-full w-full">
         <Texture className="h-full w-full" />
       </div>
