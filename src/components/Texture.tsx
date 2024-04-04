@@ -8,7 +8,7 @@ export function Texture(props: React.ComponentPropsWithoutRef<'svg'>) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_1200_9748)">
+      <g clipPath="url(#clip0_1200_9748)">
         <rect width="1920" height="1025" fill="white" />
         <path d="M1210 453.074H1960" stroke="#F3F3F3" />
         <path d="M1209.78 463.543L1959.12 494.95" stroke="#F3F3F3" />
