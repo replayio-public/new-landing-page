@@ -42,7 +42,7 @@ export function Hero({ hero }: LandingPageFragment) {
           <BaseHubButton {...hero.getStartedLink} />
           <BaseHubButton {...hero.contactUsLink} />
         </div>
-        <Carousel />
+        <Carousel testimonials={hero.testimonials} />
         <div className="mt-4">
           <p className="hidden font-display text-base text-slate-900">{hero.logosTitle}</p>
 
