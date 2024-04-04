@@ -47,7 +47,8 @@ const navigation = {
     { name: 'Resources', href: '#' },
     { name: 'Guides', href: '#' },
     { name: 'Branding', href: '/branding' },
-    { name: 'Security & Privacy', href: '/security-and-privacy' },
+    { name: 'Security', href: '/security-and-privacy' },
+    { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Terms of Use', href: '/terms-of-use' }
   ],
   integrations: [
