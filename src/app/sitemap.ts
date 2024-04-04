@@ -30,18 +30,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8
     },
     {
-      url: `${siteURLString}/download`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'daily',
-      priority: 0.8
-    },
-    {
-      url: `${siteURLString}/overview`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'daily',
-      priority: 0.8
-    },
-    {
       url: `${siteURLString}/privacy-policy`,
       lastModified: new Date().toISOString(),
       changeFrequency: 'daily',
@@ -54,19 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8
     },
     {
-      url: `${siteURLString}/shoutouts`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'daily',
-      priority: 0.8
-    },
-    {
       url: `${siteURLString}/terms-of-service`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'daily',
-      priority: 0.8
-    },
-    {
-      url: `${siteURLString}/time-travel`,
       lastModified: new Date().toISOString(),
       changeFrequency: 'daily',
       priority: 0.8
