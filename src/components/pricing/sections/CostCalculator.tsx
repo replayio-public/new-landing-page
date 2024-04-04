@@ -81,15 +81,8 @@ const Field = ({
   value: number
   onEdit: (value: number) => void
 }) => {
-  const [editValue, setEditValue] = useState(value)
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = parseInt(e.target.value) ?? 0
-    setEditValue(newValue)
-  }
-
-  const handleBlur = () => {
-    onEdit(editValue)
+    onEdit(parseInt(e.target.value) ?? 0)
   }
 
   return (
@@ -105,9 +98,8 @@ const Field = ({
           type="number"
           name="value"
           className="border-none bg-transparent outline-none [font-family:inherit] [font-size:inherit]"
-          value={editValue}
+          value={value}
           onChange={handleChange}
-          onBlur={handleBlur}
         />
       </dd>
     </div>
