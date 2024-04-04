@@ -17,7 +17,7 @@ import styles from '../../styles/Landingpage.module.css'
 
 export function Hero({ hero }: LandingPageFragment) {
   return (
-    <Container className="pb-16 pt-20 text-center lg:pt-32">
+    <Container className="pb-16 pt-20 text-center lg:pt-20">
       <h1 className="mx-auto max-w-4xl font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">
         Move fast{' '}
         <span className="relative whitespace-nowrap">
@@ -29,16 +29,17 @@ export function Hero({ hero }: LandingPageFragment) {
         <RichText>{hero.subtitle.json.content}</RichText>
       </div>
 
-      <div className="mt-10 flex justify-center gap-x-6">
+      <div className="mb-16 mt-10 flex justify-center gap-x-6">
         <BaseHubButton {...hero.getStartedLink} />
         <BaseHubButton {...hero.contactUsLink} />
       </div>
-      <div className="mt-36 lg:mt-44">
+      <Carousel />
+      <div className="mt-4">
         <p className="hidden font-display text-base text-slate-900">{hero.logosTitle}</p>
 
         <ul
           role="list"
-          className="mt-0 flex items-center justify-center gap-x-8 saturate-0 sm:flex-col sm:gap-x-0 sm:gap-y-0 xl:flex-row xl:gap-x-12 xl:gap-y-0"
+          className="sm:gap-y- mt-0 flex items-center justify-center gap-x-8 saturate-0 sm:flex-col sm:gap-x-0 xl:flex-row xl:gap-x-12 xl:gap-y-0"
         >
           {[
             [
@@ -68,8 +69,6 @@ export function Hero({ hero }: LandingPageFragment) {
           ))}
         </ul>
       </div>
-
-      <Carousel />
 
       <div className="absolute inset-x-0 top-0 -z-10 h-full w-full">
         <Texture className="h-full w-full" />
