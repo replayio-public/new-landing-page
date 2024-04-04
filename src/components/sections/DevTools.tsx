@@ -42,7 +42,7 @@ export function DevTools({ devTools }: LandingPageFragment) {
     <section
       id="devtools"
       aria-label="Time Travel enabled Browser DevTools"
-      className="relative overflow-hidden bg-gray-700 pb-28 pt-20 sm:py-32"
+      className="relative overflow-hidden bg-slate-900 pb-28 pt-20 sm:py-32"
     >
       <Container className="relative">
         <div className="justfify-center flex max-w-2xl flex-col items-center md:mx-auto md:text-center xl:max-w-none">
