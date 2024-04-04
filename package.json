@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "basehub-gen": "basehub --output .basehub",
-    "dev": "yarn basehub-gen && next dev",
+    "dev": "yarn basehub dev --output .basehub & next dev",
     "build": "yarn basehub-gen && next build",
     "start": "yarn basehub-gen && next start",
     "lint": "next lint"
@@ -35,7 +35,7 @@
     "@types/react-dom": "^18.2.18",
     "@vercel/analytics": "^1.2.2",
     "autoprefixer": "^10.4.12",
-    "basehub": "^3.1.3",
+    "basehub": "^3.2.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "embla-carousel-react": "8.0.0-rc05",
