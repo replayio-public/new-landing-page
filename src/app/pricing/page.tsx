@@ -20,12 +20,12 @@ export default function Home() {
         return (
           <>
             <main>
-              <Header />
+              <Header variant="dark" />
               <PricingHero {...pricingPage} />
               <CostCalculator />
               <PricingTable />
               <PricingFAQ />
-              <Footer /> */}
+              <Footer />
             </main>
           </>
         )
