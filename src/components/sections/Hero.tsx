@@ -67,8 +67,8 @@ export function Hero({ hero }: LandingPageFragment) {
           ))}
         </ul>
       </div>
-      <div className="absolute inset-x-0 top-0 -z-10 ">
-        <Texture />
+      <div className="absolute inset-x-0 top-0 -z-10 h-full w-full">
+        <Texture className="h-full w-full" />
       </div>
     </Container>
   )
