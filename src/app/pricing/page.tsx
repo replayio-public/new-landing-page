@@ -4,10 +4,9 @@ import { Pump } from '.basehub/react-pump'
 import { draftMode } from 'next/headers'
 import { pricingPageFragment } from '~/lib/basehub-queries'
 import { Header } from '~/components/Header'
-import { CostCalculator } from '~/components/pricing/sections/CostCalculator'
 import { Footer } from '~/components/Footer'
 import { PricingFAQ } from '~/components/pricing/PricingFAQ'
-import { PricingCalculator2 } from '~/components/pricing-calculator2'
+import { CostCalculator } from '~/components/pricing/sections/CostCalculator'
 
 export default function Home() {
   return (
@@ -23,11 +22,10 @@ export default function Home() {
             <main>
               <Header />
               <PricingHero {...pricingPage} />
-              {/* <CostCalculator /> */}
-              <PricingCalculator2 />
+              <CostCalculator />
               <PricingTable />
               <PricingFAQ />
-              <Footer />
+              <Footer /> */}
             </main>
           </>
         )
