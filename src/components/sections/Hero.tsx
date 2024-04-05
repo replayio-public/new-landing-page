@@ -18,15 +18,6 @@ import Cal from './hero/Cal'
 export function Hero({ hero }: LandingPageFragment) {
   return (
     <div className="relative overflow-hidden">
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: 'url(/images/hyperspace.svg)',
-          backgroundSize: '1920px 1025px',
-          backgroundPosition: 'center -10rem',
-          backgroundRepeat: 'no-repeat'
-        }}
-      />
       <Container className="relative z-10 max-w-3xl pb-16 pt-20 text-center lg:pt-20">
         <h1 className="mx-auto max-w-4xl font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">
           Move fast{' '}

@@ -93,7 +93,7 @@ export function Header({ variant }: { variant?: 'dark' | 'light' }) {
     <header
       className={classNames(
         'py-10',
-        variant === 'dark' ? 'bg-slate-900 text-slate-100 ' : 'bg-white text-slate-900'
+        variant === 'dark' ? 'bg-slate-900 text-slate-100 ' : 'bg-transparent text-slate-900'
       )}
     >
       <Container>
