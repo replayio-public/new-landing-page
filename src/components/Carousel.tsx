@@ -13,8 +13,8 @@ export function Carousel({
   const testimonial = testimonials[0].testimonial
   return (
     <section className="overflow-hiddenpx-6 isolate lg:px-8">
-      <div className="relative mx-auto max-w-2xl py-4 text-left sm:py-0 lg:max-w-lg ">
-        <figure className="grid grid-cols-1 items-center gap-x-6 gap-y-4 lg:gap-x-10">
+      <div className="relative mx-auto max-w-2xl py-4 text-left sm:py-0 lg:max-w-xl ">
+        <figure className="grid grid-cols-1 items-center gap-x-6 gap-y-4 lg:gap-x-6">
           <div className="relative col-span-2 lg:col-start-1 lg:row-start-2">
             <blockquote className="text-md font-light leading-8 text-gray-900 sm:text-sm sm:leading-5">
               <RichText>{testimonial.quote.json.content}</RichText>
