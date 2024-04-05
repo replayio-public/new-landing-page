@@ -5,7 +5,8 @@ import { Container } from '~/components/Container'
 import { PricingPageFragment } from '~/lib/basehub-queries'
 import { RichText } from 'basehub/react-rich-text'
 import { SquigglyTitle } from '~/components/SquigglyTitle'
-import { FEATURES, tiers, annualDiscount, showAnnual, Tier } from './comparison'
+import { FEATURES, tiers, Tier } from './comparison'
+import { PricingTooltip } from '../PricingTooltip'
 
 function CheckIcon({ className, ...props }: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -52,8 +53,7 @@ function Plan({ tier }: { tier: Tier }) {
               Let&lsquo;s chat
             </p>
             <p className="mt-1 font-light tracking-tight text-slate-300 ">
-              <a className="text-indigo-300" href="#">
-                {' '}
+              <a className="text-indigo-300" href={tier.href}>
                 Start a conversation
               </a>
             </p>
@@ -66,11 +66,7 @@ function Plan({ tier }: { tier: Tier }) {
               <span className="text-sm  font-light text-slate-300">&nbsp;/ &nbsp; month</span>
             </p>
             <p className="mt-1 text-sm font-light tracking-tight text-slate-300">
-              {tier.price == 0
-                ? 'No credit card required'
-                : showAnnual
-                  ? `Billed annually at $${(tier.price * 12 * annualDiscount).toLocaleString()}.`
-                  : '-'}
+              {tier.priceDescription}
             </p>
           </div>
         )}
@@ -90,7 +86,12 @@ function Plan({ tier }: { tier: Tier }) {
                 key={label}
                 className={`flex items-center  justify-between border-b  py-2 ${tier.featured ? 'border-indigo-500' : 'border-slate-700'}`}
               >
-                <span className="">{FEATURES[label].name}</span>
+                <PricingTooltip
+                  learnMore={FEATURES[label].learnMore}
+                  body={FEATURES[label].description}
+                >
+                  <span className="cursor-pointer hover:underline">{FEATURES[label].name}</span>
+                </PricingTooltip>
                 <span className="mr-2">{value.toLocaleString()}</span>
               </li>
             ))}
@@ -104,10 +105,16 @@ function Plan({ tier }: { tier: Tier }) {
           )}
         >
           {tier.included.map((feature) => (
-            <li key={feature.name} className="flex">
-              <CheckIcon className={tier.featured ? 'text-white' : 'border-indigo-500'} />
-              <span className="ml-4">{feature.name}</span>
-            </li>
+            <PricingTooltip
+              key={feature.name}
+              learnMore={feature.learnMore}
+              body={feature.description}
+            >
+              <li className="flex cursor-pointer hover:underline">
+                <CheckIcon className={tier.featured ? 'text-white' : 'border-indigo-500'} />
+                <span className="ml-4">{feature.name}</span>
+              </li>
+            </PricingTooltip>
           ))}
         </ul>
       </div>
