@@ -43,7 +43,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={clsx('h-full scroll-smooth bg-white antialiased', inter.variable, lexend.variable)}
     >
-      <body className="flex h-full flex-col">{children}</body>
+      <body
+        className="flex h-full flex-col bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url(/images/hyperspace.svg)' }}
+      >
+        {children}
+      </body>
     </html>
   )
 }
