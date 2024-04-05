@@ -11,7 +11,7 @@ import david from '~/images/testimonials/david.png'
 import dom from '~/images/testimonials/dom.png'
 import erik from '~/images/testimonials/erik.png'
 import gleb from '~/images/testimonials/gleb.jpg'
-import glide from '~/images/testimonials/glide-apps.png'
+import glide from '~/images/testimonials/glide.png'
 import guillermo from '~/images/testimonials/guillermo-rauch.jpg'
 import harald from '~/images/testimonials/harald.jpg'
 import ives from '~/images/testimonials/ives.png'
@@ -95,7 +95,6 @@ function CaseStudy({
           <div className="font-semibold">{testimonial.author.name}</div>
           <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
         </div>
-        {/* Remove the duplicate Image component if it's not needed */}
         <Image src={testimonial.author.logo} className="h-10 w-auto flex-none" alt="" />
       </figcaption>
     </figure>
