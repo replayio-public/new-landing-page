@@ -117,13 +117,13 @@ export const team = [
 
 export function Team() {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-slate-900 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl">
             Meet the Team
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-6 text-lg leading-8 text-slate-300">
             We&lsquo;re a distributed company, founded by people who have spent years working on
             fully distributed teams at companies like Mozilla. We work across the globe, so we focus
             less on hours and more on building a great product. We build for the long term:
@@ -137,11 +137,11 @@ export function Team() {
           {team.map((person) => (
             <li key={person.name}>
               <Image className="h-24 w-24 rounded-md object-cover" src={person.image} alt="" />
-              <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">
+              <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-slate-100">
                 {person.name}
               </h3>
-              <p className="text-sm  leading-6 text-gray-600">{person.role}</p>
-              <p className="mt-4 text-sm leading-6 text-gray-600">{person.bio}</p>
+              <p className="text-sm  leading-6 text-slate-300">{person.role}</p>
+              <p className="mt-4 text-sm leading-6 text-slate-300">{person.bio}</p>
             </li>
           ))}
         </ul>

@@ -28,12 +28,10 @@ function Panel({
 }) {
   const body = (
     <div>
-      <div className="text-base leading-7 text-slate-300 lg:max-w-lg">
+      <div className="text-base leading-7 lg:max-w-lg">
         <p className="text-primary text-base font-semibold leading-7">{superTitle}</p>
-        <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-200 sm:text-4xl">
-          {title}
-        </h1>
-        <div className="prose max-w-xl text-slate-300">
+        <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">{title}</h1>
+        <div className="prose max-w-xl text-gray-600">
           <RichText>{description}</RichText>
         </div>
       </div>
@@ -45,7 +43,7 @@ function Panel({
         <Image
           alt="team image"
           src={imageSrc}
-          className="absolute inset-0 h-full w-full object-cover brightness-125 saturate-0"
+          className="absolute inset-0 h-full w-full object-cover"
         />
       </div>
     </div>
@@ -71,14 +69,12 @@ function Panel({
 
 export function Hero({ hero }: { hero: AboutPageFragment['hero'] }) {
   return (
-    <div className="bg-slate-900 py-24 sm:py-32">
+    <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center">
           <div className="mx-auto max-w-2xl text-center lg:mx-0 ">
-            <h2 className="text-3xl  font-bold tracking-tight text-slate-100 sm:text-4xl">
-              {hero.title}
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-300">{hero.subTitle}</p>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{hero.title}</h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">{hero.subTitle}</p>
           </div>
         </div>
 
