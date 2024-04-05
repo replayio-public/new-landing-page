@@ -4,6 +4,8 @@ import { Inter, Lexend } from 'next/font/google'
 import clsx from 'clsx'
 
 import { defaultMeta } from '~/lib/constants'
+import { ReactNode } from 'react'
+import Analytics from '~/lib/analytics'
 
 export const metadata: Metadata = {
   title: {
@@ -37,12 +39,15 @@ const lexend = Lexend({
   variable: '--font-lexend'
 })
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
       className={clsx('h-full scroll-smooth bg-white antialiased', inter.variable, lexend.variable)}
     >
+      <head>
+        <Analytics />
+      </head>
       <body className="flex h-full flex-col">{children}</body>
     </html>
   )
