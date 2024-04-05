@@ -24,6 +24,10 @@ export const metadata: Metadata = {
     description: defaultMeta.description,
     creator: defaultMeta.twitter.handle,
     images: [{ url: defaultMeta.ogImage, width: 1200, height: 630 }]
+  },
+  other: {
+    name: 'ahrefs-site-verification',
+    content: 'd6acf1324602b320f37276d0f77e3e8ced24a91e2298c91fdcb79f2143e73bc6'
   }
 }
 
