@@ -39,37 +39,36 @@ const navigation = {
       name: 'Replay Bug Reports',
       href: 'https://docs.replay.io/learn-more/workflows/recording-bug-reports'
     },
-    { name: 'Status', href: '#' },
-    { name: 'Documentation', href: 'https://docs.replay.io#' },
+    { name: 'Documentation', href: 'https://docs.replay.io' },
     { name: 'Pricing', href: '/pricing' }
   ],
   company: [
     { name: 'About', href: '/about' },
-    { name: 'Blog', href: 'https://blog.replay.io/' },
-    { name: 'Changelog', href: '#' }, //TODO: Changelog is a category in our blog but we don't have a direct link to it
-    { name: 'Engineering blog', href: '#' }, //TODO: It's also a category in our blog but we don't have a direct link to itt
-    { name: 'Case Studies', href: '#' }
+    { name: 'Blog', href: 'https://blog.replay.io/' }
+    //TODO: We have categories in our blog but we don't have a direct link to them yet
+    // { name: 'Changelog', href: '#' },
+    // { name: 'Engineering blog', href: '#' },
+    // { name: 'Case Studies', href: '#' }
   ],
   information: [
-    { name: 'Support', href: '#' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Resources', href: '#' },
-    { name: 'Guides', href: '#' },
+    { name: 'Resources', href: 'https://docs.replay.io/resources-and-examples' },
+    { name: 'Guides', href: 'https://docs.replay.io/getting-started/introduction-to-debugging' },
     { name: 'Branding', href: '/branding' },
     { name: 'Security', href: '/security-and-privacy' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Terms of Use', href: '/terms-of-service' }
   ],
   integrations: [
-    { name: 'React', href: '#' },
-    { name: 'Redux', href: '#' },
-    { name: 'Cypress', href: '#' },
-    { name: 'Playwright', href: '#' },
-    { name: 'Selenium WebDriver', href: '#' },
-    { name: 'NextJS', href: '#' },
-    { name: 'Apollo GraphQL', href: '#' },
-
-    { name: 'Zustand', href: '#' }
+    { name: 'React', href: 'https://docs.replay.io/reference-guide/dev-tools/react' },
+    {
+      name: 'Redux',
+      href: 'https://docs.replay.io/getting-started/introduction-to-debugging#jumping-to-a-redux-action'
+    },
+    { name: 'Cypress', href: 'https://docs.replay.io/test-suites/cypress/installation' },
+    { name: 'Playwright', href: 'https://docs.replay.io/test-suites/playwright/installation' },
+    { name: 'Selenium WebDriver', href: 'https://docs.replay.io/test-suites/selenium' },
+    { name: 'NextJS', href: 'https://docs.replay.io/resources/next-js' }
   ],
   social: [
     {
@@ -118,7 +117,7 @@ const navigation = {
     },
     {
       name: 'LinkedIn',
-      href: '#',
+      href: 'https://www.linkedin.com/company/replayio',
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
