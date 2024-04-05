@@ -10,7 +10,6 @@ import { landingPageFragment } from '~/lib/basehub-queries'
 import { Header } from '~/components/Header'
 import FAQ from '~/components/sections/FAQ'
 import DynamicAnalysis from '~/components/sections/DynamicAnalysis'
-import { TestSuiteCaseStudies } from '~/components/sections/TestSuiteCaseStudies'
 import { Content } from '~/components/sections/Content'
 
 export default function Home() {
