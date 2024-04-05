@@ -3,23 +3,22 @@
 }
 
 .colorPrimaryAccent {
-  color: #F02D5E;
+  color: #f02d5e;
 }
 
 .bgPrimaryAccent {
-  background-color: #F02D5E;
+  background-color: #f02d5e;
 }
 
-.ringPrimaryAccent
-{
-  border: 1px solid #F02D5E;
-  color: #F02D5E;
+.ringPrimaryAccent {
+  border: 1px solid #f02d5e;
+  color: #f02d5e;
   box-shadow: none;
   transition: color 0.1s ease;
 }
 
 .bgPrimaryAccent {
-  background-color: #F02D5E;
+  background-color: #f02d5e;
   transition: background-color 0.1s ease;
 }
 
@@ -32,8 +31,7 @@
   font-weight: 600;
   line-height: 2rem;
   letter-spacing: 0.025em;
-  text-transform: uppercase;
-  color: #F02D5E;
+  color: #f02d5e;
 }
 
 .quoteCallout {
