@@ -95,7 +95,9 @@ function CaseStudy({
           <div className="font-semibold">{testimonial.author.name}</div>
           <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
         </div>
-        <Image src={testimonial.author.logo} className="h-10 w-auto flex-none" alt="" />
+        {testimonial.author.logo && (
+          <Image src={testimonial.author.logo} className="h-10 w-auto flex-none" alt="" />
+        )}
       </figcaption>
     </figure>
   )
@@ -153,7 +155,9 @@ function FeaturedTestimonial({ testimonial }: { testimonial: any }) {
           <div className="font-semibold">{testimonial.author.name}</div>
           <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
         </div>
-        <Image src={testimonial.author.logo} className="h-10 w-auto flex-none" alt="" />
+        {testimonial.author.logo && (
+          <Image src={testimonial.author.logo} className="h-10 w-auto flex-none" alt="" />
+        )}
       </figcaption>
     </figure>
   )
@@ -262,7 +266,7 @@ export function Testimonials({ testimonials }: LandingPageFragment) {
                     <Testimonial
                       key={i}
                       testimonial={testimonial}
-                      columnIdx={columnIdx}
+                      columnIdx={i}
                       columnGroupIdx={columnGroupIdx}
                     />
                   ))}

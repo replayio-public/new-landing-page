@@ -18,7 +18,7 @@ export const Work = () => {
   return (
     <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-12 px-6 pt-16 sm:pt-24 lg:flex-row lg:px-8">
       <div className="flex flex-col gap-6">
-        <div className="bg-primary mb-6 flex h-16 w-16 items-center justify-center rounded-full">
+        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary">
           <RocketLaunchIcon className="h-6 w-6 text-white" aria-hidden="true" />
         </div>
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
