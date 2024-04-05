@@ -1,12 +1,12 @@
-import { InboxIcon, TrashIcon, UsersIcon } from '@heroicons/react/24/outline'
+import { CommandLineIcon, HandThumbUpIcon } from '@heroicons/react/24/outline'
 
 const features = [
   {
     name: 'The code behind our code',
     description:
       'Integrity, honesty, and decency. Our principles are not aspirations but constraints. They lie behind every action we take, or decision we make. They ensure that we remain true to our course and true to ourselves.',
-    href: '#',
-    icon: InboxIcon
+    href: 'https://replayio.notion.site/Replay-s-Principles-Values-7b20c16430524356a28bbe842b1d5f06#19baa7e2-94a0-4f53-8211-12c280f715f5',
+    icon: CommandLineIcon
   },
   {
     name: 'Embedded values',
@@ -20,8 +20,8 @@ const features = [
         </p>
       </>
     ),
-    href: '#',
-    icon: UsersIcon
+    href: 'https://replayio.notion.site/Replay-s-Principles-Values-7b20c16430524356a28bbe842b1d5f06#4af5092d36214ce4a780e9c144014e58',
+    icon: HandThumbUpIcon
   }
 ]
 
