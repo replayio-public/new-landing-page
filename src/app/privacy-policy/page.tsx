@@ -11,7 +11,9 @@ const Privacy = () => {
   return (
     <>
       <Header />
-      <Policy />
+      <main>
+        <Policy />
+      </main>
       <Footer />
     </>
   )

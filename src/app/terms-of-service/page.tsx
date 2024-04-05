@@ -12,9 +12,11 @@ const Terms = () => {
   return (
     <>
       <Header />
-      <div className="px-4">
-        <TermsOfService />
-      </div>
+      <main>
+        <div className="px-4">
+          <TermsOfService />
+        </div>
+      </main>
       <Footer />
     </>
   )

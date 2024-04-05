@@ -27,8 +27,8 @@ export default function Home() {
               <PricingTable />
               {/* <LGDevtoolsTable /> */}
               <PricingFAQ {...pricingPage} />
-              <Footer />
             </main>
+            <Footer />
           </>
         )
       }}

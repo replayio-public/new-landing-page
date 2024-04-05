@@ -25,8 +25,8 @@ export default function Home() {
               <Values />
               <Team />
               <Work />
-              <Footer />
             </main>
+            <Footer />
           </>
         )
       }}

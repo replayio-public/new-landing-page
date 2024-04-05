@@ -11,9 +11,11 @@ const Privacy = () => {
   return (
     <>
       <Header />
-      <div className="px-4">
-        <Security />
-      </div>
+      <main>
+        <div className="px-4">
+          <Security />
+        </div>
+      </main>
       <Footer />
     </>
   )
