@@ -26,7 +26,7 @@ export default function Home() {
               <CostCalculator />
               <PricingTable />
               {/* <LGDevtoolsTable /> */}
-              <PricingFAQ />
+              <PricingFAQ {...pricingPage} />
               <Footer />
             </main>
           </>

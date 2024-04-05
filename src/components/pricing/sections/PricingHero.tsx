@@ -7,7 +7,6 @@ import { RichText } from 'basehub/react-rich-text'
 import { SquigglyTitle } from '~/components/SquigglyTitle'
 // import tiers from "./tiers.json"
 import { FEATURES, tiers, annualDiscount, showAnnual, Tier } from './comparison'
-import styles from '~/styles/Landingpage.module.css'
 
 function CheckIcon({ className, ...props }: React.ComponentPropsWithoutRef<'svg'>) {
   return (
