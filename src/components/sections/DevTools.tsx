@@ -59,7 +59,7 @@ export function DevTools({ devTools }: LandingPageFragment) {
         >
           {({ selectedIndex }) => (
             <>
-              <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
+              <div className="-mx-4 flex hidden overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5 lg:block">
                 <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
                   {devTools.features.items.map((feature, featureIndex) => (
                     <div
@@ -86,7 +86,7 @@ export function DevTools({ devTools }: LandingPageFragment) {
                       </h3>
                       <p
                         className={clsx(
-                          'mt-2 hidden text-sm lg:block',
+                          'mt-2 text-sm ',
                           selectedIndex === featureIndex
                             ? 'text-white'
                             : 'text-blue-100 group-hover:text-white'
@@ -98,10 +98,10 @@ export function DevTools({ devTools }: LandingPageFragment) {
                   ))}
                 </Tab.List>
               </div>
-              <Tab.Panels className="lg:col-span-7">
+              <Tab.Panels className="hidden lg:col-span-7 lg:block">
                 {devTools.features.items.map((feature) => (
                   <Tab.Panel key={feature._title} unmount={false}>
-                    <div className="relative sm:px-6 lg:hidden">
+                    <div className="relative text-blue-100 text-white hover:text-white sm:px-6 lg:hidden">
                       <div className="absolute -inset-x-4 bottom-[-4.25rem] top-[-6.5rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl" />
                       <p className="relative mx-auto max-w-2xl text-base text-white sm:text-center">
                         {feature.subTitle}
@@ -122,6 +122,37 @@ export function DevTools({ devTools }: LandingPageFragment) {
             </>
           )}
         </Tab.Group>
+
+        <>
+          <div className="-mx-4 flex  overflow-x-hidden pb-4 sm:mx-0  sm:pb-0  lg:hidden">
+            <div className="relative z-10 flex flex flex-col gap-x-4  px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
+              {devTools.features.items.map((feature, featureIndex) => (
+                <div
+                  key={feature._title}
+                  className={clsx('relative my-2 mt-16 flex flex-col rounded-full px-4 text-white')}
+                >
+                  <h3>
+                    <div
+                      className={clsx(
+                        'font-display text-lg font-semibold ui-not-focus-visible:outline-none'
+                      )}
+                    >
+                      {feature._title}
+                    </div>
+                  </h3>
+                  <p className={clsx('mb-8 mt-2 text-sm')}>{feature.subTitle}</p>
+                  <Image
+                    className="w-full"
+                    src={images[(feature.image as keyof typeof images) || 'console']}
+                    alt=""
+                    priority
+                    sizes="(min-width: 1024px) 67.8125rem, (min-width: 500px) 100vw, 30rem"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
       </Container>
 
       <div className="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl" aria-hidden="true">
