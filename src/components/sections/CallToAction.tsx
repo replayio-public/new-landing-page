@@ -15,7 +15,7 @@ export function CallToAction({ cta }: LandingPageFragment) {
               {cta.title}
             </h2>
 
-            <BaseHubButton className="mt-10 px-8 text-xl" color="default" {...cta.getStartedLink} />
+            <BaseHubButton className="mt-10 px-8 text-lg" color="default" {...cta.getStartedLink} />
           </div>
         </Container>
       </section>
