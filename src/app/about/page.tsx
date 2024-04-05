@@ -6,6 +6,7 @@ import { Footer } from '~/components/Footer'
 import { Hero } from '~/components/about/Hero'
 import { Team } from '~/components/about/Team'
 import { Values } from '~/components/about/Values'
+import { Work } from '~/components/sections/about/work'
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
               <Hero {...aboutPage} />
               <Values />
               <Team />
+              <Work />
               <Footer />
             </main>
           </>
