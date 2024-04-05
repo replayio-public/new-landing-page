@@ -45,12 +45,6 @@ export const FEATURES: Record<string, Feature> = {
   }
 }
 
-type TierFeature = {
-  label: string
-  value: string | number
-  hidden?: boolean
-}
-
 type TierIncluded = {
   name: string
   description: string
