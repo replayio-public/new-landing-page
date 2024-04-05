@@ -1,27 +1,34 @@
 export const annualDiscount = 0.9
 export const showAnnual = false
+
 type Feature = {
   name: string
   description: string
   hidden?: boolean
+  learnMore?: string
 }
 
 export const FEATURES: Record<string, Feature> = {
   users: {
     name: 'Users',
-    description: ''
+    description:
+      'We believe that debugging should be collaborative so we encourage you to invite both frontend and backend developers to investigate failing tests.'
   },
   runs: {
     name: 'Test runs',
-    description: ''
+    description:
+      'The Test Suite dashboard and CI workflows support all test run artifacts free of charge.'
   },
   recordings: {
     name: 'Uploaded recordings',
-    description: ''
+    description: `By default all failed tests are uploaded, but we recommend also uploading all recordings for atleast one run a day so you have a reference point.`,
+    learnMore: '#'
   },
   processed: {
-    name: 'Instant replays',
-    description: ''
+    name: 'Replayed recordings',
+    description:
+      'We try and replay a represantitive sample of your failed recordings so that you can start debugging them immediately.',
+    learnMore: '#'
   },
   rca: {
     name: 'Root cause analysis *',
@@ -45,15 +52,10 @@ export const FEATURES: Record<string, Feature> = {
   }
 }
 
-type TierFeature = {
-  label: string
-  value: string | number
-  hidden?: boolean
-}
-
 type TierIncluded = {
   name: string
   description: string
+  learnMore?: string
 }
 
 export type Tier = {
@@ -64,6 +66,7 @@ export type Tier = {
   included: TierIncluded[]
   featured: boolean
   price: number
+  priceDescription?: string
 }
 
 export const tiers: Record<string, Tier> = {
@@ -72,9 +75,10 @@ export const tiers: Record<string, Tier> = {
     featured: false,
     price: 0,
     description: 'For small teams with a handful of flaky E2E tests.',
-    href: 'https://app.replay.io',
+    href: 'https://app.replay.io/team/new',
+    priceDescription: 'No credit card required',
     features: {
-      users: 50,
+      users: 20,
       runs: 'Unlimited',
       recordings: 100,
       processed: 20,
@@ -86,26 +90,30 @@ export const tiers: Record<string, Tier> = {
     included: [
       {
         name: 'Recent runs dashboard',
-        description: ''
+        description:
+          'Spot regressions in recent test runs and either silence the test or revert the change.',
+        learnMore: '#'
       },
       {
         name: 'Replay DevTools',
-        description: ''
+        description: `Debug a failed test with Replay DevTools as if it's running locally on your laptop.`,
+        learnMore: '#'
       },
       {
         name: 'Discord support',
-        description: ''
+        description: 'Find us in Discord and talk with anyone on the team or in the community.'
       }
     ]
   },
   team: {
     name: 'Team',
     price: 75,
+    priceDescription: 'No credit card required',
     description: 'For teams with a growing test suite.',
-    href: 'https://app.replay.io',
+    href: 'https://app.replay.io/team/new',
     featured: true,
     features: {
-      users: 50,
+      users: 20,
       runs: 'Unlimited',
       recordings: 1000,
       processed: 100,
@@ -117,23 +125,28 @@ export const tiers: Record<string, Tier> = {
     included: [
       {
         name: 'Failing test dashboard',
-        description: ''
+        description:
+          'Stay on top of your top failing tests and take action to fix the the issue at the source.',
+        learnMore: '#'
       },
       {
         name: 'Flaky test dashboard',
-        description: ''
+        description:
+          'Stay on top of your most flaky tests and take action to fix the the issues at the source.',
+        learnMore: '#'
       },
       {
         name: 'Email support',
-        description: ''
+        description: 'Have direct access to the Replay team with dedicated email support.'
       }
     ]
   },
   pro: {
     name: 'Pro',
     price: 350,
+    priceDescription: 'No credit card required',
     description: 'For businesses who want to set E2E reliability goals.',
-    href: 'https://app.replay.io',
+    href: 'https://app.replay.io/org/new',
     featured: false,
     features: {
       users: 50,
@@ -148,15 +161,19 @@ export const tiers: Record<string, Tier> = {
     included: [
       {
         name: 'Test Suite insights',
-        description: ''
+        description: 'Track the health of your suite relative to the goals your team has set.'
       },
       {
         name: 'SSO',
-        description: ''
+        description: 'Login to Replay via SAML or identity providers such as Okta.',
+        learnMore: '#'
       },
+
       {
         name: 'Office hours',
-        description: ''
+        description:
+          "Dedicated time to work the team on the top issues you're seeing in your application that are contributing to flaky test results.",
+        learnMore: '#'
       }
     ]
   },
@@ -165,7 +182,7 @@ export const tiers: Record<string, Tier> = {
     price: -1,
     featured: false,
     description: 'For organizations with custom needs at an enterprise scale.',
-    href: 'https://app.replay.io',
+    href: 'mailto:sales@replay.io',
     features: {
       users: 'Unlimited',
       runs: 'Unlimited',
@@ -179,19 +196,23 @@ export const tiers: Record<string, Tier> = {
     included: [
       {
         name: 'Host your own storage',
-        description: ''
+        description: 'Host recording artifacts in S3 or the cloud storage provider of your choice.',
+        learnMore: '#'
       },
       {
         name: 'Custom legal terms',
-        description: ''
+        description: "We'll work with you to accommodate your business requirements.",
+        learnMore: '#'
       },
       {
         name: 'Account manager',
-        description: ''
+        description: 'Get a dedicated partner to help you hit your test suite success goals.',
+        learnMore: '#'
       },
       {
-        name: 'Best practice workshops',
-        description: ''
+        name: 'Debugging workshops',
+        description: 'Expert sessions on debugging flaky tests and React + Redux best practices.',
+        learnMore: '#'
       }
     ]
   }

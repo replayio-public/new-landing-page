@@ -7,7 +7,6 @@ import { Header } from '~/components/Header'
 import { Footer } from '~/components/Footer'
 import { PricingFAQ } from '~/components/pricing/PricingFAQ'
 import { CostCalculator } from '~/components/pricing/sections/CostCalculator'
-import { LGDevtoolsTable } from '~/components/pricing/LGDevtoolsTable'
 
 export default function Home() {
   return (
@@ -25,7 +24,6 @@ export default function Home() {
               <PricingHero {...pricingPage} />
               <CostCalculator />
               <PricingTable />
-              {/* <LGDevtoolsTable /> */}
               <PricingFAQ {...pricingPage} />
             </main>
             <Footer />
