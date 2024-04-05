@@ -81,10 +81,14 @@ export default function FAQ({ faq }: LandingPageFragment) {
               <dt className="font-semibold text-gray-900">{question._title}</dt>
               <dd className="mt-1 flex-grow text-gray-600">
                 {question.summary}
-                <br />{' '}
-                <Link className="underline" href={question.href}>
-                  Learn more
-                </Link>
+                {question.href && (
+                  <>
+                    <br />
+                    <Link className="underline" href={question.href}>
+                      Learn more
+                    </Link>
+                  </>
+                )}
               </dd>
               {question.logos && (
                 <dd className="mt-1 text-gray-600">
