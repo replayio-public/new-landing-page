@@ -118,6 +118,7 @@ const Field = ({
             size={5}
             type="number"
             name="value"
+            min={0}
             className="my-0 max-w-16 appearance-none border-none bg-transparent py-0 text-right outline-none [font-family:inherit] [font-size:inherit] focus:appearance-none focus:rounded-md focus:bg-slate-200 focus:ring-slate-300 "
             value={value}
             onChange={handleChange}
