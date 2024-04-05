@@ -251,59 +251,30 @@ export const sections = [
   }
 ]
 
-// const comparisonTable = [
-//     {
-//         "category": "Replay DevTools",
-//         "description": "Debug with 100% reproducibility",
-//         "chart": `
-//     # Browser DevTools
-//       Network monitor	true true true true
-//       Elements panel	true true true true
-//       Source viewer	true true true true
-//       In context comments	true true true true
-//     # Time Travel
-//       Live Console logs	true true true true
-//       Jump to code	true true true true
-//     # Framework DevTools
-//       Playwright Panel	true true true true
-//       Cypress Panel true true true true
-//       React DevTools	true true true true
-//       Redux DevTools	true true true true
-//     `
-//     },
-//     {
-//         "category": "Test Analytics",
-//         "description": "Maintain your test suite at scale",
-//         "chart": `
-//        # Analytics
-//         Recent test runs view	true true true true
-//         Failing test view	false true true true
-//         Flaky test view	false true true true
-//         Top errors	false false true true
-//        # Suite management
-//         GitHub PR comments	true true true true
-//         Test Suite SLOs	false false false true
-//        # Notifications
-//         Failing test detection false false false true
-//         Flake test detection false false false true
-//        `
-//     },
-//     {
-//         "category": "Integrated workflows",
-//         "description": "Connect with your favorite tools",
-//         "chart": `
-//        # Version control
-//         GitHub	true true true true
-//        # CI Environment
-//         Github Actions	true true true true
-//        # Issue trackers
-//         GitHub	false true true true
-//         Linear	false true true true
-//         Jira	false true true true
-//        # Collaboration tools
-//         Loom	false true true true
-//         Slack	false true true true
-//         Discord	false true true true
-//        `
-//     }
-// ]
+export const devToolsTiers = [
+  { name: 'Session Replay', featured: false },
+  { name: 'Chrome DevTools', featured: false },
+  { name: 'Replay DevTools', featured: true }
+]
+
+const allDevTools = [true, true, true]
+const chromeDevTools = [false, true, true]
+const replayDevTools = [false, false, true]
+
+export const devToolsSections = [
+  {
+    name: 'Replay DevTools',
+    subtitle: 'Debug your app with 100% reproducibility',
+    features: [
+      { name: 'Console logs', values: allDevTools },
+      { name: 'Network monitor', values: allDevTools },
+      { name: 'Elements panel', values: allDevTools },
+      { name: 'React DevTools', values: chromeDevTools },
+      { name: 'Redux DevTools', values: chromeDevTools },
+      { name: 'Code coverage', values: replayDevTools },
+      { name: 'Live console logs', values: replayDevTools },
+      { name: 'Playwright Panel', values: replayDevTools },
+      { name: 'Cypress Panel', values: replayDevTools }
+    ]
+  }
+]
