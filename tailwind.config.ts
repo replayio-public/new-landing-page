@@ -21,6 +21,9 @@ export default {
       '9xl': ['8rem', { lineHeight: '1' }]
     },
     extend: {
+      colors: {
+        primary: '#f02d5e'
+      },
       borderRadius: {
         '4xl': '2rem'
       },

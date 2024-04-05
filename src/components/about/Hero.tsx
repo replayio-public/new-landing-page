@@ -29,7 +29,7 @@ function Panel({
   const body = (
     <div>
       <div className="text-base leading-7 text-slate-300 lg:max-w-lg">
-        <p className="text-base font-semibold leading-7 text-indigo-400">{superTitle}</p>
+        <p className="text-primary text-base font-semibold leading-7">{superTitle}</p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-200 sm:text-4xl">
           {title}
         </h1>

@@ -1,3 +1,4 @@
+import { RocketLaunchIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import { Button } from '~/components/Button'
 
@@ -17,11 +18,13 @@ export const Work = () => {
   return (
     <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between gap-12 px-6 lg:flex-row lg:px-8">
       <div className="flex flex-col gap-6">
-        <Image src={journeyImg} alt="Journey icon" />
+        <div className="bg-primary mb-6 flex h-16 w-16 items-center justify-center rounded-full">
+          <RocketLaunchIcon className="h-6 w-6 text-white" aria-hidden="true" />
+        </div>
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Join our journey
         </h2>
-        <p>
+        <p className="text-gray-600">
           Excited by what we are doing? Think you’d be a good match?
           <br /> Great! We’d love to hear from you.
           <br />
