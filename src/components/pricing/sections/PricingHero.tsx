@@ -5,7 +5,6 @@ import { Container } from '~/components/Container'
 import { PricingPageFragment } from '~/lib/basehub-queries'
 import { RichText } from 'basehub/react-rich-text'
 import { SquigglyTitle } from '~/components/SquigglyTitle'
-// import tiers from "./tiers.json"
 import { FEATURES, tiers, annualDiscount, showAnnual, Tier } from './comparison'
 
 function CheckIcon({ className, ...props }: React.ComponentPropsWithoutRef<'svg'>) {
