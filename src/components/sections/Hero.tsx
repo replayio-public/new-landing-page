@@ -17,8 +17,8 @@ import Cal from './hero/Cal'
 
 export function Hero({ hero }: LandingPageFragment) {
   return (
-    <div className="relative overflow-hidden">
-      <Container className="relative z-10 max-w-3xl pb-16 pt-20 text-center lg:pt-20">
+    <div className="relative overflow-hidden ">
+      <Container className="relative z-10 max-w-4xl pt-20 text-center lg:pt-20">
         <h1 className="mx-auto max-w-4xl font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">
           Move fast{' '}
           <span className="relative whitespace-nowrap">
@@ -26,7 +26,7 @@ export function Hero({ hero }: LandingPageFragment) {
           </span>{' '}
           breaking things.
         </h1>
-        <div className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
+        <div className="mx-auto mt-4 max-w-3xl rounded-lg bg-white/75 p-2 text-lg tracking-tight text-slate-700">
           <RichText>{hero.subtitle.json.content}</RichText>
         </div>
 
@@ -35,7 +35,7 @@ export function Hero({ hero }: LandingPageFragment) {
           <Cal link={hero.contactUsLink} />
         </div>
 
-        <div className="mb-6">
+        <div className="mb-12 mt-12 w-full rounded-lg border border-slate-300/10  bg-white/75 px-4 py-2">
           <p className="hidden font-display text-base text-slate-900">{hero.logosTitle}</p>
 
           <ul role="list" className="flex flex-wrap items-center justify-center gap-x-8 saturate-0">
@@ -44,9 +44,7 @@ export function Hero({ hero }: LandingPageFragment) {
                 { name: 'WeightsBiases', logo: logoWeightsAndBiases },
                 { name: 'Vercel', logo: logoVercel },
                 { name: 'Metabase', logo: logoMetabase },
-                { name: 'Glide', logo: logoGlide }
-              ],
-              [
+                { name: 'Glide', logo: logoGlide },
                 { name: 'Code Sandbox', logo: logoCodeSandbox },
                 { name: 'React', logo: logoReact },
                 { name: 'Apollo GraphQL', logo: logoApolloGraphql }
@@ -66,8 +64,8 @@ export function Hero({ hero }: LandingPageFragment) {
               </li>
             ))}
           </ul>
+          {/* <Carousel testimonials={hero.testimonials.items} /> */}
         </div>
-        <Carousel testimonials={hero.testimonials.items} />
       </Container>
     </div>
   )

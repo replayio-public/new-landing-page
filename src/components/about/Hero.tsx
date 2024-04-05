@@ -29,7 +29,7 @@ function Panel({
   const body = (
     <div>
       <div className="text-base leading-7 lg:max-w-lg">
-        <p className="text-primary text-base font-semibold leading-7">{superTitle}</p>
+        <p className="text-base font-semibold leading-7 text-primary">{superTitle}</p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">{title}</h1>
         <div className="prose max-w-xl text-gray-600">
           <RichText>{description}</RichText>

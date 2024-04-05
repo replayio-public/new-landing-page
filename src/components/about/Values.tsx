@@ -33,7 +33,7 @@ export function Values() {
           {features.map((feature) => (
             <div key={feature.name} className="flex flex-col">
               <dt className="text-lg font-semibold leading-7 text-gray-700">
-                <div className="bg-primary mb-6 flex h-10 w-10 items-center justify-center rounded-lg">
+                <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                   <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                 </div>
                 {feature.name}
