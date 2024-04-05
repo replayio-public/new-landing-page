@@ -136,7 +136,7 @@ export function Team() {
         >
           {team.map((person) => (
             <li key={person.name}>
-              <Image className=" h-24 w-24 rounded-md" src={person.image} alt="" />
+              <Image className="h-24 w-24 rounded-md object-cover" src={person.image} alt="" />
               <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">
                 {person.name}
               </h3>
