@@ -44,6 +44,7 @@ const navigation = {
     { name: 'Pricing', href: '/pricing' }
   ],
   company: [
+    { name: 'About', href: '/about' },
     { name: 'Blog', href: 'https://blog.replay.io/' },
     { name: 'Changelog', href: '#' }, //TODO: Changelog is a category in our blog but we don't have a direct link to it
     { name: 'Engineering blog', href: '#' }, //TODO: It's also a category in our blog but we don't have a direct link to itt
