@@ -125,6 +125,15 @@ export const pricingPageFragment = {
     },
     label: true,
     description: { json: { content: true } }
+  },
+  faq: {
+    title: true,
+    questions: {
+      items: {
+        _title: true,
+        answer: true
+      }
+    }
   }
 } satisfies PricingPageGenqlSelection
 
