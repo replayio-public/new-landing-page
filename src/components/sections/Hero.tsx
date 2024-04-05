@@ -27,7 +27,7 @@ export function Hero({ hero }: LandingPageFragment) {
           backgroundRepeat: 'no-repeat'
         }}
       />
-      <Container className="relative z-10 pb-16 pt-20 text-center lg:pt-20">
+      <Container className="relative z-10 max-w-3xl pb-16 pt-20 text-center lg:pt-20">
         <h1 className="mx-auto max-w-4xl font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">
           Move fast{' '}
           <span className="relative whitespace-nowrap">
@@ -39,18 +39,15 @@ export function Hero({ hero }: LandingPageFragment) {
           <RichText>{hero.subtitle.json.content}</RichText>
         </div>
 
-        <div className="mb-16 mt-10 flex justify-center gap-x-6">
+        <div className="mb-32 mt-10 flex justify-center gap-x-6">
           <BaseHubButton {...hero.getStartedLink} />
           <Cal link={hero.contactUsLink} />
         </div>
-        <Carousel testimonials={hero.testimonials.items} />
-        <div className="mt-4">
+
+        <div className="mb-6">
           <p className="hidden font-display text-base text-slate-900">{hero.logosTitle}</p>
 
-          <ul
-            role="list"
-            className="sm:gap-y- mt-0 flex items-center justify-center gap-x-8 saturate-0 sm:flex-col sm:gap-x-0 xl:flex-row xl:gap-x-12 xl:gap-y-0"
-          >
+          <ul role="list" className="flex flex-wrap items-center justify-center gap-x-8 saturate-0">
             {[
               [
                 { name: 'WeightsBiases', logo: logoWeightsAndBiases },
@@ -70,7 +67,7 @@ export function Hero({ hero }: LandingPageFragment) {
                   className="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0"
                 >
                   {group.map((company) => (
-                    <li key={company.name} className="flex">
+                    <li key={company.name} className="mb-1">
                       <Image src={company.logo} alt={company.name} unoptimized />
                     </li>
                   ))}
@@ -79,6 +76,7 @@ export function Hero({ hero }: LandingPageFragment) {
             ))}
           </ul>
         </div>
+        <Carousel testimonials={hero.testimonials.items} />
       </Container>
     </div>
   )
