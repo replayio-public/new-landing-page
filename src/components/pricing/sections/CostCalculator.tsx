@@ -4,7 +4,13 @@ import { CreditCardIcon } from '@heroicons/react/20/solid'
 import clsx from 'clsx'
 
 const daysInTheMonth = 20
-const costPerRun = 0.006
+
+const copy = {
+  suite: 'Your test suite',
+  description: 'Thirty thousand foot perspective.',
+  cypressDescription: 'Paying for test runs becomes expensive quickly.',
+  replayDescription: 'We charge you for the replays you want to debug. '
+}
 
 const costs = {
   cypressTeamPerRun: 0.006,
@@ -34,16 +40,26 @@ const costs = {
   }
 }
 
-const fields = {
+type FieldType = {
+  label: string
+  defaultValue: number
+  calculated?: boolean
+}
+
+const fields: Record<string, FieldType> = {
   specs: { label: 'Specs in the suite', defaultValue: 50 },
   testsPerSpec: { label: 'Tests per spec', defaultValue: 3 },
-  devs: { label: 'Number of developers', defaultValue: 16 },
+  devs: { label: 'Developers on the team', defaultValue: 16 },
   pushes: { label: 'Pushes per day', defaultValue: 15 },
   retries: { label: 'Retry limit', defaultValue: 3 },
-  flakyTests: { label: 'Flaky tests in the suite', defaultValue: 10 },
-  failingTests: { label: 'Failing tests in the suite', defaultValue: 5 },
-  uploaded: { label: 'Uploaded recordings', defaultValue: 420 },
-  processed: { label: 'Processed recordings', defaultValue: 120 }
+  flakyTests: { label: 'How many tests are flaky?', defaultValue: 10 },
+  failingTests: { label: 'How many tests are failing?', defaultValue: 5 },
+  uploaded: { label: 'Additional uploaded recordings', defaultValue: 0 },
+  processed: { label: 'Additional processed recordings', defaultValue: 0 },
+  numTests: { label: 'Number of tests in the suite', calculated: true, defaultValue: 0 },
+  numRuns: { label: 'Number of test runs', calculated: true, defaultValue: 0 },
+  autoUploaded: { label: 'Automatically uploaded recordings', calculated: true, defaultValue: 0 },
+  autoProcessed: { label: 'Automatically processed recordings', calculated: true, defaultValue: 0 }
 }
 
 function classNames(...classes: string[]) {
@@ -72,13 +88,15 @@ const Emphasis = ({
 
 const Field = ({
   className,
+  calculated,
   label,
   value,
   onEdit
 }: {
   className?: string
   label: string
-  value: number
+  calculated?: boolean
+  value: number | string
   onEdit: (value: number) => void
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -86,21 +104,25 @@ const Field = ({
   }
 
   return (
-    <div className="mt-4 flex w-full gap-x-4 px-6">
+    <div className="mt-2 flex w-full gap-x-4 px-6 text-sm">
       <dt className={clsx('flex', className)}>
         <span className="sr-only">Status</span>
         {label && <CreditCardIcon className="h-6 w-5 text-gray-400" aria-hidden="true" />}
       </dt>
-      <dd className="flex-grow text-sm leading-6 text-gray-500">{label}</dd>
-      <dd className="shrink text-sm leading-6 text-gray-500">
-        <input
-          size={4}
-          type="number"
-          name="value"
-          className="border-none bg-transparent outline-none [font-family:inherit] [font-size:inherit]"
-          value={value}
-          onChange={handleChange}
-        />
+      <dd className="flex-grow  text-gray-500">{label}</dd>
+      <dd className="shrink  text-gray-500">
+        {calculated ? (
+          value
+        ) : (
+          <input
+            size={5}
+            type="number"
+            name="value"
+            className="my-0 max-w-16 appearance-none border-none bg-transparent py-0 text-right outline-none [font-family:inherit] [font-size:inherit] focus:appearance-none focus:rounded-md focus:bg-slate-200 focus:ring-slate-300 "
+            value={value}
+            onChange={handleChange}
+          />
+        )}
       </dd>
     </div>
   )
@@ -111,36 +133,47 @@ function Panel({
   subtitle,
   fields,
   values,
+  calculatedValues = {},
   summary,
   onFieldEdit,
-  className
+  className,
+  containerClassName
 }: {
   title: string
   subtitle: string
-  fields: Record<string, string>
+  fields: Record<string, FieldType>
   values: Record<string, number>
-  summary: React.ReactNode
+  calculatedValues?: Record<string, number>
+  summary?: React.ReactNode
   onFieldEdit: (label: string, newValue: number) => void
   className?: string
+  containerClassName?: string
 }) {
   return (
-    <div className={`max-w-lg lg:row-end-1 ${className}`}>
-      <div className="rounded-lg bg-gray-50 shadow-sm ring-1 ring-gray-900/5">
+    <div className={`flex max-w-lg flex-col ${className}`}>
+      <div
+        className={`rounded-lg bg-gray-50 shadow-sm ring-1 ring-gray-900/5 ${containerClassName}`}
+      >
         <dl className="flex flex-wrap">
-          <div className="flex-auto border-b border-gray-900/5 pb-3 pl-6 pt-6">
+          <div className="mb-3 flex-auto border-b border-gray-900/5 pb-3 pl-6 pt-6 ">
             <dt className="text-lg font-semibold leading-6 text-gray-900">{title}</dt>
             <dt className="font text-sm leading-6 text-gray-900">{subtitle}</dt>
           </div>
           {Object.entries(fields).map(([key, field]) => (
             <Field
               key={key}
-              label={field}
-              value={values[key]}
+              label={field.label}
+              value={(values[key] || calculatedValues[key] || 0).toLocaleString()}
+              calculated={field.calculated}
               onEdit={(newValue) => onFieldEdit(key, newValue)}
             />
           ))}
         </dl>
-        <div className="mt-6 border-t border-gray-900/5 px-6 py-6">{summary}</div>
+        {summary ? (
+          <div className="mt-6 border-t border-gray-900/5 px-6 py-3">{summary}</div>
+        ) : (
+          <div className="py-3" />
+        )}
       </div>
     </div>
   )
@@ -185,6 +218,13 @@ export function CostCalculator() {
     recordingsUploadedPerMonth * costs.plans.team.cost.uploaded +
     recordingsProcessedPerMonth * costs.plans.team.cost.processed
 
+  const calculatedValues = {
+    numTests: numTests,
+    numRuns: testRunsPerMonth,
+    autoUploaded: recordingsUploadedPerMonth,
+    autoProcessed: recordingsProcessedPerMonth
+  }
+
   const handleCostDriverUpdate = (fieldName: string, newValue: number) => {
     setCostDrivers((prevFields) => ({
       ...prevFields,
@@ -207,54 +247,65 @@ export function CostCalculator() {
           </p>
         </div>
 
-        <div className="row-gap-8 grid max-w-4xl grid-cols-2 gap-x-8">
+        <div className="row-gap-8 grid-y-8 grid max-w-4xl grid-cols-2 gap-x-8">
           <Panel
-            title="Cypress"
-            subtitle="Cypress and other tools charge by test runs in CI."
-            className="lg:col-start-1"
+            title={copy.suite}
+            subtitle={copy.description}
+            className="lg:col-start-1 lg:row-start-1"
+            containerClassName="grow"
             fields={{
-              specs: fields.specs.label,
-              testsPerSpec: fields.testsPerSpec.label,
-              devs: fields.devs.label,
-              pushes: fields.pushes.label,
-              retries: fields.retries.label
+              specs: fields.specs,
+              testsPerSpec: fields.testsPerSpec,
+              devs: fields.devs,
+              pushes: fields.pushes,
+              retries: fields.retries,
+              flakyTests: fields.flakyTests,
+              failingTests: fields.failingTests
             }}
             values={costDrivers}
             onFieldEdit={handleCostDriverUpdate}
-            summary={
-              <div className="text-sm font-medium leading-6 text-gray-800">
-                In the typical month, the
-                <Emphasis>{numTests}</Emphasis> tests would be run
-                <Emphasis>{testRunsPerMonth.toLocaleString()}</Emphasis>
-                times which would result in a
-                <Emphasis color="green">${cypressCost.toLocaleString()}</Emphasis> Cypress bill.
-              </div>
-            }
           />
 
-          <Panel
-            title="Replay"
-            subtitle="Replay charges by recordings uploaded and processed."
-            className="lg:col-start-2"
-            fields={{
-              failingTests: fields.failingTests.label,
-              flakyTests: fields.flakyTests.label,
-              uploaded: fields.uploaded.label,
-              processed: fields.processed.label
-            }}
-            values={costDrivers}
-            onFieldEdit={handleCostDriverUpdate}
-            summary={
-              <div className="text-sm font-medium leading-6 text-gray-900">
-                With Replay,
-                <Emphasis>{recordingsUploadedPerMonth.toLocaleString()}</Emphasis>
-                recordings would be uploaded,
-                <Emphasis>{recordingsProcessedPerMonth.toLocaleString()}</Emphasis>
-                recordings would be processed, and the plan would cost
-                <Emphasis color="green">${replayCost.toLocaleString()}</Emphasis>.
-              </div>
-            }
-          />
+          <div className="lg:col-start-2 lg:row-start-1">
+            <Panel
+              title="Cypress"
+              subtitle={copy.cypressDescription}
+              className=""
+              fields={{
+                numTests: fields.numTests,
+                numRuns: fields.numRuns
+              }}
+              values={costDrivers}
+              calculatedValues={calculatedValues}
+              onFieldEdit={handleCostDriverUpdate}
+              summary={
+                <div className="text-sm font-medium  text-gray-900">
+                  Monthly cost
+                  <Emphasis color="green">${cypressCost.toLocaleString()}</Emphasis>
+                </div>
+              }
+            />
+            <Panel
+              title="Replay"
+              subtitle={copy.replayDescription}
+              className="mt-8"
+              fields={{
+                autoUploaded: fields.autoUploaded,
+                autoProcessed: fields.autoProcessed,
+                uploaded: fields.uploaded,
+                processed: fields.processed
+              }}
+              values={costDrivers}
+              calculatedValues={calculatedValues}
+              onFieldEdit={handleCostDriverUpdate}
+              summary={
+                <div className="text-sm font-medium leading-6 text-gray-900">
+                  Monthly cost
+                  <Emphasis color="green">${replayCost.toLocaleString()}</Emphasis>
+                </div>
+              }
+            />
+          </div>
         </div>
       </div>
     </div>
