@@ -2,13 +2,9 @@
 
 import { useEffect } from 'react'
 import { gaTrackingId } from './constants'
-import { useAppGA } from './ga'
 import LogRocket from 'logrocket'
 
 export default function Analytics() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  if (gaTrackingId) useAppGA()
-
   useEffect(() => {
     LogRocket.init('4sdo4i/replay-landing-page')
   }, [])
