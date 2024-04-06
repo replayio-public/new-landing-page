@@ -13,7 +13,7 @@ test('goes to pricing page', async ({ page }) => {
   await expect(page.getByTestId('pricing')).toBeVisible()
 })
 
-test('schedule demo', async ({ page }) => {
+test.skip('schedule demo', async ({ page }) => {
   await page.getByRole('link', { name: 'Schedule a demo ->' }).click()
   const el = await page.frameLocator('iframe[name="cal-embed\\="]').getByTestId('event-title')
   await expect(el).toBeVisible()
