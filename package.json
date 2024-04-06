@@ -7,7 +7,9 @@
     "dev": "yarn basehub dev --output .basehub & next dev",
     "build": "yarn basehub-gen && next build",
     "start": "yarn basehub-gen && next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "playwright": "playwright test --project chromium",
+    "playwright:replay": "playwright test --project replay-chromium"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
@@ -65,7 +67,8 @@
     "zustand": "^4.3.8"
   },
   "devDependencies": {
-    "@playwright/test": "^1.43.0",
+    "@playwright/test": "^1.37.0",
+    "@replayio/playwright": "2.0.0-alpha.10",
     "@types/lodash": "^4.17.0",
     "@types/mousetrap": "^1.6.15",
     "@types/prismjs": "^1.26.3",

@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test'
+import { devices as replayDevices } from '@replayio/playwright'
 
 /**
  * Read environment variables from file.
@@ -25,7 +26,17 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [
+    ['line'],
+    [
+      '@replayio/playwright/reporter',
+      {
+        apiKey: process.env.REPLAY_API_KEY,
+        upload: true
+      }
+    ],
+    ['html', { open: 'never' }]
+  ],
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -37,6 +48,10 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] }
+    },
+    {
+      name: 'replay-chromium',
+      use: { ...(replayDevices['Replay Chromium'] as any) }
     }
   ],
 
