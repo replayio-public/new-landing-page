@@ -26,6 +26,10 @@ jobs:
         restore-keys: "yarn-cache-folder-"
     - run: yarn install
     - run: yarn build
+      env:
+        BASEHUB_TOKEN: ${{ secrets.BASEHUB_TOKEN }}
+        BASEHUB_DRAFT: true
+        NEXT_PUBLIC_SITE_URL: "https://replay.io"
     - run: yarn playwright install --with-deps
     - run: yarn playwright test
     - uses: actions/upload-artifact@v4
