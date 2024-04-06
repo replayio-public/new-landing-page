@@ -36,3 +36,7 @@ jobs:
         run: yarn lint
       - name: Next Build (because it's more strict)
         run: yarn build
+        env: 
+          NEXT_PUBLIC_SITE_URL: "https://replay.io"
+          BASEHUB_TOKEN: ${{ secrets.BASEHUB_TOKEN }}
+          BASEHUB_DRAFT: true
