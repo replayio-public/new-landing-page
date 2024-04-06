@@ -133,7 +133,12 @@ function Plan({ tier }: { tier: Tier }) {
 
 export function PricingHero({ hero }: { hero: PricingPageFragment['hero'] }) {
   return (
-    <section id="pricing" aria-label="Pricing" className="bg-slate-900 py-20 sm:py-32">
+    <section
+      id="pricing"
+      data-testid="pricing"
+      aria-label="Pricing"
+      className="bg-slate-900 py-20 sm:py-32"
+    >
       <Container>
         <div className="md:text-left">
           <h2 className="text-base font-semibold leading-7 text-indigo-300">Test Suites</h2>
