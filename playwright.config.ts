@@ -27,6 +27,7 @@ export default defineConfig({
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
+    ['line'],
     [
       '@replayio/playwright/reporter',
       {
@@ -34,7 +35,6 @@ export default defineConfig({
         upload: true
       }
     ],
-    ['line'],
     ['html', { open: 'never' }]
   ],
 
