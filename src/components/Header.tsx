@@ -91,6 +91,7 @@ function classNames(...classes: string[]) {
 export function Header({ variant }: { variant?: 'dark' | 'light' }) {
   return (
     <header
+      aria-label="Header"
       className={classNames(
         'py-10',
         variant === 'dark' ? 'bg-slate-900 text-slate-100 ' : 'bg-transparent text-slate-900'
