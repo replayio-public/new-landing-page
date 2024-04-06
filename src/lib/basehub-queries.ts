@@ -1,23 +1,13 @@
-import {
-  AboutPage,
-  AboutPageGenqlSelection,
-  FieldsSelection,
-  LandingPage,
-  LandingPageGenqlSelection,
-  LinkComponent,
-  LinkComponentGenqlSelection,
-  PricingPage,
-  PricingPageGenqlSelection
-} from '.basehub'
+import { fragmentOn } from '.basehub'
 
-export const linkFragment = {
+export const linkFragment = fragmentOn('LinkComponent', {
   _id: true,
   href: true,
   label: true,
   variant: true
-} satisfies LinkComponentGenqlSelection
+})
 
-export const landingPageFragment = {
+export const landingPageFragment = fragmentOn('LandingPage', {
   hero: {
     subtitle: {
       json: { content: true }
@@ -115,9 +105,9 @@ export const landingPageFragment = {
       }
     }
   }
-} satisfies LandingPageGenqlSelection
+})
 
-export const pricingPageFragment = {
+export const pricingPageFragment = fragmentOn('PricingPage', {
   hero: {
     title: {
       left: true,
@@ -135,9 +125,9 @@ export const pricingPageFragment = {
       }
     }
   }
-} satisfies PricingPageGenqlSelection
+})
 
-export const aboutPageFragment = {
+export const aboutPageFragment = fragmentOn('AboutPage', {
   hero: {
     title: true,
     subTitle: true,
@@ -146,9 +136,9 @@ export const aboutPageFragment = {
     title2: true,
     description2: { json: { content: true } }
   }
-} satisfies AboutPageGenqlSelection
+})
 
-export type LandingPageFragment = FieldsSelection<LandingPage, typeof landingPageFragment>
-export type LinkFragment = FieldsSelection<LinkComponent, typeof linkFragment>
-export type PricingPageFragment = FieldsSelection<PricingPage, typeof pricingPageFragment>
-export type AboutPageFragment = FieldsSelection<AboutPage, typeof aboutPageFragment>
+export type LandingPageFragment = fragmentOn.infer<typeof landingPageFragment>
+export type LinkFragment = fragmentOn.infer<typeof linkFragment>
+export type PricingPageFragment = fragmentOn.infer<typeof pricingPageFragment>
+export type AboutPageFragment = fragmentOn.infer<typeof aboutPageFragment>
