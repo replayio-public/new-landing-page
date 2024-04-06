@@ -1962,7 +1962,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@replayio/playwright@npm:^2.0.0":
+"@replayio/playwright@npm:^2.0.0-alpha.9":
   version: 2.0.0
   resolution: "@replayio/playwright@npm:2.0.0"
   dependencies:
@@ -6335,7 +6335,7 @@ __metadata:
     "@radix-ui/react-tabs": "npm:^1.0.0"
     "@radix-ui/react-tooltip": "npm:^1.0.7"
     "@replayio/overboard": "npm:^0.4.1"
-    "@replayio/playwright": "npm:^2.0.0"
+    "@replayio/playwright": "npm:^2.0.0-alpha.9"
     "@tailwindcss/forms": "npm:^0.5.7"
     "@tailwindcss/typography": "github:tailwindcss/typography"
     "@typeform/embed-react": "npm:^2.22.0"

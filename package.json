@@ -68,7 +68,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.43.0",
-    "@replayio/playwright": "^2.0.0",
+    "@replayio/playwright": "^2.0.0-alpha.9",
     "@types/lodash": "^4.17.0",
     "@types/mousetrap": "^1.6.15",
     "@types/prismjs": "^1.26.3",
