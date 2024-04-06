@@ -30,7 +30,7 @@ jobs:
         BASEHUB_TOKEN: ${{ secrets.BASEHUB_TOKEN }}
         BASEHUB_DRAFT: true
         NEXT_PUBLIC_SITE_URL: "https://replay.io"
-    - run: yarn playwright install --with-deps
+    - run: yarn playwright install
     - run: yarn playwright test
       env:
         NEXT_PUBLIC_SITE_URL: "https://replay.io"
