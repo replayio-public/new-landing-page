@@ -83,6 +83,7 @@ function CaseStudy({
     >
       <blockquote className="p-6 text-lg font-semibold leading-7 tracking-tight text-gray-900 sm:p-12 sm:text-xl sm:leading-8">
         <p>{`“${testimonial.body}”`}</p>
+        <p className="mt-8 underline">Read more -></p>
       </blockquote>
       <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
         <Image
