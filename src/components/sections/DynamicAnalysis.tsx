@@ -1,4 +1,4 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import { BellAlertIcon, CodeBracketIcon, BeakerIcon } from '@heroicons/react/20/solid'
 import screenshotRca from '~/images/screenshots/rca-1.png'
 import Image from 'next/image'
 import { LandingPageFragment } from '~/lib/basehub-queries'
@@ -6,8 +6,8 @@ import { RichText } from 'basehub/react-rich-text'
 import styles from '../../styles/Landingpage.module.css'
 
 const images = {
-  cloudUp: CloudArrowUpIcon,
-  server: ServerIcon
+  rootCause: CodeBracketIcon,
+  perfRegression: BellAlertIcon
 }
 
 export default function DynamicAnalysis({ dynamicAnalysis }: LandingPageFragment) {
@@ -17,9 +17,15 @@ export default function DynamicAnalysis({ dynamicAnalysis }: LandingPageFragment
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
           <div className="px-6 md:px-0 lg:pr-4 lg:pt-4">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-              <h2 className={`${styles.colorPrimaryAccent} text-base font-semibold leading-7`}>
-                {dynamicAnalysis.subtitle}
-              </h2>
+              <div className="relative">
+                <BeakerIcon
+                  className={`absolute -left-7 top-1 h-5 w-5 ${styles.colorPrimaryAccent}`}
+                  aria-hidden="true"
+                />
+                <h2 className={`${styles.colorPrimaryAccent} text-base font-semibold leading-7`}>
+                  {dynamicAnalysis.subtitle}
+                </h2>
+              </div>
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 {dynamicAnalysis.title}
               </p>
