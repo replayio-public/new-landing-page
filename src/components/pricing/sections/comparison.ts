@@ -221,18 +221,34 @@ export const tiers: Record<string, Tier> = {
 function mappedValue(feature: string) {
   return {
     name: FEATURES[feature].name,
-    values: [
-      tiers.free.features[feature],
-      tiers.team.features[feature],
-      tiers.pro.features[feature],
-      tiers.enterprise.features[feature]
-    ]
+    values: {
+      free: tiers.free.features[feature],
+      team: tiers.team.features[feature],
+      pro: tiers.pro.features[feature],
+      enterprise: tiers.enterprise.features[feature]
+    }
   }
 }
 
-const allTrue = [true, true, true, true]
+const allTrue = {
+  free: true,
+  team: true,
+  pro: true,
+  enterprise: true
+}
 
-export const sections = [
+export type Section = {
+  name?: string
+  subtitle?: string
+  features: {
+    name: string
+    values: {
+      [key in keyof typeof tiers]: string | boolean | number
+    }
+  }[]
+}
+
+export const sections: Section[] = [
   {
     // name: "Plan limits",
     // subtitle: "Select the plan best for you",

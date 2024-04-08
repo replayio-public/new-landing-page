@@ -1,17 +1,19 @@
 import { CheckIcon, MinusIcon } from '@heroicons/react/20/solid'
 import { Fragment } from 'react'
 
-import { FEATURES, tiers, sections } from './sections/comparison'
+import { Tier, Section } from './sections/comparison'
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export function LGTable() {
+export function LGTable({ tiers, sections }: { tiers: Record<string, Tier>; sections: Section[] }) {
+  const tierEntries = Object.entries(tiers)
+
   return (
     <div className="isolate mt-20 hidden lg:block">
       <div className="relative -mx-8">
-        {Object.values(tiers).some((tier) => tier.featured) ? (
+        {tierEntries.some(([_, tier]) => tier.featured) ? (
           <div className="absolute inset-x-4 inset-y-0 -z-10 flex">
             <div
               className="flex w-1/5 px-4"
@@ -36,7 +38,7 @@ export function LGTable() {
           <thead>
             <tr>
               <td />
-              {Object.values(tiers).map((tier) => (
+              {tierEntries.map(([_, tier]) => (
                 <th key={tier.name} scope="col" className="px-6 pt-6 xl:px-8 xl:pt-8">
                   <div className="text-sm font-semibold leading-7 text-gray-900">{tier.name}</div>
                 </th>
@@ -48,7 +50,7 @@ export function LGTable() {
               <th scope="row">
                 <span className="sr-only">Price</span>
               </th>
-              {Object.values(tiers).map((tier) => (
+              {tierEntries.map(([_, tier]) => (
                 <td key={tier.name} className="px-6 pt-2 xl:px-8">
                   <div className="flex items-baseline gap-x-1 text-gray-900">
                     {tier.price != -1 ? (
@@ -98,9 +100,11 @@ export function LGTable() {
                       {feature.name}
                       <div className="absolute inset-x-8 mt-4 h-px bg-gray-900/5" />
                     </th>
-                    {feature.values.map((value, idx) => {
+                    {tierEntries.map(([tierKey, _]) => {
+                      const value = feature.values[tierKey]
+
                       return (
-                        <td key={`${feature.name}-${idx}-${value}`} className="px-6 py-4 xl:px-8">
+                        <td key={`${feature.name}-${tierKey}`} className="px-6 py-4 xl:px-8">
                           {typeof value === 'string' || typeof value === 'number' ? (
                             <div className="text-center text-sm leading-6 text-gray-500">
                               {value}

@@ -1,5 +1,6 @@
 import { LGTable } from '../LGTable'
 import { XSTable } from '../XSTable'
+import { tiers, sections } from './comparison'
 
 export function PricingTable() {
   return (
@@ -12,11 +13,8 @@ export function PricingTable() {
           </p>
         </div>
 
-        {/* xs to lg */}
-        {/* <XSTable tiers={tiers} sections={sections} /> */}
-
-        {/* lg+ */}
-        <LGTable />
+        <XSTable tiers={tiers} sections={sections} />
+        <LGTable tiers={tiers} sections={sections} />
       </div>
     </div>
   )
