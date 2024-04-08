@@ -143,9 +143,9 @@ export function PricingHero({ hero }: { hero: PricingPageFragment['hero'] }) {
         <div className="md:text-left">
           <h2 className="text-base font-semibold leading-7 text-indigo-300">Test Suites</h2>
           <SquigglyTitle {...hero.title} />
-          <p className="text-md mt-4 text-slate-300 md:max-w-2xl">
+          <div className="text-md mt-4 text-slate-300 md:max-w-2xl">
             <RichText>{hero.description.json.content}</RichText>
-          </p>
+          </div>
         </div>
         <div className="mt-16 grid max-w-7xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-4 xl:gap-x-8">
           {Object.values(tiers).map((tier) => (
