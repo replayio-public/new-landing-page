@@ -40,9 +40,13 @@ export function Content() {
             Getting started with Replay
           </h2>
           <p className="mt-2 text-base leading-6 text-slate-500">
-            Featured essays from the{' '}
+            Featured essays from the replay.io{' '}
             <a href="https://replay.io/blog/" className="underline">
-              replay.io blog
+              blog
+            </a>{' '}
+            and{' '}
+            <a href="http://replay.help/course" className="underline">
+              YouTube channel
             </a>
           </p>
         </div>
@@ -81,7 +85,7 @@ export function Content() {
             }}
           >
             <div className="p-4 text-2xl font-bold text-white">Replay.io Crash Course</div>
-            <div className="my-0 p-4 pt-0 text-gray-600 text-white">
+            <div className="my-0 mb-4 p-4 pt-0 text-gray-600 text-white">
               Drive down your debugging time from hours to minutes. Learn how to use Replay.io from
               A to Z in this free and simple course.
             </div>
@@ -97,35 +101,104 @@ export function Content() {
           <div className="col-span-2 lg:col-span-2">
             <div className="flex flex-col">
               <div className="flex justify-between border-b border-gray-200 p-2 pl-0">
-                <div>Introduction</div> <span className="text-gray-400">2:37</span>
+                <a
+                  href="https://www.youtube.com/watch?v=kWOcmZeoqkg&list=PLOHkr6ZaQDlH5M0PZzjVG9ohyqw7avwPa&index=2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Introduction
+                </a>
+                <span className="text-gray-400">2:37</span>
               </div>
               <div className="flex justify-between border-b border-gray-200 p-2 pl-0">
-                <div>Creating your first replay</div> <span className="text-gray-400">2:10</span>
+                <a
+                  href="https://www.youtube.com/watch?v=dv4M0dwCPYQ&list=PLOHkr6ZaQDlH5M0PZzjVG9ohyqw7avwPa&index=3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Creating your first replay
+                </a>
+                <span className="text-gray-400">2:10</span>
               </div>
               <div className="flex justify-between border-b border-gray-200 p-2 pl-0">
-                <div>DevTools overview</div> <span className="text-gray-400">2:45</span>
+                <a
+                  href="https://www.youtube.com/watch?v=JPA_5Np2mIk&list=PLOHkr6ZaQDlH5M0PZzjVG9ohyqw7avwPa&index=4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  DevTools overview
+                </a>
+                <span className="text-gray-400">2:45</span>
               </div>
               <div className="flex justify-between border-b border-gray-200 p-2 pl-0">
-                <div>Print statements</div> <span className="text-gray-400">5:20</span>
+                <a
+                  href="https://www.youtube.com/watch?v=4lKim09ZTVM&list=PLOHkr6ZaQDlH5M0PZzjVG9ohyqw7avwPa&index=5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Print statements
+                </a>
+                <span className="text-gray-400">5:20</span>
               </div>
               <div className="flex justify-between border-b border-gray-200 p-2 pl-0">
-                <div>Commenting and sharing a replay</div>{' '}
+                <a
+                  href="https://www.youtube.com/watch?v=4OaHXugtiuQ&list=PLOHkr6ZaQDlH5M0PZzjVG9ohyqw7avwPa&index=6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Commenting and sharing a replay
+                </a>
                 <span className="text-gray-400">1:56</span>
               </div>
               <div className="flex justify-between border-b border-gray-200 p-2 pl-0">
-                <div>Using the timeline</div> <span className="text-gray-400">4:11</span>
+                <a
+                  href="https://www.youtube.com/watch?v=ksxf6qE9Ymc&list=PLOHkr6ZaQDlH5M0PZzjVG9ohyqw7avwPa&index=7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Using the timeline
+                </a>
+                <span className="text-gray-400">4:11</span>
               </div>
               <div className="flex justify-between border-b border-gray-200 p-2 pl-0">
-                <div>Network panel</div> <span className="text-gray-400">2:28</span>
+                <a
+                  href="https://www.youtube.com/watch?v=rGKAOG6gZZU&list=PLOHkr6ZaQDlH5M0PZzjVG9ohyqw7avwPa&index=8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Network panel
+                </a>
+                <span className="text-gray-400">2:28</span>
               </div>
               <div className="flex justify-between border-b border-gray-200 p-2 pl-0">
-                <div>Elements panel</div> <span className="text-gray-400">3:42</span>
+                <a
+                  href="https://www.youtube.com/watch?v=kgJVauI7Obs&list=PLOHkr6ZaQDlH5M0PZzjVG9ohyqw7avwPa&index=9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Elements panel
+                </a>
+                <span className="text-gray-400">3:42</span>
               </div>
               <div className="flex justify-between border-b border-gray-200 p-2 pl-0">
-                <div>Source explorer and search</div> <span className="text-gray-400">3:00</span>
+                <a
+                  href="https://www.youtube.com/watch?v=8zdbCLDPz2Y&list=PLOHkr6ZaQDlH5M0PZzjVG9ohyqw7avwPa&index=10"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Source explorer and search
+                </a>
+                <span className="text-gray-400">3:00</span>
               </div>
               <div className="flex justify-between p-2 pl-0">
-                <div>React panel</div> <span className="text-gray-400">2:28</span>
+                <a
+                  href="https://www.youtube.com/watch?v=I_YH__mrm2U&list=PLOHkr6ZaQDlH5M0PZzjVG9ohyqw7avwPa&index=11"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  React panel
+                </a>
+                <span className="text-gray-400">2:28</span>
               </div>
             </div>
           </div>
