@@ -77,7 +77,7 @@ export function Content() {
 
         <div className="mx-auto mt-8 grid max-w-2xl auto-rows-fr grid-cols-1 gap-6 sm:mt-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           <div
-            className="col-span-1 rounded-lg bg-black pt-32 lg:col-span-1"
+            className="col-span-1 rounded-lg bg-black px-2 pt-32 lg:col-span-1"
             style={{
               backgroundImage: "url('images/screenshots/course-thumbnail.png')",
               backgroundSize: '100% auto',
