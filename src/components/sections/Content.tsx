@@ -1,4 +1,3 @@
-import { PlayCircleIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
 import Image from 'next/image'
 import { LandingPageFragment } from '~/lib/basehub-queries'
@@ -67,9 +66,9 @@ export function Content({ content }: LandingPageFragment) {
           <h2 className="text-2xl font-bold tracking-tight text-slate-800 sm:text-3xl">
             {content.title}
           </h2>
-          <p className="prose mt-2 text-base leading-6 text-slate-500">
+          <div className="prose mt-2 text-base leading-6 text-slate-500">
             <RichText>{content.subTitle.json.content}</RichText>
-          </p>
+          </div>
         </div>
         <div className="mx-auto mt-8 grid max-w-2xl auto-rows-fr grid-cols-1 gap-6 sm:mt-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {content.blog.items.map((post, i) => (
