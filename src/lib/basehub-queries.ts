@@ -1,4 +1,5 @@
 import { fragmentOn } from '.basehub'
+import { link } from 'fs'
 
 export const linkFragment = fragmentOn('LinkComponent', {
   _id: true,
@@ -103,6 +104,31 @@ export const landingPageFragment = fragmentOn('LandingPage', {
         quote: true,
         image: true,
         featured: true
+      }
+    }
+  },
+  content: {
+    title: true,
+    subTitle: { json: { content: true } },
+    blog: {
+      items: {
+        title: true,
+        href: true,
+        description: true,
+        imageUrl: true
+      }
+    },
+    course: {
+      title: true,
+      description: true,
+      getStarted: linkFragment,
+      course: {
+        items: {
+          _title: true,
+          title: true,
+          href: true,
+          duration: true
+        }
       }
     }
   }

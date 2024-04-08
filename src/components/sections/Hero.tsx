@@ -11,7 +11,6 @@ import logoVercel from '~/images/hero-logos/vercel.svg'
 import logoWeightsAndBiases from '~/images/hero-logos/weights-and-biases.svg'
 import { LandingPageFragment } from '~/lib/basehub-queries'
 import { RichText } from 'basehub/react-rich-text'
-import { Carousel } from '~/components/Carousel'
 import styles from '../../styles/Landingpage.module.css'
 import Cal from './hero/Cal'
 

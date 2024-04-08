@@ -37,7 +37,7 @@ export default function Home() {
               <DynamicAnalysis {...landingPage} />
               <CallToAction {...landingPage} />
               <Testimonials {...landingPage} />
-              <Content />
+              <Content {...landingPage} />
             </main>
             <Footer />
           </>

@@ -74,7 +74,7 @@ function CaseStudy({
   colStart,
   rowEnd
 }: {
-  testimonial: Testimonial
+  testimonial: any
   colStart: number
   rowEnd: number
 }) {
@@ -118,7 +118,7 @@ function Testimonial({
   columnIdx,
   columnGroupIdx
 }: {
-  testimonial: Testimonial
+  testimonial: any
   columnIdx: number
   columnGroupIdx: number
 }) {
