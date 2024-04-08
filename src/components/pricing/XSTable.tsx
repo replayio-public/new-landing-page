@@ -42,7 +42,7 @@ export function XSTable({ tiers, sections }: { tiers: Record<string, Tier>; sect
             Buy plan
           </a>
           {sections.map((section) => (
-            <div key={section.name} className="mt-10">
+            <div key={`${tierKey}-${section.name}`} className="mt-10">
               <div className="mb-4">
                 {section.name && <h4 className="text-sm font-semibold">{section.name}</h4>}
                 {section.subtitle && (

@@ -79,7 +79,7 @@ export function LGTable({ tiers, sections }: { tiers: Record<string, Tier>; sect
               ))}
             </tr>
             {sections.map((section, sectionIdx) => (
-              <Fragment key={section.name}>
+              <Fragment key={`{${section.name}-${sectionIdx}`}>
                 <tr>
                   <th
                     scope="colgroup"
