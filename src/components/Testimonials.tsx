@@ -1,5 +1,6 @@
 import { LandingPageFragment } from '~/lib/basehub-queries'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import styles from '../styles/Landingpage.module.css'
 import alex from '~/images/testimonials/alex.png'
@@ -73,7 +74,7 @@ function CaseStudy({
   colStart,
   rowEnd
 }: {
-  testimonial: any
+  testimonial: Testimonial
   colStart: number
   rowEnd: number
 }) {
@@ -81,9 +82,13 @@ function CaseStudy({
     <figure
       className={`flex min-h-[desiredHeight] flex-col justify-between rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 xl:col-start-${colStart} xl:row-end-${rowEnd}`}
     >
-      <blockquote className="p-6 text-lg font-semibold leading-7 tracking-tight text-gray-900 sm:p-12 sm:text-xl sm:leading-8">
+      <blockquote className="flex flex-col px-12 pt-6 text-lg font-semibold leading-7 tracking-tight text-gray-900 sm:pb-6 sm:pt-12 sm:text-xl sm:leading-8">
         <p>{`“${testimonial.body}”`}</p>
-        <p className="mt-8">Read more -&gt;</p>
+        <p className="mt-8 grow">
+          <Link target="blank" className="" href={testimonial.url}>
+            Read more
+          </Link>
+        </p>
       </blockquote>
       <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
         <Image
@@ -113,7 +118,7 @@ function Testimonial({
   columnIdx,
   columnGroupIdx
 }: {
-  testimonial: any
+  testimonial: Testimonial
   columnIdx: number
   columnGroupIdx: number
 }) {
@@ -164,6 +169,18 @@ function FeaturedTestimonial({ testimonial }: { testimonial: any }) {
   )
 }
 
+type Testimonial = {
+  body: string
+  author: {
+    name: string
+    handle: string
+    image: any
+    logo: any
+  }
+  featured: boolean
+  url: string
+}
+
 export function Testimonials({ testimonials }: LandingPageFragment) {
   const newTestimonials = testimonials.testimonials.items.map((testimonial) => ({
     body: testimonial.quote,
@@ -182,7 +199,8 @@ export function Testimonials({ testimonials }: LandingPageFragment) {
       handle: testimonial.handle,
       image: images[testimonial.image as keyof typeof images],
       logo: images[testimonial.logo as keyof typeof images]
-    }
+    },
+    url: testimonial.url
   }))
 
   const breaks = [0, 6, 10, 14, 19]

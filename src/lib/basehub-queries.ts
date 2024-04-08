@@ -92,7 +92,8 @@ export const landingPageFragment = fragmentOn('LandingPage', {
         handle: true,
         quote: true,
         image: true,
-        logo: true
+        logo: true,
+        url: true
       }
     },
     testimonials: {
