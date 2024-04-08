@@ -147,10 +147,7 @@ export function PricingHero({ hero }: { hero: PricingPageFragment['hero'] }) {
             <RichText>{hero.description.json.content}</RichText>
           </p>
         </div>
-        <div
-          className="-mx-4 mt-16 grid max-w-7xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-4 xl:mx-0 xl:gap-x-8"
-          style={{ width: '80rem' }}
-        >
+        <div className="mt-16 grid max-w-7xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-4 xl:gap-x-8">
           {Object.values(tiers).map((tier) => (
             <Plan key={tier.name} tier={tier} />
           ))}
