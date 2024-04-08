@@ -248,7 +248,7 @@ export function CostCalculator() {
           </p>
         </div>
 
-        <div className="row-gap-8 grid-y-8 grid max-w-4xl grid-cols-2 gap-x-8">
+        <div className="row-gap-8 grid max-w-4xl justify-center gap-x-8 gap-y-8 lg:grid-cols-2">
           <Panel
             title={copy.suite}
             subtitle={copy.description}
