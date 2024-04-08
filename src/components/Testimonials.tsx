@@ -102,7 +102,9 @@ function CaseStudy({
           <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
         </div>
         {testimonial.author.logo && (
-          <Image src={testimonial.author.logo} className="h-10 w-auto flex-none" alt="" />
+          <div className="hidden md:block">
+            <Image src={testimonial.author.logo} className="h-10 w-auto flex-none" alt="" />
+          </div>
         )}
       </figcaption>
     </figure>
