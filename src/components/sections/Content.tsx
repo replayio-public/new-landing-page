@@ -12,9 +12,8 @@ type VideoType = {
 
 function Video({ video }: { video: VideoType }) {
   return (
-    <div className="relative flex  justify-between p-2 pl-0 ">
+    <div className="flex justify-between border-b border-gray-200 p-2 pl-0 ">
       <div className="flex items-center  text-gray-800">
-        <PlayCircleIcon className={` mr-1 h-4 w-4 `} aria-hidden="true" />
         <Link
           href={video.href}
           className="hover:underline"
