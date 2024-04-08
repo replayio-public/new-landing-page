@@ -32,6 +32,7 @@ export const landingPageFragment = fragmentOn('LandingPage', {
   devTools: {
     title: true,
     subTitle: true,
+    replayUrl: true,
     features: {
       items: {
         _title: true,
