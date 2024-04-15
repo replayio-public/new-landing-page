@@ -29,7 +29,7 @@ export function Hero({ hero }: LandingPageFragment) {
           <RichText>{hero.subtitle.json.content}</RichText>
         </div>
 
-        <div className="mb-32 mt-10 flex justify-center gap-x-6">
+        <div className="mb-32 mt-10 flex flex-col justify-center gap-y-6 sm:flex-row sm:gap-x-6">
           <BaseHubButton {...hero.getStartedLink} />
           <Cal link={hero.contactUsLink} />
         </div>
