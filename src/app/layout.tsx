@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import { defaultMeta } from '~/lib/constants'
 import { ReactNode } from 'react'
 import Analytics from '~/lib/analytics'
-import Mixpanel from '~/lib/Mixpanel'
+import Mixpanel from '~/lib/mixpanel'
 
 export const metadata: Metadata = {
   title: {
