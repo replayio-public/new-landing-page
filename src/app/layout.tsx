@@ -6,6 +6,7 @@ import clsx from 'clsx'
 import { defaultMeta } from '~/lib/constants'
 import { ReactNode } from 'react'
 import Analytics from '~/lib/analytics'
+import Mixpanel from '~/lib/Mixpanel'
 
 export const metadata: Metadata = {
   title: {
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     >
       <head>
         <Analytics />
+        <Mixpanel />
       </head>
       <body className="flex h-full flex-col">{children}</body>
     </html>
